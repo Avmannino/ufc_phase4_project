@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import About from './About'; 
+import Map from './Map';
+import Data from './Data';
 import './App.css';
+import logoImage from './assets/UFC_Logo1.png';
 
 function App() {
+  const isRootPath = window.location.pathname === '/';
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/fight_map" element={<Map />} />
+          <Route path="/data" element={<Data />} />
+        </Routes>
+      </div>
+      <h1 className='logo'>
+      {isRootPath && <img src={logoImage} alt="Logo" className="logo" />}
+      </h1>
+    </Router>
   );
 }
 

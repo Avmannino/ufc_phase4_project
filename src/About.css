@@ -1,0 +1,22 @@
+/* About.css */
+
+.container {
+  background-color: rgba(128, 128, 128, 0.4); /* Grey background with 50% opacity */
+  padding: 20px; /* Adjust padding as needed */
+  border-radius: 10px; /* Optional: Add rounded corners to the container */
+  margin: 10%;
+}
+
+.textarea {
+  width: 100%; /* Ensure the textarea fills the container */
+  height: 600px; /* Set a fixed height for the textarea */
+  resize: vertical; /* Allow vertical resizing of the textarea */
+  border: none; /* Remove default textarea border */
+  outline: none; /* Remove outline when focused */
+  background-color: transparent; /* Make the textarea background transparent */
+  color: #fff; /* Set text color */
+  font-size: 26px; /* Set font size */
+  font-family: 'Arial', sans-serif; /* Set font family */
+}
+
+  
