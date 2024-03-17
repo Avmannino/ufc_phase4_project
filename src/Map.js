@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import "./mapbox-gl.css"
 
 function Map() {
   useEffect(() => {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHRxdTIxMmQwYWJyMmptb2V0b2I5N2s0In0.Gi41GFW13BHS4BCY3psEqQ'; // API KEY HERE
+    mapboxgl.accessToken = ''; // API KEY HERE
     const mapContainer = document.getElementById('map');
 
     if (!mapContainer) {
@@ -53,7 +54,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-95.9309,36.1342]
+                'coordinates': [-95.9309, 36.1342]
               }
             },
             {
@@ -61,7 +62,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-80.85281499999998,35.22580600000001]
+                'coordinates': [-80.85281499999998, 35.22580600000001]
               }
             },
             {
@@ -69,7 +70,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-106.332889,42.8682295]
+                'coordinates': [-106.332889, 42.8682295]
               }
             },
             {
@@ -77,7 +78,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-78.877,42.9333]
+                'coordinates': [-78.877, 42.9333]
               }
             },
             {
@@ -85,7 +86,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-66.15781,18.399654]
+                'coordinates': [-66.15781, 18.399654]
               }
             },
             {
@@ -93,7 +94,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-83.0477265,42.3266345]
+                'coordinates': [-83.0477265, 42.3266345]
               }
             },
             {
@@ -101,7 +102,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-86.874225,33.49498]
+                'coordinates': [-86.874225, 33.49498]
               }
             },
             {
@@ -109,7 +110,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-69.7986195,44.3424505]
+                'coordinates': [-69.7986195, 44.3424505]
               }
             },
             {
@@ -117,7 +118,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-85.3899855,31.224796]
+                'coordinates': [-85.3899855, 31.224796]
               }
             },
             {
@@ -125,7 +126,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-69.7986195,44.3424505]
+                'coordinates': [-69.7986195, 44.3424505]
               }
             },
             {
@@ -133,7 +134,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-86.657094,33.529857]
+                'coordinates': [-86.657094, 33.529857]
               }
             },
             {
@@ -149,7 +150,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-89.3502106,30.331221999999997]
+                'coordinates': [-89.3502106, 30.331221999999997]
               }
             },
             {
@@ -157,7 +158,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-90.04,30.02]
+                'coordinates': [-90.04, 30.02]
               }
             },
             {
@@ -165,7 +166,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-88.044793,30.686003999999997]
+                'coordinates': [-88.044793, 30.686003999999997]
               }
             },
             {
@@ -173,7 +174,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-90.04,30.02]
+                'coordinates': [-90.04, 30.02]
               }
             },
             {
@@ -181,7 +182,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-89.3502106,30.331221999999997]
+                'coordinates': [-89.3502106, 30.331221999999997]
               }
             },
             {
@@ -189,7 +190,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-86.657094,33.529857]
+                'coordinates': [-86.657094, 33.529857]
               }
             },
             {
@@ -197,7 +198,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-91.6704,41.9759]
+                'coordinates': [-91.6704, 41.9759]
               }
             },
             {
@@ -205,7 +206,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-93.221487,30.228534999999997]
+                'coordinates': [-93.221487, 30.228534999999997]
               }
             },
             {
@@ -213,7 +214,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [140.12333,35.605]
+                'coordinates': [140.12333, 35.605]
               }
             },
             {
@@ -221,7 +222,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-93.221487,30.228534999999997]
+                'coordinates': [-93.221487, 30.228534999999997]
               }
             },
             {
@@ -229,7 +230,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [139.700752,35.6679065]
+                'coordinates': [139.700752, 35.6679065]
               }
             },
             {
@@ -237,7 +238,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-91.6704,41.9759]
+                'coordinates': [-91.6704, 41.9759]
               }
             },
             {
@@ -245,7 +246,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-90.050562,30.030061]
+                'coordinates': [-90.050562, 30.030061]
               }
             },
             {
@@ -253,7 +254,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.420687,39.360302000000004]
+                'coordinates': [-74.420687, 39.360302000000004]
               }
             },
             {
@@ -261,7 +262,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [139.79189325,35.6336905]
+                'coordinates': [139.79189325, 35.6336905]
               }
             },
             {
@@ -269,7 +270,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.420687,39.360302000000004]
+                'coordinates': [-74.420687, 39.360302000000004]
               }
             },
             {
@@ -277,7 +278,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.420687,39.360302000000004]
+                'coordinates': [-74.420687, 39.360302000000004]
               }
             },
             {
@@ -285,7 +286,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.07624,40.81312]
+                'coordinates': [-74.07624, 40.81312]
               }
             },
             {
@@ -293,7 +294,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -301,7 +302,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -309,7 +310,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-72.09029075000002,41.491343]
+                'coordinates': [-72.09029075000002, 41.491343]
               }
             },
             {
@@ -317,7 +318,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -325,7 +326,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-93.67360699999999,32.465134500000005]
+                'coordinates': [-93.67360699999999, 32.465134500000005]
               }
             },
             {
@@ -333,7 +334,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.17709750000002,36.1111205]
+                'coordinates': [-115.17709750000002, 36.1111205]
               }
             },
             {
@@ -341,7 +342,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-0.17740299999999998,51.501061]
+                'coordinates': [-0.17740299999999998, 51.501061]
               }
             },
             {
@@ -349,7 +350,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-72.09029075000002,41.491343]
+                'coordinates': [-72.09029075000002, 41.491343]
               }
             },
             {
@@ -357,7 +358,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -365,7 +366,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.4390255,39.353911]
+                'coordinates': [-74.4390255, 39.353911]
               }
             },
             {
@@ -373,7 +374,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-80.1879725,25.781348]
+                'coordinates': [-80.1879725, 25.781348]
               }
             },
             {
@@ -381,7 +382,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.14428400000001,36.1050975]
+                'coordinates': [-115.14428400000001, 36.1050975]
               }
             },
             {
@@ -389,7 +390,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -397,7 +398,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-72.09029075000002,41.491343]
+                'coordinates': [-72.09029075000002, 41.491343]
               }
             },
             {
@@ -405,7 +406,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -413,7 +414,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -421,7 +422,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -429,7 +430,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -437,7 +438,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.4390255,39.353911]
+                'coordinates': [-74.4390255, 39.353911]
               }
             },
             {
@@ -445,7 +446,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -453,7 +454,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -461,7 +462,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.4390255,39.353911] //50
+                'coordinates': [-74.4390255, 39.353911] //50
               }
             },
             {
@@ -469,7 +470,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -477,7 +478,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -485,7 +486,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.4390255,39.353911]
+                'coordinates': [-74.4390255, 39.353911]
               }
             },
             {
@@ -493,7 +494,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -501,7 +502,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-72.09029075000002,41.491343]
+                'coordinates': [-72.09029075000002, 41.491343]
               }
             },
             {
@@ -509,7 +510,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -517,7 +518,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -525,7 +526,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -533,7 +534,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-117.876659,33.807835]
+                'coordinates': [-117.876659, 33.807835]
               }
             },
             {
@@ -541,7 +542,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-118.2672065,34.0430705]
+                'coordinates': [-118.2672065, 34.0430705]
               }
             },
             {
@@ -549,7 +550,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.171283,36.1204695]
+                'coordinates': [-115.171283, 36.1204695]
               }
             },
             {
@@ -557,7 +558,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -565,7 +566,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.178946, 36.0906785]
               }
             },
             {
@@ -573,7 +574,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-117.876659,33.807835] //63
+                'coordinates': [-117.876659, 33.807835] //63
               }
             },
             {
@@ -581,7 +582,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-121.51785,38.649029]
+                'coordinates': [-121.51785, 38.649029]
               }
             },
             {
@@ -589,7 +590,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -597,7 +598,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-83.0060235,39.969288] //68
+                'coordinates': [-83.0060235, 39.969288] //68
               }
             },
             {
@@ -605,7 +606,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-95.362215,29.750890000000002]
+                'coordinates': [-95.362215, 29.750890000000002]
               }
             },
             {
@@ -613,7 +614,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-2.243918,53.4881655]
+                'coordinates': [-2.243918, 53.4881655]
               }
             },
             {
@@ -621,7 +622,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -629,7 +630,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-5.84,54.59093000000001]
+                'coordinates': [-5.84, 54.59093000000001]
               }
             },
             {
@@ -637,7 +638,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.19508,36.11461]
+                'coordinates': [-115.19508, 36.11461]
               }
             },
             {
@@ -645,7 +646,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [0.003291375,51.502808625]
+                'coordinates': [0.003291375, 51.502808625]
               }
             },
             {
@@ -653,7 +654,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-117.876659,33.807835]
+                'coordinates': [-117.876659, 33.807835]
               }
             },
             {
@@ -661,7 +662,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-84.504573,39.097971]
+                'coordinates': [-84.504573, 39.097971]
               }
             },
             {
@@ -669,7 +670,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-74.171133,40.7336095]
+                'coordinates': [-74.171133, 40.7336095]
               }
             },
             {
@@ -677,7 +678,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-1.622718,54.9639405]
+                'coordinates': [-1.622718, 54.9639405]
               }
             },
             {
@@ -685,7 +686,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-83.0060235,39.969288] //82
+                'coordinates': [-83.0060235, 39.969288] //82
               }
             },
             {
@@ -693,7 +694,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-73.5693785,45.4960725]
+                'coordinates': [-73.5693785, 45.4960725]
               }
             },
             {
@@ -701,7 +702,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-93.276103,44.97945350000001]
+                'coordinates': [-93.276103, 44.97945350000001]
               }
             },
             {
@@ -709,7 +710,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-84.3963765,33.757180500000004]
+                'coordinates': [-84.3963765, 33.757180500000004]
               }
             },
             {
@@ -717,7 +718,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-95.9379,41.2587]
+                'coordinates': [-95.9379, 41.2587]
               }
             },
             {
@@ -725,7 +726,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-1.9148205000000003,52.479751500000006]
+                'coordinates': [-1.9148205000000003, 52.479751500000006]
               }
             },
             {
@@ -733,7 +734,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-87.88774599999998,42.005313]
+                'coordinates': [-87.88774599999998, 42.005313]
               }
             },
             {
@@ -741,7 +742,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-78.89167900000002,35.015297499999996]
+                'coordinates': [-78.89167900000002, 35.015297499999996]
               }
             },
             {
@@ -749,7 +750,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-82.40649099999997,28.059369] //95
+                'coordinates': [-82.40649099999997, 28.059369] //95
               }
             },
             {
@@ -757,7 +758,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-86.7744,36.1622]
+                'coordinates': [-86.7744, 36.1622]
               }
             },
             {
@@ -765,7 +766,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-73.5693785,45.4960725]
+                'coordinates': [-73.5693785, 45.4960725]
               }
             },
             {
@@ -773,7 +774,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [6.981977499999998,50.938449]
+                'coordinates': [6.981977499999998, 50.938449]
               }
             },
             {
@@ -781,7 +782,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-75.171908, 39.9011165] //101
               }
             },
             {
@@ -789,7 +790,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-122.6742, 45.5202]
               }
             },
             {
@@ -797,7 +798,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-96.81005225, 32.790229749999995]
               }
             },
             {
@@ -805,7 +806,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-118.2672065, 34.0430705]
               }
             },
             {
@@ -813,7 +814,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-2.243918, 53.4881655]
               }
             },
             {
@@ -821,7 +822,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-90.050848, 35.138411000000005] //107
               }
             },
             {
@@ -829,7 +830,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [151.06224600000004, -33.844529]
               }
             },
             {
@@ -837,7 +838,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [54.598397999999996, 24.467944]
               }
             },
             {
@@ -845,7 +846,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-123.1139, 49.2609]
               }
             },
             {
@@ -853,7 +854,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-122.202835625, 37.750767625]
               }
             },
             {
@@ -861,7 +862,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-71.06206275, 42.366164500000004]
               }
             },
             {
@@ -869,7 +870,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-86.15557050000002, 39.7639575]
               }
             },
             {
@@ -877,7 +878,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [6.872622, 51.4900645] //122
               }
             },
             {
@@ -885,7 +886,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-83.2341, 42.6875]
               }
             },
             {
@@ -893,7 +894,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [151.06224600000004, -33.844529]
               }
             },
             {
@@ -901,7 +902,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-79.38837925, 43.6415585]
               }
             },
             {
@@ -909,7 +910,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-123.108806, 49.2778505]
               }
             },
             {
@@ -917,7 +918,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-75.171908, 39.9011165]
               }
             },
             {
@@ -925,7 +926,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-43.3904225, -22.975163] //134
               }
             },
             {
@@ -933,7 +934,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-105.0075355, 39.7486095]
               }
             },
             {
@@ -941,7 +942,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-95.362215, 29.750890000000002]
               }
             },
             {
@@ -949,7 +950,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-1.9485880000000002, 52.391234999999995]
               }
             },
             {
@@ -957,7 +958,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-121.901202, 37.3328665]
               }
             },
             {
@@ -965,7 +966,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-79.3791035, 43.643389500000005]
               }
             },
             {
@@ -973,7 +974,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-43.3904225, -22.975163]
               }
             },
             {
@@ -981,7 +982,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-87.6742055, 41.8806415]
               }
             },
             {
@@ -989,7 +990,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-95.9379, 41.2587]
               }
             },
             {
@@ -997,7 +998,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [139.63084049999998, 35.89474149999999]
               }
             },
             {
@@ -1005,7 +1006,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-84.3963765, 33.757180500000004] //145
               }
             },
             {
@@ -1013,7 +1014,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-43.9451, -19.9227]
               }
             },
             {
@@ -1021,7 +1022,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-114.05209099999999, 51.03787]
               }
             },
             {
@@ -1029,7 +1030,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-118.2672065, 34.0430705]
               }
             },
             {
@@ -1037,7 +1038,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-105.0075355, 39.7486095]
               }
             },
             {
@@ -1045,7 +1046,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-79.3791035, 43.643389500000005]
               }
             },
             {
@@ -1053,7 +1054,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-43.3904225, -22.975163]
               }
             },
             {
@@ -1061,7 +1062,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [103.0, 35.0]
               }
             },
             {
@@ -1069,7 +1070,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-122.3536745, 47.622131]
               }
             },
             {
@@ -1077,7 +1078,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [18.0817244375, 59.293773]
               }
             },
             {
@@ -1085,7 +1086,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-97.1436765, 49.8926835] //161
               }
             },
             {
@@ -1093,7 +1094,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-87.9075, 43.040229]
               }
             },
             {
@@ -1101,7 +1102,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-95.362215, 29.750890000000002]
               }
             },
             {
@@ -1109,7 +1110,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-96.81005225, 32.790229749999995]
               }
             },
             {
@@ -1117,7 +1118,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-76.61918800000002, 39.2889465]
               }
             },
             {
@@ -1125,7 +1126,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.169513, 36.102367]
               }
             },
             {
@@ -1133,7 +1134,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-121.51785, 38.649029]
               }
             },
             {
@@ -1141,7 +1142,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-43.2292695, -22.913921]
               }
             },
             {
@@ -1149,7 +1150,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-99.175252, 19.496916]
               }
             },
             {
@@ -1157,7 +1158,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-99.175252, 19.496916] //188
               }
             },
             {
@@ -1165,7 +1166,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [144.9477615, -37.8164805]
               }
             },
             {
@@ -1173,7 +1174,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-45.01135100000001, -12.1266305]
               }
             },
             {
@@ -1181,7 +1182,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.169513,36.102367]
+                'coordinates': [-118.341951, 33.958211999999996]
               }
             },
             {
@@ -1189,7 +1190,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-115.1782595, 36.1028325] //200
               }
             },
             {
@@ -1197,7 +1198,215 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-115.178946,36.0906785]
+                'coordinates': [-81.6881325, 41.496479]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-2.243918, 53.4881655]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-73.99365162500001, 40.750709125]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-73.97703299999999, 40.68364325]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-78.87648, 42.8751295]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-43.3904225, -22.975163]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-113.4977475, 53.546962]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-83.054969, 42.34111400000001]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [115.8520415, -31.948363]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [144.978451, -37.821633]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-84.3963765, 33.757180500000004]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [54.598397999999996, 24.467944] //242
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [144.9477615, -37.8164805]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-81.64498, 30.325804499999997]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-115.1492, 36.1663] //250
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-96.81005225, 32.790229749999995]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-76.61918800000002, 39.2889465]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [24.4858, 54.6036]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [24.4865, 54.6087]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-112.2613, 33.5322] //263
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-112.0717, 33.4456]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [103.8757, 1.3020]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-111.9011, 40.7683]//278
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [115.8580, -31.9485]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-80.1866, 25.7814]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-111.9011, 40.7683]
+              }
+            },
+            {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [151.0691, -33.8483] //299
               }
             },
           ]
@@ -1209,10 +1418,10 @@ function Map() {
         'type': 'circle',
         'source': 'points',
         'paint': {
-          'circle-color': '#4264fb',
-          'circle-radius': 8,
+          'circle-color': '#850303',
+          'circle-radius': 11,
           'circle-stroke-width': 2,
-          'circle-stroke-color': '#ffffff'
+          'circle-stroke-color': '#DB8000'
         }
       });
 
