@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
-import "./mapbox-gl.css"
+import "./mapbox-gl.css";
+
+
 
 function Map() {
   useEffect(() => {
-    mapboxgl.accessToken = ''; // API KEY HERE
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHRxdTIxMmQwYWJyMmptb2V0b2I5N2s0In0.Gi41GFW13BHS4BCY3psEqQ'; // API KEY HERE
     const mapContainer = document.getElementById('map');
 
     if (!mapContainer) {
@@ -1425,35 +1427,43 @@ function Map() {
         }
       });
 
-      // Center the map on the coordinates of any clicked circle from the 'circle' layer.
-      map.on('click', 'circle', (e) => {
-        map.flyTo({
-          center: e.features[0].geometry.coordinates
-        });
+      const popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
       });
 
-      // Change the cursor to a pointer when the it enters a feature in the 'circle' layer.
-      map.on('mouseenter', 'circle', () => {
-        map.getCanvas().style.cursor = 'pointer';
+      // Show popup on hover
+      map.on('mouseenter', 'circle', (e) => {
+        if (e.features.length > 0) { // Check if features array is not empty
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          const properties = e.features[0].properties;
+
+          // Create HTML content for the popup
+          let htmlContent = '<div class="popup">';
+          htmlContent += `<p class="popup-title">${properties.show}</p>`;
+          htmlContent += `<p class="popup-paragraph">Date: ${properties.datee}</p>`;
+          htmlContent += `<p class="popup-paragraph">Attendance: ${properties.attendance}</p>`;
+          htmlContent += `<p class="popup-paragraph">Wikipage: <a class="popup-link" href="${properties.wikipage}" target="_blank">${properties.show}</a></p>`;
+          htmlContent += '</div>';
+
+
+          popup.setLngLat(coordinates).setHTML(htmlContent).addTo(map);
+
+        }
       });
 
-      // Change it back to a pointer when it leaves.
+      // Remove popup when mouse leaves
       map.on('mouseleave', 'circle', () => {
-        map.getCanvas().style.cursor = '';
+        popup.remove();
       });
     });
 
     map.addControl(new mapboxgl.NavigationControl());
+
+    return () => map.remove(); // Clean up on unmount
   }, []);
 
   return <div id="map" style={{ width: '100%', height: '95vh' }}></div>;
 }
 
 export default Map;
-
-
-
-
-
-
-

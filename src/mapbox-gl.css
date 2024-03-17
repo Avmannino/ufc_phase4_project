@@ -1,6 +1,48 @@
-body { margin: 0; padding: 0; }
+body {
+    margin: 0;
+    padding: 0;
+}
 
 .mapboxgl-canvas {
     position: static !important;
     height: 95vh !important;
+}
+
+.popup {
+    font-family: , sans-serif;
+    background-color: white;
+    width: 200px;
+    height: 200px;
+}
+
+/* Title style */
+.popup-title {
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+/* Paragraph style */
+.popup-paragraph {
+    font-size: 15px;
+
+}
+
+/* Link style */
+.popup-link {
+    color: #007bff;
+    /* Blue color */
+    text-decoration: none;
+}
+
+/* Link hover style */
+.popup-link:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: "Sternbach";
+    src: local("Sternbach"), local("Sternbach"),
+        url("./fonts/Sternbach.otf");
+    font-weight: bold;
 }
