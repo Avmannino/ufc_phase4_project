@@ -6,7 +6,7 @@ import "./mapbox-gl.css";
 
 function Map() {
   useEffect(() => {
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHRxdTIxMmQwYWJyMmptb2V0b2I5N2s0In0.Gi41GFW13BHS4BCY3psEqQ'; // API KEY HERE
+    mapboxgl.accessToken = ''; // API KEY HERE
     const mapContainer = document.getElementById('map');
 
     if (!mapContainer) {
@@ -16,12 +16,11 @@ function Map() {
 
     const map = new mapboxgl.Map({
       container: mapContainer,
-      style: 'mapbox://styles/amannino92/clturucaq01sx01p5ay7b0iq1',
-      center: [-104.9653, 39.7348],
-      zoom: 3
+      style: 'mapbox://styles/amannino92/cltw0qns6010c01pb657hagns',
+      center: [-99.175252,19.496916],
+      zoom: 2
     });
     map.on('load', () => {
-      // Add a GeoJSON source with 3 points.
       map.addSource('points', {
         'type': 'geojson',
         'data': {
@@ -32,7 +31,7 @@ function Map() {
               'properties': {},
               'geometry': {
                 'type': 'Point',
-                'coordinates': [-104.9653, 39.7348]
+                'coordinates': [-90.5069, 14.6349]
               }
             },
             {
