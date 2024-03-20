@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "0.0",
+                "id": "1",
                 "index": "1.0",
                 "show": "UFC 1: The Beginning",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_1",
@@ -29,7 +29,7 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "1.0",
+                "id": "2",
                 "index": "2.0",
                 "show": "UFC 2: No Way Out",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_2",
