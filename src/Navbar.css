@@ -33,6 +33,7 @@ a{
   position: relative; 
   border-bottom: solid;
   border-color: rgb(255, 10, 10);
+  border-width: 6px;
 }
 
 .nav_brand {
@@ -45,8 +46,10 @@ a{
 }
 
 .nav_link{
-  font-size: 30px;
+  font-size: 35px;
+  font-family: "Sternbach";
   text-align:right;
+  color: black;
   
 }
 
@@ -108,7 +111,7 @@ a{
   transform: rotate(45deg) translate(-4px, -5px);
 }
 
-nav ul li a:hover {
+.nav_link:hover {
   background-color: #9c0000;
 }
 
