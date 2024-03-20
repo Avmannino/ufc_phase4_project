@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import nav_logo from './assets/nav_logo.png'
+import aboutLogo from './assets/a_bout.png';
 
 function Navbar() {
     const location = useLocation();
@@ -28,10 +29,15 @@ function Navbar() {
                 </div>
             )}
             <ul className={active}>
-                <li className="nav_item"><Link to="/" className="nav_link">HOME</Link></li>
-                <li className="nav_item"><Link to="/about" className="nav_link">ABOUT</Link></li>
-                <li className="nav_item"><Link to="/fight_map" className="nav_link">EVENT MAP</Link></li>
+
+                <li className="nav_item">
+                    <Link to="/about" className="nav_link">
+                        <img src={aboutLogo} alt="About" className="about-logo" />
+                    </Link>
+                </li>
+                <li className="nav_item"><Link to="/map" className="nav_link">EVENT MAP</Link></li>
                 <li className="nav_item"><Link to="/data" className="nav_link">DATA</Link></li>
+                <li className="nav_item"><Link to="/fantasy" className="nav_link">FANTASY</Link></li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
@@ -9,20 +9,27 @@ import './App.css';
 import logoImage from './assets/UFC_Logo1.png';
 
 function App() {
+  const [navActive, setNavActive] = useState(false);
+
+  const toggleNav = () => {
+    setNavActive(!navActive);
+  };
+
   const isRootPath = window.location.pathname === '/';
+
   return (
     <Router>
       <div className="app">
-        <Navbar />
+      <Navbar active={navActive} toggleNav={toggleNav} />
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/fight_map" element={<Map />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/fantasy" element={<Home />} />
           {/* <Route path="/data" element={<Data />} /> */}
         </Routes>
       </div>
       <h1 className='logo'>
-      {isRootPath && <img src={logoImage} alt="Logo" className="logo" />}
+        {isRootPath && <img src={logoImage} alt="Logo" className="logo" />}
       </h1>
     </Router>
   );

@@ -34,6 +34,7 @@ a{
   border-bottom: solid;
   border-color: rgb(255, 10, 10);
   border-width: 6px;
+  z-index: 1000;
 }
 
 .nav_brand {
@@ -42,20 +43,27 @@ a{
   font-weight: bold;
   z-index: 999;
   position: absolute; 
-  left: 10px; 
+  left: 20px; 
+}
+
+.about-logo {
+  padding-top: 4%;
 }
 
 .nav_link{
-  font-size: 35px;
+  font-size: 39px;
   font-family: "Sternbach";
-  text-align:right;
   color: black;
+  padding-right: -304px;
+  display:inline-flex;
   
 }
 
 .nav_left{
-  padding-right:31%;
+  margin-right:26%;
 }
+
+
 
 .nav_menu{
   display: flex;
