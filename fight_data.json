@@ -4,7 +4,7 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "1",
+                "id": "0.0",
                 "index": "1.0",
                 "show": "UFC 1: The Beginning",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_1",
@@ -29,7 +29,7 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "2",
+                "id": "1.0",
                 "index": "2.0",
                 "show": "UFC 2: No Way Out",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_2",
@@ -12154,8 +12154,8 @@
         {
             "type": "Feature",
             "properties": {
-                "id": "486.0",
-                "index": "487.0",
+                // "id": "486.0",
+                // "index": "487.0",
                 "show": "UFC 240: Holloway vs. Edgar",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_240",
                 "Date": "2019-07-27",
