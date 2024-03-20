@@ -7,12 +7,12 @@ function Map() {
   const [map, setMap] = useState(null);
 
   useEffect(() => {
-    mapboxgl.accessToken = ''; // API KEY HERE
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHRxdTIxMmQwYWJyMmptb2V0b2I5N2s0In0.Gi41GFW13BHS4BCY3psEqQ'; // API KEY HERE
 
     const newMap = new mapboxgl.Map({
       container: 'map', // container ID
       style: 'mapbox://styles/amannino92/cltw0qns6010c01pb657hagns', // Updated Mapbox style URL
-      center: [-20.0937, 12.0489], // starting position [lng, lat]
+      center: [-3.0937, 12.0489], // starting position [lng, lat]
       zoom: 2.4, // starting zoom
       pitch: 35, // starting pitch
       bearing: 0, // starting bearing
@@ -40,8 +40,8 @@ function Map() {
           <p class="label">Venue:</p><p>${event.venue}</p>
           <p class="label">Location:</p><p>${event.location}</p>
           <p class="label">Attendance:</p><p>${event.attendance}</p>
-          <p><a href="${event.wikipage}" target="_blank">Wikipedia</a></p>
-          <img src="${event.poster_url}" alt="Event Poster" style="width:245px">
+          <p><a href="${event.wikipage}" target="_blank">*Wikipedia*</a></p>
+          <img src="${event.poster_url}" alt="Event Poster" style="width:190px">
         </div>`;
 
 
@@ -53,7 +53,7 @@ function Map() {
             essential: true, // Indicates that this animation is essential and should not be interrupted
             duration: 1000
           });
-          const popup = new mapboxgl.Popup({ offset: 45 }).setHTML(popupContent);
+          const popup = new mapboxgl.Popup({ offset: 37 }).setHTML(popupContent);
           marker.setPopup(popup);
           popup.addTo(newMap);
         });

@@ -5,79 +5,97 @@ body {
 
 /* Adjust width of popup content wrapper */
 .mapboxgl-popup.mapboxgl-popup-anchor-bottom .mapboxgl-popup-content-wrapper {
-    max-width: 500px !important;
+    max-width: 90vw !important; /* Adjust the percentage as needed */
     /* Adjust the width as needed */
     background-color: #007bff;
     color: #007bff;
   
 }
 
-
-
 /* Popup content styling */
-.mapboxgl-popup-content {
-    display: flexbox;
-    width: 860px !important;
-    height: 540px;
-    background-color: #640000;
-    border: 12px groove #ffb700;
 
+
+.mapboxgl-popup-content {
+    display: flex;
+    width: 90vw !important; /* Adjust the percentage as needed */
+    max-width: 700px; /* Adjust the maximum width if necessary */
+    height: 410px;
+    background-color: #7c0000;
+    border: 12px groove #d79300;
 }
+
+
+/* Popup styling */
+.mapboxgl-popup.mapboxgl-popup-anchor-top {
+    max-width: none;
+    font-family: Arial, sans-serif;
+}
+
 
 .mapboxgl-popup-content h3 {
     font-family: 'Sternbach', 'bold';
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     /* text-decoration: underline; */
-    margin-bottom: 55px;
-    padding-top: 1%;
-    text-align: center;
-    color: #eaac00;
+    margin-bottom: 30px;
+    padding-top: 0.5%;
+    padding-left: 1%;
+    text-align: left;
+    color: #ea9000;
 }
 
 .mapboxgl-popup-content p {
     font-family: 'Sternbach';
-    font-size: 30px;
-    margin: 23px;
-    color: #eaac00;
+    font-size: 23px;
+    margin-bottom: 10px;
+    padding-bottom: -20px;
+    padding-left: 1%;
+    color: #ea9000;
     text-align: left;
+    line-height: 26px;
+    
 }
 
 /* Style the event poster image */
 .mapboxgl-popup-content img {
     display: block;
     /* Ensure the image is a block element */
-    margin: -390px 525px 10px;
+    margin: -319px 430px 10px;
     /* Center the image horizontally and adjust top margin */
     -webkit-box-shadow: -4px 6px 15px 12px #000000; 
     box-shadow: -4px 6px 15px 12px #000000;
+    max-width: 100%;
+    height: auto;
 }
 
-
-/* Make labels bold in popup content */
-
-.mapboxgl-popup-content p {
-    font-weight: normal;
-    /* Reset font weight */
-    font-size: 25px;
-
-
+.mapboxgl-popup-content p a {
+    color:#f09000; /* Change the color of the link */
+    text-decoration: none; /* Remove underline */
+    padding-left: 0%;
 
 }
+
+.mapboxgl-popup-content p a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color:#640000;
+    background-color:#f09000;
+}
+
 
 .mapboxgl-popup-content p.label {
     font-weight: bold;
-    font-size: 40px;
+    font-size: 30px;
     color: rgb(0, 0, 0);
-    padding-right: 4%;
+    padding-right: 7%;
 
 }
 
 
 .mapboxgl-popup-content img {
+    display:flex;
     max-width: 100%;
     height: auto;
-    background-color: #007bff;
+    background-color: #000000;
 }
 
 /* Popup styling */
@@ -92,14 +110,17 @@ body {
 }
 
 .mapboxgl-popup-close-button {
-    font-size: 22px;
-    color: #000;
+    font-size: 40px;
+    color: #f09000;
     padding: 0;
     margin: 0;
     cursor: pointer;
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 11px;
+}
+.mapboxgl-popup-close-button:hover {
+    color: #640000;
+    background-color:#ea9000; ;
 }
 
 
@@ -111,7 +132,6 @@ body {
     overflow: hidden;
 }
 
-/* Custom marker style */
 /* Custom marker style */
 .custom-marker {
     width: 30px;
