@@ -1,10 +1,24 @@
 /* About.css */
 
-.container {
-  background-color: rgba(128, 128, 128, 0.4); /* Grey background with 50% opacity */
-  padding: 20px; /* Adjust padding as needed */
+.container p {
+  color: rgb(191, 144, 3);
+  background-color: rgb(144, 0, 0); /* Grey background with 50% opacity */
+  padding: 10px; /* Adjust padding as needed */
   border-radius: 10px; /* Optional: Add rounded corners to the container */
-  margin: 10%;
+  margin: 1.5%;
+  font-size: 36px;
+  font-family: "Sternbach";
+  font-weight: normal;
+}
+
+.container h4 {
+  font-size: 50px;
+  color: black;
+}
+
+.container h3 {
+  font-size: 50px;
+  color: black;
 }
 
 .textarea {
@@ -14,9 +28,35 @@
   border: none; /* Remove default textarea border */
   outline: none; /* Remove outline when focused */
   background-color: transparent; /* Make the textarea background transparent */
-  color: #fff; /* Set text color */
+  color: #ff0000; /* Set text color */
   font-size: 26px; /* Set font size */
   font-family: 'Arial', sans-serif; /* Set font family */
 }
 
-  
+.contact {
+  display: flex;
+  flex-direction: row; /* Change flex-direction to row */
+  padding: 50px;
+  margin: 13%;
+  color: rgb(128, 0, 0);
+}
+
+.contact h4 {
+  margin-right: 20px; /* Add some spacing between elements */
+}
+
+.contact p {
+  margin: 0; /* Remove default margin */
+}
+
+.contact .info {
+  display: flex;
+  flex-direction: column; /* Nested flex container for the info */
+  margin-left: 10px; /* Add spacing between name and info */
+}
+
+.contact a {
+  color: black;
+  font-size: 30px;
+  margin-left: 10px; /* Add spacing between name and info */
+}
