@@ -5,11 +5,12 @@ body {
 
 /* Adjust width of popup content wrapper */
 .mapboxgl-popup.mapboxgl-popup-anchor-bottom .mapboxgl-popup-content-wrapper {
-    max-width: 90vw !important; /* Adjust the percentage as needed */
+    max-width: 90vw !important;
+    /* Adjust the percentage as needed */
     /* Adjust the width as needed */
     background-color: #007bff;
     color: #007bff;
-  
+
 }
 
 /* Popup content styling */
@@ -17,8 +18,10 @@ body {
 
 .mapboxgl-popup-content {
     display: flex;
-    width: 90vw !important; /* Adjust the percentage as needed */
-    max-width: 700px; /* Adjust the maximum width if necessary */
+    width: 90vw !important;
+    /* Adjust the percentage as needed */
+    max-width: 700px;
+    /* Adjust the maximum width if necessary */
     height: 410px;
     background-color: #7c0000;
     border: 12px groove #d79300;
@@ -53,7 +56,7 @@ body {
     color: #ea9000;
     text-align: left;
     line-height: 26px;
-    
+
 }
 
 /* Style the event poster image */
@@ -62,23 +65,26 @@ body {
     /* Ensure the image is a block element */
     margin: -319px 430px 10px;
     /* Center the image horizontally and adjust top margin */
-    -webkit-box-shadow: -4px 6px 15px 12px #000000; 
+    -webkit-box-shadow: -4px 6px 15px 12px #000000;
     box-shadow: -4px 6px 15px 12px #000000;
     max-width: 100%;
     height: auto;
 }
 
 .mapboxgl-popup-content p a {
-    color:#f09000; /* Change the color of the link */
-    text-decoration: none; /* Remove underline */
+    color: #f09000;
+    /* Change the color of the link */
+    text-decoration: none;
+    /* Remove underline */
     padding-left: 0%;
 
 }
 
 .mapboxgl-popup-content p a:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color:#640000;
-    background-color:#f09000;
+    text-decoration: underline;
+    /* Add underline on hover */
+    color: #640000;
+    background-color: #f09000;
 }
 
 
@@ -92,7 +98,7 @@ body {
 
 
 .mapboxgl-popup-content img {
-    display:flex;
+    display: flex;
     max-width: 100%;
     height: auto;
     background-color: #000000;
@@ -118,9 +124,11 @@ body {
     position: absolute;
     right: 11px;
 }
+
 .mapboxgl-popup-close-button:hover {
     color: #640000;
-    background-color:#ea9000; ;
+    background-color: #ea9000;
+    ;
 }
 
 
@@ -137,8 +145,10 @@ body {
     width: 30px;
     height: 30px;
     position: absolute;
-    top: -17.5px; /* Adjust based on marker size */
-    left: -17.5px; /* Adjust based on marker size */
+    top: -17.5px;
+    /* Adjust based on marker size */
+    left: -17.5px;
+    /* Adjust based on marker size */
     background-image: url('assets/marker_icon.png');
     background-size: cover;
     border-radius: 50%;
@@ -180,6 +190,170 @@ body {
 .popup-link:hover {
     text-decoration: underline;
 }
+
+.searchBox {
+    position: absolute;
+    top: 13%;
+    /* Adjust top position */
+    left: 16%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    background: rgb(154, 0, 0);
+    height: 6vh;
+    /* Use viewport height units */
+    border-radius: 0%;
+    /* Adjust border radius if needed */
+    border-width: 0.6vh;
+    /* Use viewport height units */
+    border-color: #007bff;
+    font-family: 'Sternbach';
+    z-index: 1000;
+}
+
+.searchBox:hover>.searchInput {
+    width: 25vw;
+    /* Use viewport width units */
+    padding-top: 0%;
+    color: #ea9000;
+    font-family: 'Sternbach';
+    border-width: 0.6vh;
+    /* Use viewport height units */
+    border-color: #007bff;
+    text-align: center;
+    font-size: 3vh;
+    /* Use viewport height units */
+}
+
+.searchBox:hover>.searchButton {
+    background: rgb(181, 112, 0);
+    color: #b60000;
+    align-items: center;
+}
+
+.searchButton {
+    color: rgb(255, 255, 255);
+    width: 1vh;
+    height: 7vh;
+    float: left;
+    border-radius: 5%;
+    border-width: 0.6vh;
+    /* Use viewport height units */
+    border-color: rgb(163, 163, 163);
+    background: #d00101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.6s;
+    font-family: "Sternbach";
+    font-size: 2vh;
+    /* Use viewport height units */
+    font-weight: lighter;
+    padding-right: 3vw;
+    padding-left: 3vw;
+    margin-top: -0.75vh;
+    /* Use viewport height units */
+    margin-right: 0%;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    border-color: rgb(255, 0, 0);
+    border-width: 1vh;
+    /* Use viewport height units */
+    float: right;
+    padding: 0;
+    color: rgb(200, 127, 0);
+    font-size: 2.5vh;
+    /* Use viewport height units */
+    transition: 0.6s;
+    line-height: 6vh;
+    /* Use viewport height units */
+    width: 0px;
+}
+
+@media screen and (max-width: 420px) {
+    .searchBox:hover>.searchInput {
+        width: 20vw;
+        /* Use viewport width units */
+        padding: 0 10vw;
+        /* Use viewport width units */
+        border-width: 9px;
+        border-color: #d79300;
+    }
+
+    .searchButton {
+        width: 2vw;
+        /* Use viewport width units */
+        height: 5vh;
+        /* Use viewport height units */
+        /* Use viewport width units */
+    }
+}
+
+.searchResultsPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.searchResultsOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.searchResultsContent {
+    position: relative;
+    display: flexbox;
+    background-color: #620000;
+    color: rgb(194, 110, 0);
+    border-radius: 5%;
+    justify-content: space-around;
+    gap: 7rem;
+    padding: 40px;
+    max-width: 80%;
+    margin-top: 5%;
+    /* Adjust as needed */
+    max-height: 80%;
+    /* Adjust as needed */
+    overflow-y: auto;
+    /* Enable vertical scrollbar */
+}
+
+.searchResultsContent ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.searchResultsContent ul li {
+    margin-bottom: 35px;
+    border-bottom: 5px solid #ccc;
+    padding-bottom: 35px;
+}
+
+.closeButton {
+    position: relative;
+    margin-left: 97%;
+    display: flex;
+    background-color: #ea9000;
+    color: #b60000;
+    font-size: 20px;
+    font-weight: bolder;
+    border-width: 2px;
+    border-color: #b60000;
+}
+
 
 @font-face {
     font-family: "Sternbach";

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import mapboxgl from 'mapbox-gl';
 import './mapbox-gl.css';
-import eventData from './event_data.json'; // Import JSON data
+import eventData from './event_data.json';
 
 function Map() {
   const [map, setMap] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState(null);
+  const [showResultsPopup, setShowResultsPopup] = useState(false);
 
   useEffect(() => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHRxdTIxMmQwYWJyMmptb2V0b2I5N2s0In0.Gi41GFW13BHS4BCY3psEqQ'; // API KEY HERE
@@ -81,7 +84,61 @@ function Map() {
     return () => newMap.remove(); // Clean up on unmount
   }, []);
 
-  return <div id="map" style={{ width: '100%', height: '95vh' }}></div>;
+  const handleSearch = () => {
+    // Perform search logic here
+    const filteredEvents = eventData.eventData.filter(event => {
+      // Convert all values to lowercase for case-insensitive search
+      const showMatch = event.show.toLowerCase().includes(searchTerm.toLowerCase());
+      const dateMatch = event.date.toLowerCase().includes(searchTerm.toLowerCase());
+      const venueMatch = event.venue.toLowerCase().includes(searchTerm.toLowerCase());
+      const locationMatch = event.location.toLowerCase().includes(searchTerm.toLowerCase());
+      return showMatch || dateMatch || venueMatch || locationMatch;
+    });
+    setSearchResults(filteredEvents);
+    setShowResultsPopup(true);
+  };
+
+  const closeResultsPopup = () => {
+    setShowResultsPopup(false);
+  };
+
+  return (
+    <div>
+      <div id="map" style={{ width: '100%', height: '95vh' }}></div>
+      <div className="searchBox">
+        <input
+          type="text"
+          placeholder="Search events..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="searchInput"
+        />
+        <button onClick={handleSearch} className="searchButton">Search</button>
+      </div>
+      {showResultsPopup && (
+        <div className="searchResultsPopup">
+          <div className="searchResultsContent" onClick={(e) => e.preventDefault()}>
+            <button className="closeButton" onClick={closeResultsPopup}>x</button> {/* Close button */}
+            <h2>Search Results:</h2>
+            <ul>
+              {searchResults.map((event, index) => (
+                <li key={index}>
+                  <p><strong>Show:</strong> {event.show}</p>
+                  <p><strong>Date:</strong> {event.date}</p>
+                  <p><strong>Venue:</strong> {event.venue}</p>
+                  <p><strong>Location:</strong> {event.location}</p>
+                  <p><a href={event.wikipage} target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
+                </li>
+              ))}
+
+            </ul>
+          </div>
+        </div>
+      )}
+
+
+    </div>
+  );
 }
 
 export default Map;
