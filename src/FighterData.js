@@ -4,13 +4,13 @@ export default function FighterData({fighter,handleBackButton}){
         <>
         <div className="fighter_data">
             <input type="submit" className="backButton" value="BACK" onClick={(event)=>handleBackButton(event)} />
-            <p>{fighter.name}</p>
-            <p>{fighter.nickname?'"'+fighter.nickname+'"':null}</p>
-            <p>{fighter.wins}-{fighter.losses}-{fighter.draws}</p>
+            <h1>{fighter.name}</h1>
+            <h1>{fighter.nickname?'"'+fighter.nickname+'"':null}</h1>
+            <h4>{fighter.wins}-{fighter.losses}-{fighter.draws}</h4>
             
         </div>
         <div className="fighter_data">
-            <p>CHARTS HERE</p>
+            <h2>CHARTS HERE</h2>
         </div>
         </>
     )
