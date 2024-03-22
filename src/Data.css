@@ -4,11 +4,18 @@
 }
 
 .fighterLink{
-    font-size: 39px;
+    font-size: 37px;
     padding-top: 3px;
     font-family: "Sternbach";
     color:rgb(201, 8, 8) ;
 
+}
+
+.fighter_data{
+    color: rgb(255, 0, 0);
+    font-size: 35px;
+    padding-top: 3px;
+    font-family: "Sternbach";
 }
 
 .backButton :hover{
