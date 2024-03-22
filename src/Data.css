@@ -1,6 +1,14 @@
 .cards :hover {
-    background-color: lightblue;
+    background-color: rgb(191, 144, 3);
     cursor: pointer;
+}
+
+.fighterLink{
+    font-size: 39px;
+    padding-top: 3px;
+    font-family: "Sternbach";
+    color:rgb(201, 8, 8) ;
+
 }
 
 .backButton :hover{
