@@ -1,3 +1,10 @@
-.h2 {
-    color: red;
+.cards :hover {
+    background-color: lightblue;
+    cursor: pointer;
 }
+
+.backButton :hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+
