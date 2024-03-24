@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import FightersList from './FightersList';
 import FighterData from './FighterData';
 import Plot from "react-plotly.js";
 import "./Data.css";
@@ -48,13 +47,17 @@ export default function Data() {
                         } else if (sortBy === 'draws') {
                             return b.draws - a.draws; // Sort by draws (descending)
                         } else if (sortBy === 'losses') {
-                            return a.losses - b.losses; // Sort by losses (ascending)
+                            return b.losses - a.losses; // Sort by losses (ascending)
                         } else if (sortBy === 'height_cm') {
                             return b.height_cm - a.height_cm; // Sort by height (descending)
                         } else if (sortBy === 'weight_in_kg') {
                             return b.weight_in_kg - a.weight_in_kg; // Sort by weight (descending)
                         } else if (sortBy === 'reach_in_cm') {
                             return b.reach_in_cm - a.reach_in_cm; // Sort by reach (descending)
+                        } else if (sortBy === 'significant_strikes_landed_per_minute') {
+                            return b.significant_strikes_landed_per_minute - a.significant_strikes_landed_per_minute; // Sort by strikes landed (descending)
+                        } else if (sortBy === 'average_submissions_attempted_per_15_minutes') {
+                            return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes; // Sort by takedown accuracy (descending)
                         }
                     })
                     .slice(0, 100); // Select top 100 fighters after sorting
@@ -70,27 +73,44 @@ export default function Data() {
         setSortBy(event.target.value);
     };
 
+    const handleDropdownSelect = (fighter) => {
+        setSelectedFighter(fighter);
+        setSearch(fighter.name); // Set search input value to the selected fighter's name
+    };
+
     return (
-        <div>
+        <div className='graph_page'>
             {selectedFighter ? (
                 <FighterData fighter={selectedFighter} handleBackButton={handleBackButton} />
             ) : (
                 <div>
-                    <button onClick={handleShowAllClick}>Show All</button>
-                    <select value={sortBy} onChange={handleSortByChange}>
-                        <option value="wins">Wins</option>
-                        <option value="draws">Draws</option>
-                        <option value="losses">Losses</option>
-                        <option value="height_cm">Height (cm)</option>
-                        <option value="weight_in_kg">Weight (kg)</option>
-                        <option value="reach_in_cm">Reach (cm)</option>
-                    </select>
-                    <form onChange={handleSearching} style={{ marginLeft: "20px", paddingBottom: "20px", paddingTop: "25px", fontSize: "39px" }}>
-                        <input type="text" name="search" value={search} placeholder="Fighter Name Here" id="text-fighter" style={{ backgroundColor: "rgba(99, 15, 4,.8)", borderRadius: "4px", height: "50px", width: "500px", marginLeft: "20px", color: "white", textAlign: "center", fontSize: "30px" }} />
+                    <div className="buttons-container">
+                        <button className='graphs_btn' onClick={handleShowAllClick}>Graph By:</button>
+                        <select className='dropdown_menu' value={sortBy} onChange={handleSortByChange}>
+                            <option value="wins">Wins</option>
+                            <option value="draws">Draws</option>
+                            <option value="losses">Losses</option>
+                            <option value="height_cm">Height (cm)</option>
+                            <option value="weight_in_kg">Weight (kg)</option>
+                            <option value="reach_in_cm">Reach (cm)</option>
+                            <option value="significant_strikes_landed_per_minute">Strikes Landed</option>
+                            <option value="average_submissions_attempted_per_15_minutes">Avg.Submissions</option>
+                        </select>
+                    </div>
+                    <form style={{ position: "relative", display: "flex", marginTop: "-50px", marginLeft: "2000px" }}>
+                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "rgb(225, 147, 3)", borderRadius: "7px", borderWidth: "2px", height: "50px", width: "500px", marginLeft: "20px", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "30px" }} />
+                        {search && (
+                            <div className="dropdown_search" style={{ position: "absolute", top: "60px", left: "0", zIndex: "1" }}>
+                                {filteredFighters.map((fighter, index) => (
+                                    <div key={index} onClick={() => handleDropdownSelect(fighter)}>{fighter.name}</div>
+                                ))}
+                            </div>
+                        )}
                     </form>
-                    <FightersList filteredFighters={filteredFighters} handleFighterClick={handleFighterClick} />
+                    <br></br>
+                    <br></br>
                     {showAll && allFightersData && (
-                        <div className="fighter_data">
+                        <div className="scatter_graph">
                             <h2>
                                 <Plot
                                     data={[
@@ -98,16 +118,103 @@ export default function Data() {
                                             x: allFightersData.map(fighter => fighter.name),
                                             y: allFightersData.map(fighter => fighter[sortBy]),
                                             type: 'scattergl',
-                                            mode: 'markers',
-                                            marker: { color: 'blue' },
-                                            name: `Top 100 Fighters - Sorted by ${sortBy}`
+                                            mode: 'lines+markers',
+                                            marker: {
+                                                color: 'red',
+                                                size: 11
+                                            },
+                                            font: { family: "Sternbach", size: 20, color: ["rgb(255,255,255)"] },
+                                            name: `Top 100 Fighters - ${sortBy}`,
+                                            paper_bgcolor: "rgba(0,0,0,0)",
+                                            hoverinfo: 'text',
+                                            hovertext: allFightersData.map(fighter => {
+                                                return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
+                                            })
                                         }
                                     ]}
-                                    layout={{ title: `Top 100 Fighters - Sorted by ${sortBy}`, xaxis: { title: 'Fighter' } }}
+                                    layout={{
+                                        title: `Top 100 Fighters - ${sortBy}`,
+                                        titlefont: {
+                                            size: 35,
+                                            color: '#e19303', // Adjust title color if needed
+                                            family: "Sternbach"
+                                        },
+                                        xaxis: {
+                                            title: '',
+                                            automargin: true,
+                                            showgrid: false,
+                                            color: '#e19303',
+                                            tickfont: {
+                                                size: 12,
+                                                color: "#e19303"
+                                            }
+                                        },
+                                        yaxis: {
+                                            title: sortBy, // Update y-axis title based on sortBy
+                                            automargin: true,
+                                            showgrid: false,
+                                            color: '#e19303',
+                                            tickfont: {
+                                                size: 15,
+                                                color: '#e19303'
+                                            }
+                                        },
+                                        hoverlabel: {
+                                            bgcolor: '#e19303', // Change hover window background color
+                                            bordercolor: 'white', // Change hover window border color
+                                            font: {
+                                                family: 'Sternbach', // Change hover window text font family
+                                                size: 27, // Change hover window text font size
+                                                color: '#c90000' // Change hover window text font color
+                                            }
+                                        },
+                                        width: 1800,
+                                        height: 900,
+                                        plot_bgcolor: 'rgba(0, 0, 0, 0)',
+                                        paper_bgcolor: 'rgba(0, 0, 0, 0)'
+                                    }}
                                 />
                             </h2>
                         </div>
                     )}
+
+                    {showAll && allFightersData && (
+                        <div className="sunburst_graph">
+                            <h2>
+                                <Plot
+                                    data={[
+                                        {
+                                            labels: allFightersData.map(fighter => fighter.name),
+                                            parents: allFightersData.map(fighter => fighter.parent), // Assuming you have a parent property in your data to define the hierarchy
+                                            values: allFightersData.map(fighter => fighter[sortBy]),
+                                            type: 'sunburst',
+                                            hoverinfo: 'label+value',
+                                            hovertext: allFightersData.map(fighter => {
+                                                return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
+                                            })
+                                        }
+                                    ]}
+                                    layout={{
+                                        title: `Top 100 Fighters - ${sortBy}`,
+                                        titlefont: {
+                                            size: 35,
+                                            color: '#c90000',
+                                            family: "Sternbach"
+                                        },
+                                        sunburstcolorway: ['#c90000'], // Set the color for the Sunburst chart
+                                        margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
+                                        width: 1500,
+                                        height: 800,
+                                        plot_bgcolor: 'rgba(0, 0, 0, 0)',
+                                        paper_bgcolor: 'rgba(0, 0, 0, 0)'
+                                    }}
+                                    config={{ modeBarButtonsToAdd: ['zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d'] }} // Enable panning and zooming with click interactions
+                                />
+                            </h2>
+                        </div>
+                    )}
+
+
                 </div>
             )}
         </div>

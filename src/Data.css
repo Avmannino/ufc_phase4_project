@@ -4,10 +4,10 @@
 }
 
 .fighterLink {
-    font-size: 37px;
-    padding-top: 3px;
+    font-size: 8px;
+    padding-top: 4px;
     font-family: "Sternbach";
-    color: rgb(201, 8, 8);
+    color: rgb(28, 149, 123);
 }
 
 .fighter_data {
@@ -17,84 +17,126 @@
     font-family: "Sternbach";
 }
 
-/* .about_table,
-.stats_table {
+.scatter_graph {
     text-align: center;
-    margin: 0 auto;
-} */
-
-.fighter_table {
-    text-align: center;
+    z-index: 1000;
 }
 
-.fighter_table h2 {
-    color: rgb(255, 0, 0);
-    font-family: 'Sternbach';
+.sunburst_graph {
     text-align: center;
-    font-size: 60px;
-}
-
-.fighter_table h3 {
-    color: rgb(225, 147, 3);
-    font-family: 'Sternbach';
-    text-align: center;
-    font-size: 50px;
-}
-
-.fighter_table h4 {
-    color: red;
-    font-family: 'Sternbach';
-    text-align: center;
-    font-size: 45px;
-    padding-top: 0%;
-}
-
-.fighter_table h6 {
-    color: rgb(225, 147, 3);
-    font-family: 'Sternbach';
-    text-align: center;
-    font-size: 35px;
-}
-
-.stats_table {
-    text-align: center;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    z-index: 1000;
 }
 
 
-
-
-.fighter_table Plot {
-    color: red;
+.graph_page {
+    display: flex;
+    justify-content: flex-start;
+    background-image: url('./assets/data_bg.png');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-color: black;
+    width: 100vw;
+    /* Set width to 100% of the viewport width */
+    height: 180vh;
+    /* Set height to 100% of the viewport height */
+    overflow: hidden;
+    /* Prevent scrolling if the content overflows */
 }
 
-.backButton {
+.buttons-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+}
+
+.graphs_btn {
     font-family: "Sternbach";
     font-weight: 0;
-    font-size: 28px;
+    font-size: 25px;
     color: #db0000;
     background-color: #e19303;
-    padding: 13px 18px;
-    border: solid #c90000 5px;
+    padding: 13px 8px;
+    border: solid #c90000 3px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
     border-radius: 10px;
-    transition: 538ms;
+    transition: 238ms;
     transform: translateY(0);
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 14%;
-    margin-top: 0%;
+    margin-left: 8%;
+    margin-top: 1.5%;
 }
 
-.backButton:hover {
-
-    transition: 538ms;
-    padding: 10px 33px;
+.graphs_btn:hover {
+    transition: 238ms;
+    padding: 13px 13px;
     transform: translateY(-0px);
     background-color: #c90000;
     color: #e19303;
-    border: solid 5px #e19303;
+    border: solid 3px #e19303;
+}
+
+.dropdown_menu {
+    position: relative;
+    display: inline-block;
+    padding: 8px 50px;
+    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
+    font-size: 30px;
+    font-family: "Sternbach";
+    background-color: #e19303;
+    transition: 138ms;
+    transform: translateY(0);
+    text-align: left;
+    color: rgb(201, 0, 0);
+    border-color:#c90000;
+    border-width: 3px;
+    border-radius: 10px;
+    margin-top: 1.5%;
+    margin-left: 1%;
+    
+}
+
+.dropdown_menu:hover {
+    transition: 138ms;
+    padding: 8px 63px;
+    transform: translateY(-0px);
+    background-color: #c90000;
+    color: #e19303;
+    border: solid 3px #e19303;
+}
+
+.dropdown_search {
+    position: relative;
+    display: flexbox;
+    padding: 13px 30px;
+    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
+    font-size: 30px;
+    font-family: "Sternbach";
+    background-color: hsl(39, 97%, 45%);
+    transition: 238ms;
+    transform: translateY(0);
+    text-align: left;
+    color:#c90000;
+    border-width: 5px;
+    border-color: #c90000;
+    border-radius: 10px;
+    margin-left: 1%;
+}
+
+
+
+
+/* Style the options */
+.dropdown_menu option {
+    /* Add your desired styles here */
+    font-size: 25px;
+    font-family: "Sternbach";
+    background-color: #c90000;
+    color: #e19303;
+}
+
+/* Style the options on hover */
+.dropdown_menu option:hover {
+    background-color: #dddddd;
+    color: #333333;
 }

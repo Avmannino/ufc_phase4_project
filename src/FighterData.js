@@ -1,8 +1,12 @@
 import React from "react";
 import Plot from "react-plotly.js";
-import './Data.css';
+import Outline from './assets/fighter_outline.png';
+import './FighterData.css';
 
 export default function FighterData({ fighter, handleBackButton }) {
+    // Example data for heatmap, replace with actual data as needed
+    const heatmapData = [fighter.significant_strikes_landed_per_minute];
+
     return (
         <>
             <div className="fighter_data">
@@ -35,34 +39,65 @@ export default function FighterData({ fighter, handleBackButton }) {
                                         fighter.weight_in_kg === 0 ? 0 : (fighter.weight_in_kg || "null"),
                                         fighter.reach_in_cm === 0 ? 0 : (fighter.reach_in_cm || "null"),
                                         fighter.significant_strikes_landed_per_minute === 0 ? 0 : (fighter.significant_strikes_landed_per_minute || "null"),
-                                        fighter.significant_striking_accuracy === 0 ? 0 : (fighter.significant_striking_accuracy|| "null"),
-                                        fighter.significant_strikes_absorbed_per_minute === 0 ? 0 : (fighter.significant_strikes_absorbed_per_minute|| "null"),
-                                        fighter.significant_strike_defense === 0 ? 0 : (fighter.significant_strike_defense|| "null"),
-                                        fighter.average_takedowns_landed_per_15_minutes === 0 ? 0 : (fighter.average_takedowns_landed_per_15_minutes|| "null"),
+                                        fighter.significant_striking_accuracy === 0 ? 0 : (fighter.significant_striking_accuracy || "null"),
+                                        fighter.significant_strikes_absorbed_per_minute === 0 ? 0 : (fighter.significant_strikes_absorbed_per_minute || "null"),
+                                        fighter.significant_strike_defense === 0 ? 0 : (fighter.significant_strike_defense || "null"),
+                                        fighter.average_takedowns_landed_per_15_minutes === 0 ? 0 : (fighter.average_takedowns_landed_per_15_minutes || "null"),
                                         fighter.takedown_accuracy === 0 ? 0 : (fighter.takedown_accuracy || "null"),
                                         fighter.takedown_defense === 0 ? 0 : (fighter.takedown_defense || "null"),
-                                        fighter.average_submissions_attempted_per_15_minutes === 0 ? 0 : (fighter.average_submissions_attempted_per_15_minutes|| "null")
+                                        fighter.average_submissions_attempted_per_15_minutes === 0 ? 0 : (fighter.average_submissions_attempted_per_15_minutes || "null")
                                     ]
                                 ],
                                 align: "center",
                                 line: { color: "transparent", width: 0.5 },
-                                font: { family: "Sternbach", size: 32, color: ["rgb(225,147,3)"] },
-                                height: 65, // Increase the height of the cells
+                                font: { family: "Sternbach", size: 28, color: ["rgb(225,147,3)"] },
+                                height: 60, // Increase the height of the cells
                                 fill: { color: "rgba(0,0,0,0)" },
                                 paper_bgcolor: 'rgba(0,0,0,0)'
                             }
                         }
                     ]}
                     layout={{
-                       
+
                         font: { family: "Sternbach", size: 40, color: ["pink"] },
                         width: 1250,
-                        height: 1000,
+                        height: 970,
                         paper_bgcolor: 'rgba(10,10,10,0.6)',
                         // plot_bgcolor: 'rgba(0,0,0,0)',
                     }}
                 />
             </div>
+            {/* Heatmap with custom background */}
+            <div className="heatmap_container">
+                <h2>Heatmap: Strikes Landed per Minute</h2>
+                <Plot
+                    data={[
+                        {
+                            z: fighter.significant_strikes_landed_per_minute, // Replace with actual heatmap data
+                            type: 'heatmap',
+                            colorscale: 'RdBu',
+                            hoverongaps: false,
+                        }
+                    ]}
+                    layout={{
+                        width: 1000,
+                        height: 1100,
+                        paper_bgcolor: 'rgba(0,0,0,0)', // Set the background to transparent
+                        plot_bgcolor: 'rgba(0,0,0,0)', // Set the plot area background to transparent
+                        images: [{ 
+                            source: Outline,
+                            xref: 'paper',
+                            yref: 'paper',
+                            x: 0,
+                            y: 1,
+                            sizex: 1,
+                            sizey: 1,
+                            sizing: 'cover',
+                            layer: 'below'
+                        }]
+                    }}
+                />
+            </div>
         </>
-    )
+    );
 }
