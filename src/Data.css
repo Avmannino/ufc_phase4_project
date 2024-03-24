@@ -1,3 +1,30 @@
-.h2 {
-    color: red;
+.cards :hover {
+    background-color: rgb(191, 144, 3);
+    cursor: pointer;
 }
+
+.fighterLink{
+    font-size: 37px;
+    padding-top: 3px;
+    font-family: "Sternbach";
+    color:rgb(201, 8, 8) ;
+}
+
+.fighter_data{
+    color: rgb(255, 0, 0);
+    font-size: 35px;
+    padding-top: 3px;
+    font-family: "Sternbach";
+}
+
+.fighter_data h4{
+    /* text-align: center;
+    margin-top: -140px;
+    padding-bottom: 140px; */
+}
+
+.backButton :hover{
+    cursor: pointer;
+    background-color: lightblue;
+}
+
