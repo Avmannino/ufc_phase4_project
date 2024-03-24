@@ -36,7 +36,7 @@ function Navbar() {
                     </Link>
                 </li>
                 <li className="nav_item"><Link to="/map" className="nav_link">EVENT MAP</Link></li>
-                <li className="nav_item"><Link to="/data" className="nav_link">DATA</Link></li>
+                <li className="nav_item"><Link to="/data" className="nav_link">FIGHTERS</Link></li>
                 <li className="nav_item"><Link to="/fantasy" className="nav_link">FANTASY</Link></li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>

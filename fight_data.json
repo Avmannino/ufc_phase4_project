@@ -12154,8 +12154,8 @@
         {
             "type": "Feature",
             "properties": {
-                // "id": "486.0",
-                // "index": "487.0",
+                "id": "486.0",
+                "index": "487.0",
                 "show": "UFC 240: Holloway vs. Edgar",
                 "wikipage": "https://en.wikipedia.org/wiki/UFC_240",
                 "Date": "2019-07-27",

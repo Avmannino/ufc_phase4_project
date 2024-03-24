@@ -3,28 +3,98 @@
     cursor: pointer;
 }
 
-.fighterLink{
+.fighterLink {
     font-size: 37px;
     padding-top: 3px;
     font-family: "Sternbach";
-    color:rgb(201, 8, 8) ;
+    color: rgb(201, 8, 8);
 }
 
-.fighter_data{
+.fighter_data {
     color: rgb(255, 0, 0);
     font-size: 35px;
     padding-top: 3px;
     font-family: "Sternbach";
 }
 
-.fighter_data h4{
-    /* text-align: center;
-    margin-top: -140px;
-    padding-bottom: 140px; */
+/* .about_table,
+.stats_table {
+    text-align: center;
+    margin: 0 auto;
+} */
+
+.fighter_table {
+    text-align: center;
 }
 
-.backButton :hover{
+.fighter_table h2 {
+    color: rgb(255, 0, 0);
+    font-family: 'Sternbach';
+    text-align: center;
+    font-size: 60px;
+}
+
+.fighter_table h3 {
+    color: rgb(225, 147, 3);
+    font-family: 'Sternbach';
+    text-align: center;
+    font-size: 50px;
+}
+
+.fighter_table h4 {
+    color: red;
+    font-family: 'Sternbach';
+    text-align: center;
+    font-size: 45px;
+    padding-top: 0%;
+}
+
+.fighter_table h6 {
+    color: rgb(225, 147, 3);
+    font-family: 'Sternbach';
+    text-align: center;
+    font-size: 35px;
+}
+
+.stats_table {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+
+
+
+.fighter_table Plot {
+    color: red;
+}
+
+.backButton {
+    font-family: "Sternbach";
+    font-weight: 0;
+    font-size: 28px;
+    color: #db0000;
+    background-color: #e19303;
+    padding: 13px 18px;
+    border: solid #c90000 5px;
+    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
+    border-radius: 10px;
+    transition: 538ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     cursor: pointer;
-    background-color: lightblue;
+    text-transform: uppercase;
+    margin-left: 14%;
+    margin-top: 0%;
 }
 
+.backButton:hover {
+
+    transition: 538ms;
+    padding: 10px 33px;
+    transform: translateY(-0px);
+    background-color: #c90000;
+    color: #e19303;
+    border: solid 5px #e19303;
+}
