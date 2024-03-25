@@ -4,15 +4,17 @@ from flask_migrate import Migrate
 from flask_cors import CORS
 from dotenv import dotenv_values
 from flask_bcrypt import Bcrypt
+from sqlite3 import IntegrityError
+from sqlalchemy import exc 
 from models import db,Match,Fighter,Event,User,Comment
 
 import json
 
-# config = dotenv_values(".env")
+config = dotenv_values(".env")
 
 app = Flask(__name__)
 app.debug = True
-# app.secret_key = config['FLASK_SECRET_KEY']
+app.secret_key = config['FLASK_SECRET_KEY']
 CORS(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///app.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -71,6 +73,32 @@ def get_reviews():
 
     return [c.to_dict() for c in comments]
 
+@app.post('/signup')
+def signup():
+    data = request.json
+    try:
+        # make a new object from the request json
+        user = User(
+            name=data.get("name")
+        )
+        # add to the db
+        db.session.add(user)
+        db.session.commit()
+        # return object we just made
+        return user.to_dict(), 201
+    except IntegrityError as e:
+        print("caught1")
+        print(e)
+        return {"error": f"username taken"}, 405
+    except exc.IntegrityError as e:
+        print("caught2")
+        print(e)
+        return {"error": f"username taken"}, 405
+    # except Exception as e:
+    #     # if anything in the try block goes wrong, execute this
+    #     print(e)
+    #     return {"error": f"could not post user {e}"}, 405
+
 # @app.post("/comments")
 # def post_comments():
 #     data = request.json
@@ -91,6 +119,10 @@ def get_reviews():
 #     except Exception as e:
 #         print(e)
 #         return {"error": f"could not post review: {e}"}, 405
-
+@app.delete('/logout')
+def logout():
+    # logging out is simply removing the key we set in the session from log in
+    session.pop('user_id')
+    return { "message": "Logged out"}, 200
 if __name__ == "__main__":
     app.run(port=5555, debug=True)

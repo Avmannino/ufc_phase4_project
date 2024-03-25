@@ -5,7 +5,7 @@ import nav_logo from './assets/nav_logo.png'
 import aboutLogo from './assets/a_bout.png';
 import forumLogo from './assets/ufc_300.png';
 
-function Navbar() {
+function Navbar({user,logout}) {
     const location = useLocation();
     const [active, setActive] = useState("nav_menu");
     const [toggleIcon, setToggleIcon] = useState("nav_toggler");
@@ -39,10 +39,11 @@ function Navbar() {
                 <li className="nav_item"><Link to="/map" className="nav_link">EVENT MAP</Link></li>
                 <li className="nav_item"><Link to="/data" className="nav_link">FIGHTERS</Link></li>
                 <li className="nav_item">
-                    <Link to="/ufc_300" className="nav_link">
+                    <Link to="/event" className="nav_link">
                         <img src={forumLogo} alt="Forum" className="forum-logo" />
                     </Link>
                 </li>
+                {user?<li className="nav_item"><Link to="/" className="nav_link" style={{fontSize:"30px"}} onClick={logout}>Log-Out</Link></li>:<li className="nav_item"><Link to="/login" className="nav_link">LOG IN</Link></li>}
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>
