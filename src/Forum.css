@@ -103,7 +103,9 @@
 .forum-main h2 {
     font-family: Oswald;
     font-weight: bolder;
+    margin-top: -20px;
 }
+
 
 .fight-card {
     display: flex;
@@ -118,7 +120,8 @@
     font-weight: bold;
     font-size: 25px;
     position: absolute;
-    left: 350px; /* Adjust left offset as needed */
+    left: 350px;
+    /* Adjust left offset as needed */
     top: 10%;
     transform: translateY(-50%);
 }
@@ -128,7 +131,8 @@
     font-weight: bold;
     font-size: 25px;
     position: absolute;
-    right: 350px; /* Adjust right offset as needed */
+    right: 350px;
+    /* Adjust right offset as needed */
     top: 10%;
     transform: translateY(-50%);
 }
@@ -147,6 +151,23 @@
     transform: translate(-50%, -50%);
     /* Center the element */
 }
+
+.watch-espn {
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px;
+    /* Adjust margin bottom to reduce space */
+}
+
+.centered-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: ;
+}
+
 
 
 .fight-card p {

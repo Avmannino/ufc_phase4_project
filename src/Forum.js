@@ -1,5 +1,6 @@
 import React from 'react';
 import './Forum.css';
+import ESPN from './assets/ESPN.png'
 import Fighter1Image from './assets/fighter1.png';
 import Fighter2Image from './assets/fighter2.png';
 import Fighter3Image from './assets/fighter3.png';
@@ -28,13 +29,14 @@ export default function Forum() {
                 </p>
             </header>
             <main className="forum-main">
+                <h5 className='watch-espn'>STREAMING ONLY ON <img className="centered-img" src={ESPN} alt="ESPN Logo" /></h5>
                 <h2>MAIN CARD</h2>
                 {/* Fight 1 */}
                 <div className="fight-card">
                     <div className="fighter left-side">
-                    <h6>LIGHT HEAVYWEIGHT TITLE BOUT</h6>
+                        <h6>LIGHT HEAVYWEIGHT TITLE BOUT</h6>
                         <img src={Fighter1Image} alt="Fighter_1" />
-                        <p>ALEX PEREIRA</p>
+                        <p>ALEX PEREIRA    🥇</p>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
@@ -45,9 +47,9 @@ export default function Forum() {
                 {/* Fight 2 */}
                 <div className="fight-card">
                     <div className="fighter left-side">
-                    <h6>WOMEN'S STRAWWEIGHT TITLE BOUT</h6>
+                        <h6>WOMEN'S STRAWWEIGHT TITLE BOUT</h6>
                         <img src={Fighter3Image} alt="Fighter_3" />
-                        <p>ZHANG WEILI</p>
+                        <p>ZHANG WEILI   🥇</p>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
@@ -58,7 +60,7 @@ export default function Forum() {
                 {/* Fight 3 */}
                 <div className="fight-card">
                     <div className="fighter left-side">
-                    <h6>LIGHWEIGHT BOUT</h6>
+                        <h6>LIGHWEIGHT BOUT</h6>
                         <img src={Fighter5Image} alt="Fighter_5" />
                         <p>JUSTIN GAETHJE</p>
                     </div>
@@ -71,7 +73,7 @@ export default function Forum() {
                 {/* Fight 4 */}
                 <div className="fight-card">
                     <div className="fighter left-side">
-                    <h6>LIGHTWEIGHT BOUT</h6>
+                        <h6>LIGHTWEIGHT BOUT</h6>
                         <img src={Fighter7Image} alt="Fighter_7" />
                         <p>CHARLES OLIVIERA</p>
                     </div>
@@ -84,7 +86,7 @@ export default function Forum() {
                 {/* Fight 5 */}
                 <div className="fight-card">
                     <div className="fighter left-side">
-                    <h6>MIDDLEWEIGHT BOUT</h6>
+                        <h6>MIDDLEWEIGHT BOUT</h6>
                         <img src={Fighter9Image} alt="Fighter_9" />
                         <p>BO NICKAL</p>
                     </div>
