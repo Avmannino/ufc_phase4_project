@@ -69,4 +69,11 @@ if __name__ == "__main__":
         db.session.add_all(match_list)
         db.session.commit()
 
+        reviewer = User(
+                name='Nick',
+                password_hash=bcrypt.generate_password_hash("a"),
+            )
+        db.session.add(reviewer)
+        db.session.commit()
+
 
