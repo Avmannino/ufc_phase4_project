@@ -3,7 +3,31 @@ import Plot from "react-plotly.js";
 import Outline from './assets/fighter_outline.png';
 import './FighterData.css';
 
-export default function FighterData({ fighter, handleBackButton }) {
+// Define the top 20 fighters array
+const topFighters = [
+    "Conor McGregor",
+    "Khabib Nurmagomedov",
+    "Jon Jones",
+    "Jorge Masvidal",
+    "Israel Adesanya",
+    "Dustin Poirier",
+    "Nate Diaz",
+    "Stipe Miocic",
+    "Amanda Nunes",
+    "Francis Ngannou",
+    "Rose Namajunas",
+    "Max Holloway",
+    "Alexander Volkanovski",
+    "Valentina Shevchenko",
+    "Daniel Cormier",
+    "Tony Ferguson",
+    "Tyron Woodley",
+    "Justin Gaethje",
+    "Robert Whittaker",
+    "Cody Garbrandt"
+];
+
+export default function FighterData({ fighter, handleBackButton, handleTopFighterSelect }) {
     // Example data for heatmap, replace with actual data as needed
     const heatmapData = [fighter.significant_strikes_landed_per_minute];
 
@@ -66,6 +90,14 @@ export default function FighterData({ fighter, handleBackButton }) {
                         // plot_bgcolor: 'rgba(0,0,0,0)',
                     }}
                 />
+            </div>
+            <div className="top-fighters-list">
+                <h2>Top 20 Fighters</h2>
+                <ul>
+                    {topFighters.map((fighter, index) => (
+                        <li key={index} onClick={() => handleTopFighterSelect(fighter)}>{fighter}</li>
+                    ))}
+                </ul>
             </div>
             {/* Heatmap with custom background */}
             {/* <div className="heatmap_container">

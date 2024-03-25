@@ -47,15 +47,16 @@
 .buttons-container {
     display: flex;
     align-items: center; /* Align items vertically */
+    width: 100px;
 }
 
 .graphs_btn {
     font-family: "Sternbach";
     font-weight: 0;
-    font-size: 25px;
+    font-size: 12px;
     color: #db0000;
     background-color: #e19303;
-    padding: 13px 8px;
+    padding: 0 1.2vh;
     border: solid #c90000 3px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
     border-radius: 10px;
@@ -63,13 +64,13 @@
     transform: translateY(0);
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 8%;
+    margin-left: 8vh;
     margin-top: 1.5%;
 }
 
 .graphs_btn:hover {
     transition: 238ms;
-    padding: 13px 13px;
+    padding: 0 1.5vh;
     transform: translateY(-0px);
     background-color: #c90000;
     color: #e19303;
@@ -81,7 +82,7 @@
     display: inline-block;
     padding: 8px 50px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    font-size: 30px;
+    font-size: 10px;
     font-family: "Sternbach";
     background-color: #e19303;
     transition: 138ms;
@@ -98,9 +99,9 @@
 
 .dropdown_menu:hover {
     transition: 138ms;
-    padding: 8px 63px;
+    padding: 8px 55px;
     transform: translateY(-0px);
-    background-color: #c90000;
+    background-color: rgb(201, 0, 0);
     color: #e19303;
     border: solid 3px #e19303;
 }
@@ -110,7 +111,7 @@
     display: flexbox;
     padding: 13px 30px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    font-size: 30px;
+    font-size: 20px;
     font-family: "Sternbach";
     background-color: hsl(39, 97%, 45%);
     transition: 238ms;
@@ -120,7 +121,7 @@
     border-width: 5px;
     border-color: #c90000;
     border-radius: 10px;
-    margin-left: 1%;
+    margin-left: 45vh;
 }
 
 

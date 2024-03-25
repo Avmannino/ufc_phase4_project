@@ -37,7 +37,32 @@
     margin-bottom: 5%;
 }
 
-
+.top-fighters-list {
+    margin-top: 20px;
+  }
+  
+  .top-fighters-list h2 {
+    font-family: "Sternbach";
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .top-fighters-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .top-fighters-list li {
+    cursor: pointer;
+    font-family: "Sternbach";
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .top-fighters-list li:hover {
+    text-decoration: underline;
+  }
 
 
 .fighter_table Plot {

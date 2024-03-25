@@ -10,6 +10,9 @@ export default function Data() {
     const [showAll, setShowAll] = useState(false);
     const [allFightersData, setAllFightersData] = useState(null);
     const [sortBy, setSortBy] = useState('wins');
+    useEffect(()=>{
+        handleShowAllClick()
+    },[])
 
     const handleFighterClick = (fighter) => {
         setSelectedFighter(fighter);
@@ -60,7 +63,7 @@ export default function Data() {
                             return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes; // Sort by takedown accuracy (descending)
                         }
                     })
-                    .slice(0, 100); // Select top 100 fighters after sorting
+                    .slice(0, 50); // Select top 100 fighters after sorting
                 setAllFightersData(sortedFightersData);
                 setShowAll(true);
             })
@@ -71,6 +74,7 @@ export default function Data() {
 
     const handleSortByChange = (event) => {
         setSortBy(event.target.value);
+        handleShowAllClick()
     };
 
     const handleDropdownSelect = (fighter) => {
@@ -97,8 +101,8 @@ export default function Data() {
                             <option value="average_submissions_attempted_per_15_minutes">Avg.Submissions</option>
                         </select>
                     </div>
-                    <form style={{ position: "relative", display: "flex", marginTop: "-50px", marginLeft: "2000px" }}>
-                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "rgb(225, 147, 3)", borderRadius: "7px", borderWidth: "2px", height: "50px", width: "500px", marginLeft: "20px", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "30px" }} />
+                    <form style={{ position: "relative", display: "flex", marginTop: "-50px", marginLeft: "600px" }}>
+                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "rgb(225, 147, 3)", borderRadius: "7px", borderWidth: "2px", height: "50px", width: "500px", marginLeft: "20px", marginTop: "5%", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "20px" }} />
                         {search && (
                             <div className="dropdown_search" style={{ position: "absolute", top: "60px", left: "0", zIndex: "1" }}>
                                 {filteredFighters.map((fighter, index) => (
@@ -133,7 +137,7 @@ export default function Data() {
                                         }
                                     ]}
                                     layout={{
-                                        title: `Top 100 Fighters - ${sortBy}`,
+                                        title: `Top 50 Fighters - ${sortBy}`,
                                         titlefont: {
                                             size: 35,
                                             color: '#e19303', // Adjust title color if needed
@@ -145,7 +149,7 @@ export default function Data() {
                                             showgrid: false,
                                             color: '#e19303',
                                             tickfont: {
-                                                size: 12,
+                                                size: 7,
                                                 color: "#e19303"
                                             }
                                         },
@@ -164,12 +168,12 @@ export default function Data() {
                                             bordercolor: 'white', // Change hover window border color
                                             font: {
                                                 family: 'Sternbach', // Change hover window text font family
-                                                size: 27, // Change hover window text font size
+                                                size: 20, // Change hover window text font size
                                                 color: '#c90000' // Change hover window text font color
                                             }
                                         },
-                                        width: 1800,
-                                        height: 900,
+                                        width: 900,
+                                        height: 600,
                                         plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                         paper_bgcolor: 'rgba(0, 0, 0, 0)'
                                     }}
@@ -203,7 +207,7 @@ export default function Data() {
                                         },
                                         sunburstcolorway: ['#c90000'], // Set the color for the Sunburst chart
                                         margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
-                                        width: 1500,
+                                        width: 1000,
                                         height: 800,
                                         plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                         paper_bgcolor: 'rgba(0, 0, 0, 0)'
