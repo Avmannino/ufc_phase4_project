@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useOutletContext } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Login.css'
 
 export default function Login(){
-    const { attemptLogin } = useOutletContext();
+    const { attemptLogin,user} = useOutletContext();
+    
     const [name,setName]=useState("")
     const [password,setPassword]=useState("")
     const handleChangeUsername = (e) => setName(e.target.value);
@@ -19,6 +21,9 @@ export default function Login(){
         className="form-div"
         style={{ paddingTop: "100px" }}
     >
+        <div className='logged-not'>
+        {user?<p><strong>Logged In As: {user.name}</strong></p>:<p><strong>Log In:</strong></p>}
+        </div>
         <form
             className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
             onSubmit={handleSubmit}
@@ -59,6 +64,7 @@ export default function Login(){
                 >
                     Log In
                 </button>
+                <Link to="/signup"><button className="login-btn">Sign Up</button></Link>
             </div>
         </form>
     </div>

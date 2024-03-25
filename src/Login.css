@@ -55,3 +55,14 @@
     /* Simplify border shorthand */
     z-index: 1000;
 }
+
+.sign-text{
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.logged-not{
+    margin-bottom: 40px;
+}
