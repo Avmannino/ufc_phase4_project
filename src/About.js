@@ -29,7 +29,7 @@ function About() {
                 </div>
             
                 <div className="info_r">
-                    <p><strong>Nick Raym</strong></p>
+                    <p><strong>Nick Rayman</strong></p>
                     <p>EMAIL HERE</p>
                     <a href="https://github.com/nick-raym">https://github.com/nick-raym</a>
                 </div>

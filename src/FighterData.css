@@ -7,21 +7,21 @@
     color: rgb(255, 0, 0);
     font-family: 'Sternbach';
     text-align: center;
-    font-size: 50px;
+    font-size: 2.1vw;
 }
 
 .fighter_table h3 {
     color: rgb(225, 147, 3);
     font-family: 'Sternbach';
     text-align: center;
-    font-size: 45px;
+    font-size: 2vw;
 }
 
 .fighter_table h4 {
     color: red;
     font-family: 'Sternbach';
     text-align: center;
-    font-size: 35px;
+    font-size: 1.5vw;
     padding-top: 0%;
 }
 
@@ -29,7 +29,7 @@
     color: rgb(225, 147, 3);
     font-family: 'Sternbach';
     text-align: center;
-    font-size: 25px;
+    font-size: 1.7vw;
 }
 
 .stats_table {
@@ -61,14 +61,14 @@
     align-items: center;
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 91%;
+    margin-left: 99%;
     margin-top: 5.3%;
 }
 
 .backButton:hover {
 
     transition: 538ms;
-    padding: 10px 33px;
+    padding: 15px 20px;
     transform: translateY(-0px);
     background-color: #c90000;
     color: #e19303;

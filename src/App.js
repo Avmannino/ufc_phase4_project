@@ -5,6 +5,7 @@ import Home from './Home';
 import About from './About'; 
 import Map from './Map';
 import Data from './Data';
+import Forum from './Forum';
 import './App.css';
 import logoImage from './assets/UFC_Logo1.png';
 
@@ -24,8 +25,8 @@ function App() {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/map" element={<Map />} />
-          <Route path="/fantasy" element={<Home />} />
           <Route path="/data" element={<Data />} /> 
+          <Route path="/ufc_300" element={<Forum />} />
         </Routes>
       </div>
       <h1 className='logo'>

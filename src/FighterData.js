@@ -68,7 +68,7 @@ export default function FighterData({ fighter, handleBackButton }) {
                 />
             </div>
             {/* Heatmap with custom background */}
-            <div className="heatmap_container">
+            {/* <div className="heatmap_container">
                 <h2>Heatmap: Strikes Landed per Minute</h2>
                 <Plot
                     data={[
@@ -97,7 +97,7 @@ export default function FighterData({ fighter, handleBackButton }) {
                         }]
                     }}
                 />
-            </div>
+            </div> */}
         </>
     );
 }

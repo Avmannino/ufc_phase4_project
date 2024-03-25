@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 import nav_logo from './assets/nav_logo.png'
 import aboutLogo from './assets/a_bout.png';
+import forumLogo from './assets/ufc_300.png';
 
 function Navbar() {
     const location = useLocation();
@@ -37,7 +38,11 @@ function Navbar() {
                 </li>
                 <li className="nav_item"><Link to="/map" className="nav_link">EVENT MAP</Link></li>
                 <li className="nav_item"><Link to="/data" className="nav_link">FIGHTERS</Link></li>
-                <li className="nav_item"><Link to="/fantasy" className="nav_link">FANTASY</Link></li>
+                <li className="nav_item">
+                    <Link to="/ufc_300" className="nav_link">
+                        <img src={forumLogo} alt="Forum" className="forum-logo" />
+                    </Link>
+                </li>
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>

@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.forum-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+.forum-header {
+    background-image: url('./assets/ufc_header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding-top: 150px;
+    /* Adjust the top padding */
+    padding-bottom: 150px;
+    /* Adjust the bottom padding */
+    text-align: center;
+    position: relative;
+    /* Set position to relative to allow absolute positioning of the button */
+}
+
+.forum-header h3 {
+    font-family: Oswald;
+    font-size: 5vh;
+}
+
+.forum-header h1,
+.forum-header h2 {
+    font-family: Oswald;
+    font-size: 6.5vh;
+    margin: 15px 0;
+    /* Adjust the vertical margin as needed */
+    padding: 0.5vh;
+}
+
+.forum-header h4 {
+    font-family: Oswald;
+    font-size: 2.5vh;
+    margin-bottom: -5px;
+    /* Increase the margin to move h4 lower */
+}
+
+.forum-header p {
+    font-family: Oswald;
+    font-size: 1.7vh;
+    margin-top: 40px;
+    /* Increase the margin-top value to move the content lower */
+    margin-bottom: -40px;
+    /* Adjust the margin-bottom to keep the content closer together */
+}
+
+.login-button {
+    position: absolute;
+    /* Set position to absolute to position the button relative to the header */
+    font-family: Oswald;
+    font-weight: bold;
+    bottom: -40px;
+    /* Adjust the bottom value to move the button up */
+    left: 50%;
+    /* Center the button horizontally */
+    transform: translateX(-50%);
+    /* Center the button horizontally */
+    background-color: white;
+    color: black;
+    border: solid 1.5px;
+    border-color: rgb(66, 66, 66);
+    padding: 9px 60px;
+    transition: 400ms;
+    margin-bottom: 8vh;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: rgb(138, 138, 138);
+}
+
+/* Existing CSS styles */
+.forum-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+}
+
+
+
+.forum-main {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.forum-main h2 {
+    font-family: Oswald;
+    font-weight: bolder;
+}
+
+.fight-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.fight-card .left-side p {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    left: 350px; /* Adjust left offset as needed */
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+.fight-card .right-side p {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    right: 350px; /* Adjust right offset as needed */
+    top: 10%;
+    transform: translateY(-50%);
+}
+
+.fight-card h6 {
+    font-family: Oswald;
+    color: rgb(109, 109, 109);
+    font-weight: bold;
+    font-size: 15px;
+    position: absolute;
+    /* Set position to absolute */
+    top: 2%;
+    /* Position at vertical center */
+    left: 50%;
+    /* Position at horizontal center */
+    transform: translate(-50%, -50%);
+    /* Center the element */
+}
+
+
+.fight-card p {
+    font-family: Oswald;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    margin: 20vh 0;
+}
+
+
+.fighter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fighter img {
+    width: 150px;
+    /* Adjust image width as needed */
+}
+
+
+.versus {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: Oswald;
+    src: url(./fonts/Oswald.ttf);
+}
