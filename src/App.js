@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
-import Home from './Home';
-import About from './About';
-import Map from './Map';
-import Data from './Data';
-import Forum from './Event';
+
 import './App.css';
 import logoImage from './assets/UFC_Logo1.png';
 import { Outlet } from "react-router-dom";
 import { useOutletContext } from 'react-router-dom';
-import Login from './Login';
+
 
 function App() {
   const [navActive, setNavActive] = useState(false);
@@ -72,6 +68,34 @@ function App() {
       }
     });
   }
+  function attemptSignup(newSignup){
+    fetch(`/signup`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accepts: "application/json",
+      },
+      body: JSON.stringify(newSignup),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw res;
+      })
+      // if we log in successfully, we want to store the
+      // user object in state
+      .then((data) => {
+        setUser(data);
+        // go to the home page if we log in successfully
+        
+      })
+      .catch((e) => {
+
+        e.json().then(data => alert(data.error))
+        console.log(e);
+      });
+  }
 
   const isRootPath = window.location.pathname === '/';
 
@@ -79,7 +103,7 @@ function App() {
     <>
       <div className="app">
         <Navbar active={navActive} toggleNav={toggleNav} user={user} logout={logout} />
-        <Outlet context={{ user, attemptLogin, logout }}/>
+        <Outlet context={{ user, attemptLogin, logout,attemptSignup }}/>
       </div>
       <h1 className='logo'>
         {isRootPath && <img src={logoImage} alt="Logo" className="logo" />}

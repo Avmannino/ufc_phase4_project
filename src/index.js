@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Navbar from './Navbar';
 import Home from './Home';
 import About from './About';
 import Map from './Map';
@@ -13,6 +12,7 @@ import logoImage from './assets/UFC_Logo1.png';
 import { Outlet } from "react-router-dom";
 import Login from './Login';
 import FighterData from './FighterData';
+import Signup from './Signup';
 
 const router = createBrowserRouter([
   // {
@@ -32,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />
+      },
+      {
+        path:"signup",
+        element: <Signup />
       },
       {
         path: "map",
