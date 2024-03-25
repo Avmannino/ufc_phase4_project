@@ -1,5 +1,5 @@
 import React from 'react';
-import './Forum.css';
+import './Event.css';
 import ESPN from './assets/ESPN.png'
 import Fighter1Image from './assets/fighter1.png';
 import Fighter2Image from './assets/fighter2.png';
@@ -12,7 +12,7 @@ import Fighter8Image from './assets/fighter8.png';
 import Fighter9Image from './assets/fighter9.png';
 import Fighter10Image from './assets/fighter10.png';
 
-export default function Forum() {
+export default function Event() {
     return (
         <div className="forum-container">
             <header className="forum-header">

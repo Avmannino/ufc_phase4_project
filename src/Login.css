@@ -1,0 +1,56 @@
+.form-div {
+    text-align: center;
+    font-family: "Sternbach";
+    letter-spacing: 3px;
+    font-weight: 0;
+    font-size: 25px;
+    color: #db0000;
+    background-color: #e19303;
+    padding: 13px 8px;
+    border: solid #c90000 3px;
+    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
+    border-radius: 10px;
+    transition: 238ms;
+    transform: translateY(0);
+    text-transform: uppercase;
+    margin-left: 8%;
+    margin-top: 1.5%;
+}
+
+.login-input {
+    margin-left: 10px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    background-color: #664405;
+    border: solid #c90000 2px;
+    margin-bottom: 30px;
+}
+
+.p-input {
+    margin-left: 8px;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    background-color: #664405;
+    border: solid #c90000 2px;
+    margin-bottom: 40px;
+}
+
+.login-btn {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+    
+    
+    text-align: center;
+    /* Use space-between to evenly distribute items */
+    /* Adjust width by 1px */
+    background: rgb(184, 124, 14);
+    
+    border-bottom: 6px solid rgb(255, 10, 10);
+    /* Simplify border shorthand */
+    z-index: 1000;
+}
