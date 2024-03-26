@@ -79,7 +79,8 @@ def signup():
     try:
         # make a new object from the request json
         user = User(
-            name=data.get("name")
+            name=data.get("name"),
+            password_hash=bcrypt.generate_password_hash(data.get("password"))
         )
         # add to the db
         db.session.add(user)
@@ -124,5 +125,7 @@ def logout():
     # logging out is simply removing the key we set in the session from log in
     session.pop('user_id')
     return { "message": "Logged out"}, 200
+
+
 if __name__ == "__main__":
     app.run(port=5555, debug=True)

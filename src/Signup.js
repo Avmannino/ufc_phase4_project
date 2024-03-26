@@ -18,8 +18,9 @@ export default function Signup(){
         className="form-div"
         style={{ paddingTop: "100px" }}
     >
+        <p className='sign-text'>Sign Up Here:</p>
         <form
-            className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            className=""
             onSubmit={handleSubmit}
         >
             <div className="mb-4">
@@ -56,7 +57,7 @@ export default function Signup(){
                     type="button"
                     onClick={handleSubmit}
                 >
-                    Log In
+                    Sign Up
                 </button>
             </div>
         </form>
