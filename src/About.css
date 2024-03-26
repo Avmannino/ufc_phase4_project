@@ -1,24 +1,29 @@
 /* About.css */
 
 .container p {
-  color: rgb(191, 144, 3);
-  background-color: rgb(144, 0, 0); /* Grey background with 50% opacity */
+  color: rgba(255, 255, 255, 0.697);
+  background-color: rgba(186, 130, 0, 0.597); /* Grey background with 50% opacity */
   padding: 10px; /* Adjust padding as needed */
   border-radius: 10px; /* Optional: Add rounded corners to the container */
   margin: 1.5%;
-  font-size: 36px;
-  font-family: "Sternbach";
+  width: 60%;
+  position: relative;
+  left: 40vh;
+  font-size: 23px;
+  font-family: "Oswald";
   font-weight: normal;
 }
 
 .container h4 {
   font-size: 50px;
-  color: black;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 .container h3 {
   font-size: 50px;
-  color: black;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 .textarea {
@@ -28,7 +33,7 @@
   border: none; /* Remove default textarea border */
   outline: none; /* Remove outline when focused */
   background-color: transparent; /* Make the textarea background transparent */
-  color: #ff0000; /* Set text color */
+  color: #cf0000; /* Set text color */
   font-size: 26px; /* Set font size */
   font-family: 'Arial', sans-serif; /* Set font family */
 }
@@ -42,11 +47,17 @@
 }
 
 .contact h4 {
-  margin-right: 20px; /* Add some spacing between elements */
+
+  text-align: center;
+}
+
+.developers h4 {
+  text-align: center;
 }
 
 .contact p {
   margin: 0; /* Remove default margin */
+  text-align: center;
 }
 
 .contact .info {

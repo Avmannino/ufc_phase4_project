@@ -6,8 +6,6 @@ body {
 /* Adjust width of popup content wrapper */
 .mapboxgl-popup.mapboxgl-popup-anchor-bottom .mapboxgl-popup-content-wrapper {
     max-width: 90vw !important;
-    /* Adjust the percentage as needed */
-    /* Adjust the width as needed */
     background-color: #007bff;
     color: #007bff;
 
@@ -20,11 +18,11 @@ body {
     display: flex;
     width: 90vw !important;
     /* Adjust the percentage as needed */
-    max-width: 700px;
+    max-width: 640px;
     /* Adjust the maximum width if necessary */
-    height: 410px;
+    height: 310px;
     background-color: #7c0000;
-    border: 12px groove #d79300;
+    border: 10px groove #d79300;
 }
 
 
@@ -37,7 +35,7 @@ body {
 
 .mapboxgl-popup-content h3 {
     font-family: 'Sternbach', 'bold';
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     /* text-decoration: underline; */
     margin-bottom: 30px;
@@ -49,13 +47,13 @@ body {
 
 .mapboxgl-popup-content p {
     font-family: 'Sternbach';
-    font-size: 23px;
+    font-size: 15px;
     margin-bottom: 10px;
     padding-bottom: -20px;
     padding-left: 1%;
     color: #ea9000;
     text-align: left;
-    line-height: 26px;
+    line-height: 14px;
 
 }
 
@@ -63,7 +61,7 @@ body {
 .mapboxgl-popup-content img {
     display: block;
     /* Ensure the image is a block element */
-    margin: -319px 430px 10px;
+    margin: -255px 410px 10px;
     /* Center the image horizontally and adjust top margin */
     -webkit-box-shadow: -4px 6px 15px 12px #000000;
     box-shadow: -4px 6px 15px 12px #000000;
@@ -72,9 +70,9 @@ body {
 }
 
 .mapboxgl-popup-content p a {
-    color: #f09000;
+    color: rgb(4, 0, 255);
     /* Change the color of the link */
-    text-decoration: none;
+    text-decoration: underline;
     /* Remove underline */
     padding-left: 0%;
 
@@ -90,7 +88,7 @@ body {
 
 .mapboxgl-popup-content p.label {
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(0, 0, 0);
     padding-right: 7%;
 
@@ -189,6 +187,7 @@ body {
 /* Link hover style */
 .popup-link:hover {
     text-decoration: underline;
+    color: #b60000;
 }
 
 .searchBox {
@@ -205,7 +204,7 @@ body {
     /* Adjust border radius if needed */
     border-width: 0.6vh;
     /* Use viewport height units */
-    border-color: #007bff;
+    border-color: #bd9b00;
     font-family: 'Sternbach';
     z-index: 1000;
 }

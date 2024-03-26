@@ -7,7 +7,7 @@
     font-size: 8px;
     padding-top: 4px;
     font-family: "Sternbach";
-    color: rgb(28, 149, 123);
+    color: rgb(230, 1, 207);
 }
 
 .fighter_data {
@@ -20,6 +20,7 @@
 .scatter_graph {
     text-align: center;
     z-index: 1000;
+    margin-top: -650px;
 }
 
 .sunburst_graph {
@@ -28,6 +29,11 @@
     z-index: 1000;
 }
 
+/* styles.css */
+#text-fighter::placeholder {
+    color: #c90000;
+  }
+  
 
 .graph_page {
     display: flex;
@@ -55,7 +61,7 @@
     font-weight: 0;
     font-size: 12px;
     color: #db0000;
-    background-color: #e19303;
+    background-color: #b27503;
     padding: 0 1.2vh;
     border: solid #c90000 3px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
@@ -65,7 +71,7 @@
     cursor: pointer;
     text-transform: uppercase;
     margin-left: 8vh;
-    margin-top: 1.5%;
+    margin-top: 20px;
 }
 
 .graphs_btn:hover {
@@ -73,55 +79,59 @@
     padding: 0 1.5vh;
     transform: translateY(-0px);
     background-color: #c90000;
-    color: #e19303;
-    border: solid 3px #e19303;
+    color: #b27503;
+    border: solid 3px #b27503;
 }
 
 .dropdown_menu {
     position: relative;
     display: inline-block;
-    padding: 8px 50px;
+    padding: 8px 40px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    font-size: 10px;
+    font-size: 2vh;
     font-family: "Sternbach";
-    background-color: #e19303;
+    background-color: #b27503;
     transition: 138ms;
     transform: translateY(0);
-    text-align: left;
+    text-align: center;
     color: rgb(201, 0, 0);
     border-color:#c90000;
     border-width: 3px;
     border-radius: 10px;
-    margin-top: 1.5%;
+    margin-top: 20px;
     margin-left: 1%;
     
 }
 
 .dropdown_menu:hover {
     transition: 138ms;
-    padding: 8px 55px;
+    padding: 15px 30px;
     transform: translateY(-0px);
     background-color: rgb(201, 0, 0);
+    text-align: center;
     color: #e19303;
     border: solid 3px #e19303;
 }
 
 .dropdown_search {
     position: relative;
+    top: auto ;
+    left: 1vh;
     display: flexbox;
-    padding: 13px 30px;
+    padding: 13px 40px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    font-size: 20px;
+    font-size: 27px;
     font-family: "Sternbach";
-    background-color: hsl(39, 97%, 45%);
+    background-color:#b27503;
     transition: 238ms;
     transform: translateY(0);
-    text-align: left;
+    text-align: center;
     color:#c90000;
     border-width: 5px;
     border-color: #c90000;
     border-radius: 10px;
-    margin-left: 45vh;
+    margin-left: 80px;
+    margin-top: -685px;
 }
 
 
@@ -140,4 +150,39 @@
 .dropdown_menu option:hover {
     background-color: #dddddd;
     color: #333333;
+}
+
+.top-fighters-list h2 {
+    display: flexbox;
+    font-size: 4vh;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #e19303;
+    text-align: center;
+    position: relative;
+    bottom: 6vh;
+    left: 110vh;
+}
+
+.top-fighters-list ul {
+    display: flexbox;
+    font-size: 3vh;
+    color: rgb(214, 0, 0);
+    text-align: center;
+    position: relative;
+    bottom: 5.5vh;
+    left: 110vh;
+    background-color: rgba(66, 0, 0, 0.5);
+    width: 250px;
+    height: 620px;
+    margin-left: 500px;
+}
+
+.top-fighters-list li {
+    color:#e19303;
+}
+
+.top-fighters-list li:hover {
+    color: #757575;
+    text-decoration: none;
 }

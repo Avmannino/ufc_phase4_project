@@ -44,7 +44,7 @@ function Map() {
           <p class="label">Location:</p><p>${event.location}</p>
           <p class="label">Attendance:</p><p>${event.attendance}</p>
           <p><a href="${event.wikipage}" target="_blank">*Wikipedia*</a></p>
-          <img src="${event.poster_url}" alt="Event Poster" style="width:190px">
+          <img src="${event.poster_url}" alt="Event Poster" style="width:160px">
         </div>`;
 
 
@@ -56,7 +56,7 @@ function Map() {
             essential: true, // Indicates that this animation is essential and should not be interrupted
             duration: 1000
           });
-          const popup = new mapboxgl.Popup({ offset: 37 }).setHTML(popupContent);
+          const popup = new mapboxgl.Popup({ offset: 30 }).setHTML(popupContent);
           marker.setPopup(popup);
           popup.addTo(newMap);
         });

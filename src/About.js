@@ -21,7 +21,7 @@ function About() {
                 Interested in looking at the code for this web-application? Check out Adam's GitHub repo, linked below (and pls hire him)!
             </p>
             <p className='contact'>
-                <h4>Developed By</h4>
+                <h4 className='developers'>Developed By:</h4>
                 <div className="infom">
                     <p><strong>Adam Mannino</strong></p>
                     <p>amannino92@gmail.com</p>

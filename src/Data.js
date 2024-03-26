@@ -3,16 +3,44 @@ import FighterData from './FighterData';
 import Plot from "react-plotly.js";
 import "./Data.css";
 
+
 export default function Data() {
+    const topFighters = [
+        "Conor McGregor",
+        "Khabib Nurmagomedov",
+        "Jon Jones",
+        "Jorge Masvidal",
+        "Israel Adesanya",
+        "Dustin Poirier",
+        "Nate Diaz",
+        "Stipe Miocic",
+        "Amanda Nunes",
+        "Francis Ngannou",
+        "Rose Namajunas",
+        "Max Holloway",
+        "Alexander Volkanovski",
+        "Valentina Shevchenko",
+        "Daniel Cormier",
+        "Tony Ferguson",
+        "Tyron Woodley",
+        "Justin Gaethje",
+        "Robert Whittaker",
+        "Cody Garbrandt"
+    ];
+    const handleTopFighterSelect = (fighter) => {
+        const selectedFighterData = allFightersData.find((f) => f.name === fighter);
+        setSelectedFighter(selectedFighterData);
+    };
+
     const [allFighters, setAllFighters] = useState([]);
     const [search, setSearch] = useState("");
     const [selectedFighter, setSelectedFighter] = useState(false);
     const [showAll, setShowAll] = useState(false);
     const [allFightersData, setAllFightersData] = useState(null);
     const [sortBy, setSortBy] = useState('wins');
-    useEffect(()=>{
+    useEffect(() => {
         handleShowAllClick()
-    },[])
+    }, [])
 
     const handleFighterClick = (fighter) => {
         setSelectedFighter(fighter);
@@ -74,7 +102,7 @@ export default function Data() {
 
     const handleSortByChange = (event) => {
         setSortBy(event.target.value);
-        handleShowAllClick()
+
     };
 
     const handleDropdownSelect = (fighter) => {
@@ -101,8 +129,17 @@ export default function Data() {
                             <option value="average_submissions_attempted_per_15_minutes">Avg.Submissions</option>
                         </select>
                     </div>
+                    <div className="top-fighters-list">
+                        <h2>Popular Searches</h2>
+                        <ul>
+                            {topFighters.map((fighter, index) => (
+                                <li key={index} onClick={() => handleTopFighterSelect(fighter)}>{fighter}</li>
+                            ))}
+                        </ul>
+                    </div>
+
                     <form style={{ position: "relative", display: "flex", marginTop: "-50px", marginLeft: "600px" }}>
-                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "rgb(225, 147, 3)", borderRadius: "7px", borderWidth: "2px", height: "50px", width: "500px", marginLeft: "20px", marginTop: "5%", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "20px" }} />
+                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "#b27503", borderRadius: "7px", borderWidth: "3px", borderColor: "red", height: "50px", width: "500px", marginLeft: "60px", marginTop: "-680px", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "25px" }} />
                         {search && (
                             <div className="dropdown_search" style={{ position: "absolute", top: "60px", left: "0", zIndex: "1" }}>
                                 {filteredFighters.map((fighter, index) => (
@@ -124,11 +161,14 @@ export default function Data() {
                                             type: 'scattergl',
                                             mode: 'lines+markers',
                                             marker: {
+                                                color: '#e19303',
+                                                size: 10
+                                            },
+                                            line:{
                                                 color: 'red',
-                                                size: 11
                                             },
                                             font: { family: "Sternbach", size: 20, color: ["rgb(255,255,255)"] },
-                                            name: `Top 100 Fighters - ${sortBy}`,
+                                            name: `Top 50 Fighters - ${sortBy}`,
                                             paper_bgcolor: "rgba(0,0,0,0)",
                                             hoverinfo: 'text',
                                             hovertext: allFightersData.map(fighter => {
@@ -140,7 +180,7 @@ export default function Data() {
                                         title: `Top 50 Fighters - ${sortBy}`,
                                         titlefont: {
                                             size: 35,
-                                            color: '#e19303', // Adjust title color if needed
+                                            color: '#c90000', // Adjust title color if needed
                                             family: "Sternbach"
                                         },
                                         xaxis: {
@@ -149,7 +189,7 @@ export default function Data() {
                                             showgrid: false,
                                             color: '#e19303',
                                             tickfont: {
-                                                size: 7,
+                                                size: 8,
                                                 color: "#e19303"
                                             }
                                         },
@@ -172,8 +212,8 @@ export default function Data() {
                                                 color: '#c90000' // Change hover window text font color
                                             }
                                         },
-                                        width: 900,
-                                        height: 600,
+                                        width: 1250,
+                                        height: 500,
                                         plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                         paper_bgcolor: 'rgba(0, 0, 0, 0)'
                                     }}
@@ -199,10 +239,10 @@ export default function Data() {
                                         }
                                     ]}
                                     layout={{
-                                        title: `Top 100 Fighters - ${sortBy}`,
+                                        title: `Top 50 Fighters - ${sortBy}`,
                                         titlefont: {
                                             size: 35,
-                                            color: '#c90000',
+                                            color: '#e19303',
                                             family: "Sternbach"
                                         },
                                         sunburstcolorway: ['#c90000'], // Set the color for the Sunburst chart
