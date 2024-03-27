@@ -87,6 +87,7 @@ function App() {
       // user object in state
       .then((data) => {
         setUser(data);
+        navigate("/");
         // go to the home page if we log in successfully
         
       })

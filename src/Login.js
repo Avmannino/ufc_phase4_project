@@ -14,7 +14,7 @@ export default function Login(){
     function handleSubmit(e) {
         e.preventDefault();
         console.log(name+" "+password)
-        attemptLogin({ name: name, password: password });
+        attemptLogin({ name: name, password_hash: password });
     }
     return(
         <div
