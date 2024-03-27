@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Event.css';
 import ESPN from './assets/ESPN.png'
 import Fighter1Image from './assets/fighter1.png';
@@ -11,8 +11,23 @@ import Fighter7Image from './assets/fighter7.png';
 import Fighter8Image from './assets/fighter8.png';
 import Fighter9Image from './assets/fighter9.png';
 import Fighter10Image from './assets/fighter10.png';
+import Comments from './Comments';
+import { Link } from 'react-router-dom';
 
 export default function Event() {
+    const [event, setEvent] = useState([]);
+    useEffect(() => {
+        fetch("http://127.0.0.1:5555/events")
+            .then((response) => response.json())
+            .then((events) => {
+                for (let i = 0; i < events.length; i++) {
+                    if (events[i].event_num === "300") {
+                        setEvent(events[i]);
+                        break
+                    }
+                }
+            });
+    }, []);
     return (
         <div className="forum-container">
             <header className="forum-header">
@@ -21,7 +36,7 @@ export default function Event() {
                 <h4> _____    vs    _____ </h4>
                 <h1>HILL</h1>
                 <p>
-                    <button className="login-button">LOGIN</button>
+                    <button className="login-button"><Link to='/login' className='link-log'>LOGIN</Link></button>
                     Sat, Apr 13 / 10:00 PM EDT
                 </p>
                 <p>
@@ -96,6 +111,7 @@ export default function Event() {
                         <p>CODY BRUNDAGE</p>
                     </div>
                 </div>
+                <Comments event={event} />
             </main>
         </div>
     );
