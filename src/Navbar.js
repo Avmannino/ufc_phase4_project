@@ -43,7 +43,7 @@ function Navbar({user,logout}) {
                         <img src={forumLogo} alt="Forum" className="forum-logo" />
                     </Link>
                 </li>
-                {user?<li className="nav_item"><Link to="/" className="logoutnav_link" style={{fontSize:"30px"}} onClick={logout}>Log-Out</Link></li>:<li className="nav_item"><Link to="/login" className="lognav_link">LOG-IN</Link></li>}
+                {user ?<li className="nav_item"><Link to="/" className="logoutnav_link" style={{fontSize:"30px"}} onClick={logout}>Log-Out</Link></li>   :     <li className="nav_item"><Link to="/login" className="lognav_link">LOG-IN</Link></li>}
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>
