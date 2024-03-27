@@ -100,26 +100,22 @@ def signup():
     #     print(e)
     #     return {"error": f"could not post user {e}"}, 405
 
-# @app.post("/comments")
-# def post_comments():
-#     data = request.json
-
-#     try:
-#         restaurant = Restaurant.query.filter(
-#             Restaurant.name == data.get("restaurant")
-#         ).first()
-#         new_review = Review(
-#             reviewer=data.get("reviewer"),
-#             review=data.get("review"),
-#             rating=data.get("rating"),
-#             restaurant=restaurant,
-#         )
-#         db.session.add(new_review)
-#         db.session.commit()
-#         return new_review.to_dict(), 201
-#     except Exception as e:
-#         print(e)
-#         return {"error": f"could not post review: {e}"}, 405
+@app.post("/comments")
+def post_comments():
+    data = request.json
+    try:
+        new_review = Comment(
+            review=data.get("review"),
+            user_id=data.get("user_id"),
+            event_id=data.get("event_id"),
+        )
+        db.session.add(new_review)
+        db.session.commit()
+        return new_review.to_dict(), 201
+    except Exception as e:
+        print(e)
+        return {"error": f"could not post Comment: {e}"}, 405
+    
 @app.delete('/logout')
 def logout():
     # logging out is simply removing the key we set in the session from log in

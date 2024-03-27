@@ -1,0 +1,116 @@
+.comments-div {
+    background-color: rgb(254, 254, 254);
+    padding: 13px 8px;
+    border: solid #000000 3px;
+    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
+    border-radius: 10px;
+    transition: 238ms;
+    transform: translateY(0);
+    text-transform: uppercase;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 7%;
+    min-height: 200px;
+}
+
+.log-link {
+    background-color: rgb(0, 0, 0);
+    font-family: Oswald;
+    border: solid #1f1f1f 3px;
+    box-shadow: rgb(80, 79, 79) 5px 5px 25px 5px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    height: 100px;
+    padding: 11px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 40px;
+}
+
+.all-comments{
+    border: solid #000000 1px;
+    min-height: 200px;
+    margin-top:35px;
+    margin-right:40px;
+    margin-left:40px;
+    margin-bottom:40px;
+    font-size: 25px;
+}
+.form-com{
+    margin-left: 40px;
+}
+.text-log-comment{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.submit-button {
+    background-color: #ef4242;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Button focus effect */
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #075ebb;
+    /* Adjust color as needed */
+}
+
+.text-input {
+
+    width: 400px;
+    height: 100px;
+    padding: 10px;
+    border: solid #1f1f1f 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+.text-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust shadow color and size as needed */
+}
+
+.comments-div h4{
+    margin-left: 40px;
+    margin-top: 30px;
+    font-family: Oswald;
+}
+
+.single-comment {
+    background-color: #f2f2f2; /* Background color */
+    padding: 10px; /* Padding around the comment */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Margin between comments */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    border: 1px solid #ddd; /* Border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
+    transition: box-shadow 0.3s ease; /* Transition effect for shadow */
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top:10px;
+}
+
+.single-comment:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}

@@ -212,7 +212,7 @@ export default function Data() {
                                                 color: '#c90000' // Change hover window text font color
                                             }
                                         },
-                                        width: 1250,
+                                        width: 1050,
                                         height: 500,
                                         plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                         paper_bgcolor: 'rgba(0, 0, 0, 0)'
@@ -248,7 +248,7 @@ export default function Data() {
                                         sunburstcolorway: ['#c90000'], // Set the color for the Sunburst chart
                                         margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
                                         width: 1000,
-                                        height: 800,
+                                        height: 650,
                                         plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                         paper_bgcolor: 'rgba(0, 0, 0, 0)'
                                     }}

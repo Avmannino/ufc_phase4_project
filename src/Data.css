@@ -173,13 +173,14 @@
     bottom: 5.5vh;
     left: 110vh;
     background-color: rgba(66, 0, 0, 0.5);
-    width: 250px;
+    width: 1.5vh;
     height: 620px;
     margin-left: 500px;
 }
 
 .top-fighters-list li {
     color:#e19303;
+    margin-right: 3.5vh
 }
 
 .top-fighters-list li:hover {

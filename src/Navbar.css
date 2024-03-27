@@ -147,14 +147,14 @@ a {
   display: flex;
   align-items: right;
   justify-content: space-around;
-  gap: 0.1rem;
+  gap: 1vh;
   text-align: right;
 }
 
 .nav_toggler div {
-  width: 4rem;
-  height: 0.2rem;
-  margin: 0.4rem;
+  width: 6vh;
+  height: 0.5vh;
+  margin: 0.6vh;
   background: rgb(210, 10, 10);
   transition: 0.2s ease-in;
 }
@@ -162,13 +162,13 @@ a {
 .nav_toggler {
   cursor: pointer;
   display: none;
-  position: relative;
+  position: absolute;
   left: 100vh;
 }
 
-@media screen and (max-width: 1875px) {
+@media screen and (max-width: 1175px) {
   .nav_toggler {
-    display: block;
+    display:block;
   }
 
   .nav_menu {
@@ -178,7 +178,7 @@ a {
     width: 18vh;
     height: 90vh;
     background-color: rgb(184, 124, 14);
-    border-left: solid rgb(255, 10, 10) 4px;
+    border-left: solid rgb(255, 10, 10) 0.8vh;
     ;
     flex-direction: column;
     transform: translateX(100%);
