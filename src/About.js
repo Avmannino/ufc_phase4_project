@@ -20,26 +20,29 @@ function About() {
                 <h4>GitHub Code</h4>
                 Interested in looking at the code for this web-application? Check out Adam's GitHub repo, linked below (and pls hire him)!
             </p>
-            <p className='contact'>
+            <div className='contact'>
                 <h4 className='developers'>Developed By:</h4>
-                <div className="infom">
-                    <p><strong>Adam Mannino</strong></p>
-                    <p>amannino92@gmail.com</p>
-                    <a href="https://github.com/Avmannino">https://github.com/Avmannino</a>
-                </div>
-            
-                <div className="info_r">
-                    <p><strong>Nick Rayman</strong></p>
-                    <p>Nlhrayman@gmail.com</p>
-                    <a href="https://github.com/nick-raym">https://github.com/nick-raym</a>
-                </div>
-                
-                <div className="info_f">
-                    <p><strong>Adham Farghaly</strong></p>
-                    <p>EMAIL HERE</p>
-                    {/* <a href="https://github.com/adam-farghaly">https://github.com/adam-farghaly</a> */}
-                </div>
-            </p>
+                <ul>
+                    <li>
+                        <strong>Adam Mannino</strong>
+                        amannino92@gmail.com
+                        <a href="https://github.com/Avmannino">https://github.com/Avmannino</a>
+
+
+
+
+                        <strong>Nick Rayman</strong>
+                        Nlhrayman@gmail.com
+                        <a href="https://github.com/nick-raym">https://github.com/nick-raym</a>
+
+
+
+                        <strong>Adham Farghaly</strong>
+                        EMAIL HERE
+                        {/* <a href="https://github.com/adam-farghaly">https://github.com/adam-farghaly</a> */}
+                    </li>
+                </ul>
+            </div>
         </div>
     );
 }

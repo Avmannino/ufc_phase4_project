@@ -62,9 +62,9 @@ a {
 }
 
 .forum-logo {
-  margin-top: -8px;
+  margin-top: 0.6vh;
   position: relative;
-  bottom: 10%;
+  bottom: 0.5vh;
 }
 
 .nav_link {
