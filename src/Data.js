@@ -5,8 +5,9 @@ import "./Data.css";
 
 
 export default function Data() {
-    const topFighters = [
-        "Conor McGregor",
+    // list of fighter objects with name and image
+    const topFighters = [ 
+        {name:"Conor McGregor", image:"./assets"},
         "Khabib Nurmagomedov",
         "Jon Jones",
         "Jorge Masvidal",
@@ -27,9 +28,10 @@ export default function Data() {
         "Robert Whittaker",
         "Cody Garbrandt"
     ];
-    const handleTopFighterSelect = (fighter) => {
-        const selectedFighterData = allFightersData.find((f) => f.name === fighter);
-        setSelectedFighter(selectedFighterData);
+    const handleTopFighterSelect = (select_fighter) => {
+        const selectedFighter = allFighters.find(fighter => fighter.name === select_fighter)
+        // const selectedFighterData = allFightersData.find((f) => f.name === fighter);
+        setSelectedFighter(selectedFighter);
     };
 
     const [allFighters, setAllFighters] = useState([]);
@@ -133,7 +135,7 @@ export default function Data() {
                         <h2>Popular Searches</h2>
                         <ul>
                             {topFighters.map((fighter, index) => (
-                                <li key={index} onClick={() => handleTopFighterSelect(fighter)}>{fighter}</li>
+                                <><img href={fighter.image}></img> <li key={index} onClick={() => handleTopFighterSelect(fighter)}>{fighter}</li></>
                             ))}
                         </ul>
                     </div>
