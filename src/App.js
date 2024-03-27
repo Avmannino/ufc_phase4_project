@@ -97,13 +97,42 @@ function App() {
       });
   }
 
+  function attemptComment(newComment){
+    return new Promise((resolve, reject) => {
+    fetch(`/comments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accepts: "application/json",
+      },
+      body: JSON.stringify(newComment),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw res;
+      })
+      .then((data) => {
+        // setUser(data);
+        resolve(data)     
+      })
+      .catch((e) => {
+        e.json().then(data => alert(data.error))
+        reject(e)
+      });
+  })
+  }
+
+
+
   const isRootPath = window.location.pathname === '/';
 
   return (
     <>
       <div className="app">
         <Navbar active={navActive} toggleNav={toggleNav} user={user} logout={logout} />
-        <Outlet context={{ user, attemptLogin, logout,attemptSignup }}/>
+        <Outlet context={{ user, attemptLogin, logout,attemptSignup,attemptComment }}/>
       </div>
       <h1 className='logo'>
         {isRootPath && <img src={logoImage} alt="Logo" className="logo" />}

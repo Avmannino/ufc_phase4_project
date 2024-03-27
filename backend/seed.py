@@ -51,29 +51,36 @@ if __name__ == "__main__":
         db.session.commit()
 
         event_list=[]
-        for _ in range(10):
-            e=Event(location=fake.sentence(),event_num=randint(1,300))
-            event_list.append(e)
+        e=Event(location="T-Mobile Arena, Las Vegas, United States",event_num=300)
+        event_list.append(e)
         db.session.add_all(event_list)
         db.session.commit()
 
-        match_list = []
-        for _ in range(15):
-            fighter_1 = choice(fighter_list)
-            fighter_2 = choice(fighter_list)
-            while(fighter_1==fighter_2):
-                fighter_2 = choice(fighter_list)
-            event_choice = choice(event_list)
-            m = Match(fighter1_id=fighter_1.id, fighter2_id=fighter_2.id, event_id = event_choice.id)
-            match_list.append(m)
-        db.session.add_all(match_list)
-        db.session.commit()
+        # match_list = []
+        # for _ in range(15):
+        #     fighter_1 = choice(fighter_list)
+        #     fighter_2 = choice(fighter_list)
+        #     while(fighter_1==fighter_2):
+        #         fighter_2 = choice(fighter_list)
+        #     event_choice = choice(event_list)
+        #     m = Match(fighter1_id=fighter_1.id, fighter2_id=fighter_2.id, event_id = event_choice.id)
+        #     match_list.append(m)
+        # db.session.add_all(match_list)
+        # db.session.commit()
 
         reviewer = User(
                 name='Nick',
                 password_hash=bcrypt.generate_password_hash("a"),
             )
         db.session.add(reviewer)
+        db.session.commit()
+
+        c = Comment(review="Alex Periera Boutta show Hill who the real champ is.",user_id=reviewer.id,event_id=choice(event_list).id)
+        db.session.add(c)
+        db.session.commit()
+
+        c = Comment(review="Holloway vs. Gaethje is a BANGER",user_id=reviewer.id,event_id=choice(event_list).id)
+        db.session.add(c)
         db.session.commit()
 
 
