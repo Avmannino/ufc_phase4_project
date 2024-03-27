@@ -43,6 +43,7 @@ def get_events():
 def check_session():
     user = db.session.get(User, session.get('user_id'))
     print(f'check session {session.get("user_id")}')
+    
     if user:
         return user.to_dict(rules=['-password_hash']), 200
     else:
@@ -58,7 +59,7 @@ def login():
     user = User.query.filter(User.name == data.get('name')).first()
 
     # check that the hash of supplied password matches the hash stored in the db
-    if user and bcrypt.check_password_hash(user.password_hash, data.get('password')):
+    if user and bcrypt.check_password_hash(user.password_hash, data.get('password_hash')):
         # if successful, set a key in the session with the user id
         session["user_id"] = user.id
         print("success")
