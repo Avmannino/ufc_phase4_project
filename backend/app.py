@@ -86,6 +86,7 @@ def signup():
         # add to the db
         db.session.add(user)
         db.session.commit()
+        session["user_id"] = user.id
         # return object we just made
         return user.to_dict(), 201
     except IntegrityError as e:

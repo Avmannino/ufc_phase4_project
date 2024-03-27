@@ -11,6 +11,7 @@ fake = Faker()
 
 if __name__ == "__main__":
     with app.app_context():
+        
         bcrypt = Bcrypt(app)
         data = {}
         # get the json as a dict

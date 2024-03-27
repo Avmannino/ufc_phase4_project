@@ -64,7 +64,7 @@ function App() {
     // for logging out we just set user to null
     fetch(`/logout`, { method: "DELETE" }).then((res) => {
       if (res.ok) {
-        setUser(null);
+        setUser(false);
       }
     });
   }
@@ -87,7 +87,7 @@ function App() {
       // user object in state
       .then((data) => {
         setUser(data);
-        navigate("/");
+        navigate("/login");
         // go to the home page if we log in successfully
         
       })
