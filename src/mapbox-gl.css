@@ -34,7 +34,7 @@ body {
 
 
 .mapboxgl-popup-content h3 {
-    font-family: 'Sternbach', 'bold';
+    font-family: Oswald;
     font-size: 25px;
     font-weight: bold;
     /* text-decoration: underline; */
@@ -46,7 +46,7 @@ body {
 }
 
 .mapboxgl-popup-content p {
-    font-family: 'Sternbach';
+    font-family: Oswald;
     font-size: 15px;
     margin-bottom: 10px;
     padding-bottom: -20px;
@@ -205,7 +205,7 @@ body {
     border-width: 0.6vh;
     /* Use viewport height units */
     border-color: #bd9b00;
-    font-family: 'Sternbach';
+    font-family: Oswald;
     z-index: 1000;
 }
 
@@ -214,7 +214,7 @@ body {
     /* Use viewport width units */
     padding-top: 0%;
     color: #ea9000;
-    font-family: 'Sternbach';
+    font-family: Oswald;
     border-width: 0.6vh;
     /* Use viewport height units */
     border-color: #007bff;
@@ -243,7 +243,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: 0.6s;
-    font-family: "Sternbach";
+    font-family: Oswald;
     font-size: 2vh;
     /* Use viewport height units */
     font-weight: lighter;
