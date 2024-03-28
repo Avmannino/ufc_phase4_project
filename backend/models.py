@@ -26,7 +26,7 @@ class Fighter(db.Model, SerializerMixin):
     wins = db.Column(db.Integer, nullable=False)
     losses = db.Column(db.Integer, nullable=False)
     draws = db.Column(db.Integer, nullable=False)
-
+    image = db.Column(db.String, nullable=False)
     height_cm = db.Column(db.Float, nullable=True)
     weight_in_kg = db.Column(db.Float, nullable=True)
     reach_in_cm = db.Column(db.Float, nullable=True)

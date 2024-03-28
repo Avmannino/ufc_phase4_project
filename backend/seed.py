@@ -24,9 +24,10 @@ if __name__ == "__main__":
         Comment.query.delete()
         User.query.delete()
 
-        fighter_list=[]
+        fighter_list = []
         for d in data["fighters"]:
-            # read the data from the dict into a Restaurant object
+            # read the data from the dict into a Fighter object
+            image = d.get("image")  # Get the value of 'image' key if it exists, otherwise None
             f = Fighter(
                 name=d.get("name"),
                 nickname=d.get("nickname"),
@@ -46,6 +47,7 @@ if __name__ == "__main__":
                 takedown_accuracy=d.get("takedown_accuracy"),
                 takedown_defense=d.get("takedown_defense"),
                 average_submissions_attempted_per_15_minutes=d.get("average_submissions_attempted_per_15_minutes"),
+                image=image,  # Pass the value of 'image' to the Fighter object
             )
             fighter_list.append(f)
         db.session.add_all(fighter_list)

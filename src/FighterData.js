@@ -11,6 +11,7 @@ export default function FighterData({ fighter, handleBackButton, handleTopFighte
         <>
             <div className="fighter_data">
                 <input type="submit" className="backButton" value="SEARCH 🔎︎" onClick={(event) => handleBackButton(event)} />
+                <h1>{fighter.image && <img src={fighter.image} alt={fighter.name} className="fighter_image" />}</h1>
             </div>
             <div className="fighter_table">
                 <h2>FIGHTER:</h2>

@@ -22,8 +22,15 @@
     font-family: 'Sternbach';
     text-align: center;
     font-size: 1.5vw;
-    padding-top: 0%;
+    padding-top: 15%;
 }
+
+h1 .fighter_image {
+
+    position: relative;
+    margin-top: 8vh;
+    left: 430%;
+  }
 
 .fighter_table h6 {
     color: rgb(225, 147, 3);

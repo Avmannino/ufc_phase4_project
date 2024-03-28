@@ -6,27 +6,27 @@ import "./Data.css";
 
 export default function Data() {
     // list of fighter objects with name and image
-    const topFighters = [ 
-        {name:"Conor McGregor", image:"./assets"},
-        "Khabib Nurmagomedov",
-        "Jon Jones",
-        "Jorge Masvidal",
-        "Israel Adesanya",
-        "Dustin Poirier",
-        "Nate Diaz",
-        "Stipe Miocic",
-        "Amanda Nunes",
-        "Francis Ngannou",
-        "Rose Namajunas",
-        "Max Holloway",
-        "Alexander Volkanovski",
-        "Valentina Shevchenko",
-        "Daniel Cormier",
-        "Tony Ferguson",
-        "Tyron Woodley",
-        "Justin Gaethje",
-        "Robert Whittaker",
-        "Cody Garbrandt"
+    const topFighters = [
+        { name: "Conor McGregor"},
+        { name: "Khabib Nurmagomedov"},
+        { name: "Jon Jones"},
+        { name: "Jorge Masvidal"},
+        { name: "Israel Adesanya"},
+        { name: "Dustin Poirier"},
+        { name: "Nate Diaz"},
+        { name: "Stipe Miocic"},
+        { name: "Amanda Nunes"},
+        { name: "Francis Ngannou"},
+        { name: "Rose Namajunas"},
+        { name: "Max Holloway"},
+        { name: "Alexander Volkanovski"},
+        { name: "Valentina Shevchenko"},
+        { name: "Daniel Cormier"},
+        { name: "Tony Ferguson"},
+        { name: "Tyron Woodley"},
+        { name: "Justin Gaethje"},
+        { name: "Robert Whittaker"},
+        { name: "Cody Garbrandt"},
     ];
     const handleTopFighterSelect = (select_fighter) => {
         const selectedFighter = allFighters.find(fighter => fighter.name === select_fighter)
@@ -135,7 +135,9 @@ export default function Data() {
                         <h2>Popular Searches</h2>
                         <ul>
                             {topFighters.map((fighter, index) => (
-                                <><img href={fighter.image}></img> <li key={index} onClick={() => handleTopFighterSelect(fighter)}>{fighter}</li></>
+                                // Use the "image" property directly from your fighter objects
+                                <li key={index} onClick={() => handleTopFighterSelect(fighter.name)}> {fighter.name}
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -166,7 +168,7 @@ export default function Data() {
                                                 color: '#e19303',
                                                 size: 10
                                             },
-                                            line:{
+                                            line: {
                                                 color: 'red',
                                             },
                                             font: { family: "Sternbach", size: 20, color: ["rgb(255,255,255)"] },

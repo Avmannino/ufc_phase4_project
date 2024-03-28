@@ -50,6 +50,15 @@ def check_session():
         # The first time a user visits a page (i.e. is not logged in)
         # we will return this.
         return {"message": "No user logged in"}, 401
+    
+@app.route('/fighter_details', methods=['GET'])
+def get_fighter_details():
+    name = request.args.get('name')
+    fighter = Fighter.query.filter_by(name=name).first()
+    if fighter:
+        return jsonify(fighter.serialize())  # Assuming you have a serialize method to format your ORM object
+    return jsonify({"error": "Fighter not found"}), 404
+
 
 @app.post('/login')
 def login():

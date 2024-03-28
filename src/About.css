@@ -36,12 +36,13 @@
   font-weight: lighter;
   width: 40vh;
   position: relative;
-  top:-43vh;
-  left: 20vh;
+  top: -50vh;
+  left: 10vw;
   height: 33vh;
+  width: 20vw;
   padding-top: 13px;
   font-family: Oswald;
-  font-size: 24px;
+  font-size: 1.5rem;
   border-radius: 5%;
 }
 
@@ -62,9 +63,10 @@
   display: inline-block;
   flex-direction: row; /* Change flex-direction to row */
   line-height: 1.45;
-  width: 85vh;
+  text-align: left;
+  width: 43vw;
   height: 60vh;
-  margin-left: 63vh;
+  margin-left: 31vw;
   padding: 20px;
   border: 2.5px solid #ccc;
   border-radius: 15px;
@@ -78,18 +80,18 @@
   position: relative;
   text-wrap:wrap;
   width: 550px;
-  top: 34%;
-  left: -22%;
+  top: 28%;
+  left: -34%;
   padding: 1.9vh;
   margin: 150px 250px;
   font-size: 10px;
-  color: rgb(0, 0, 0);
+  color: rgb(182, 182, 182);
   background-color: transparent;
 }
 
 .disclaimer {
   font-family: Oswald;
-  font-size: 14px;
+  font-size: 1rem;
   margin-bottom: 5px;
   font-weight: normal;
   color:rgb(179, 178, 178);
@@ -97,8 +99,9 @@
 }
 
 .contact-card {
+  margin-top:25vh;
   position: relative;
-  left: -13vh;
+  left: -13vw;
   margin-right: 25vh;
   color: rgb(255, 0, 0);
   display: inline-block;
@@ -119,7 +122,7 @@
 
 .contact li{
   list-style-type: none;
-  margin-bottom: 15px;
+  margin-bottom: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
