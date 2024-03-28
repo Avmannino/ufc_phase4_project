@@ -57,6 +57,8 @@
     /* Adjust the margin-bottom to keep the content closer together */
 }
 
+
+
 .login-button {
     position: absolute;
     /* Set position to absolute to position the button relative to the header */
@@ -78,7 +80,8 @@
     font-size: 17px;
     cursor: pointer;
 }
-.link-log{
+
+.link-log {
     color: black;
 }
 
@@ -121,24 +124,49 @@
 .fight-card .left-side p {
     font-family: Oswald;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 21px;
     position: absolute;
-    left: 350px;
-    /* Adjust left offset as needed */
-    top: 10%;
+    left: 19%;
+    /* Adjust right offset as needed */
+    top: 10.5%;
     transform: translateY(-50%);
+    width: 20.5vh;
 }
 
 .fight-card .right-side p {
     font-family: Oswald;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 21px;
     position: absolute;
-    right: 350px;
+    left: 75%;
     /* Adjust right offset as needed */
-    top: 10%;
+    top: 10.5%;
     transform: translateY(-50%);
+    width: 20.5vh;
 }
+
+.record-left {
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-family: Oswald;
+    font-size: 15px;
+    font-weight: bolder;
+    top: 56.5%;
+    left: 2%;
+    z-index: 1001;
+}
+
+.record-right {
+    color: rgb(0, 0, 0);
+    position: relative;
+    font-family: Oswald;
+    font-size: 15px;
+    font-weight: bolder;
+    top: 56.5%;
+    left: 1%;
+    z-index: 1001;
+}
+
 
 .fight-card h6 {
     font-family: Oswald;
@@ -156,6 +184,7 @@
 }
 
 .watch-espn {
+    font-family: Oswald;
     font-size: 10px;
     font-weight: bold;
     color: #333;
@@ -189,14 +218,15 @@
 }
 
 .fighter img {
-    width: 150px;
+    height:auto;
+    width: 146px;
     /* Adjust image width as needed */
 }
 
 
 .versus {
+    font-family: Oswald;
     font-size: 24px;
-    font-weight: bold;
 }
 
 

@@ -51,12 +51,14 @@ export default function Event() {
                     <div className="fighter left-side">
                         <h6>LIGHT HEAVYWEIGHT TITLE BOUT</h6>
                         <img src={Fighter1Image} alt="Fighter_1" />
-                        <p>ALEX PEREIRA    🥇</p>
+                        <p> 🇧🇷 🥇 ALEX PEREIRA</p>
+                        <div className='record-left'>9-2-0</div>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
                         <img src={Fighter2Image} alt="Fighter_2" />
-                        <p>JAMAHAL HILL</p>
+                        <p>🇺🇸 JAMAHAL HILL</p>
+                        <div className='record-right'>12-1-0</div>
                     </div>
                 </div>
                 {/* Fight 2 */}
@@ -64,12 +66,14 @@ export default function Event() {
                     <div className="fighter left-side">
                         <h6>WOMEN'S STRAWWEIGHT TITLE BOUT</h6>
                         <img src={Fighter3Image} alt="Fighter_3" />
-                        <p>ZHANG WEILI   🥇</p>
+                        <p>🇨🇳 🥇 ZHANG WEILI</p>
+                        <div className='record-left'>24-3-0</div>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
                         <img src={Fighter4Image} alt="Fighter_4" />
-                        <p>YAN XIAONAN</p>
+                        <p>🇨🇳 YAN XIAONAN</p>
+                        <div className='record-right'>17-3-0</div>
                     </div>
                 </div>
                 {/* Fight 3 */}
@@ -77,12 +81,14 @@ export default function Event() {
                     <div className="fighter left-side">
                         <h6>LIGHWEIGHT BOUT</h6>
                         <img src={Fighter5Image} alt="Fighter_5" />
-                        <p>JUSTIN GAETHJE</p>
+                        <p>🇺🇸 JUSTIN GAETHJE</p>
+                        <div className='record-left'>26-4-0</div>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
                         <img src={Fighter6Image} alt="Fighter_6" />
-                        <p>MAX HOLLOWAY</p>
+                        <p>🇺🇸 MAX HOLLOWAY</p>
+                        <div className='record-right'>25-7-0</div>
                     </div>
                 </div>
                 {/* Fight 4 */}
@@ -90,12 +96,14 @@ export default function Event() {
                     <div className="fighter left-side">
                         <h6>LIGHTWEIGHT BOUT</h6>
                         <img src={Fighter7Image} alt="Fighter_7" />
-                        <p>CHARLES OLIVIERA</p>
+                        <p>🇧🇷 CHARLES OLIVIERA</p>
+                        <div className='record-left'>34-9-0</div>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
                         <img src={Fighter8Image} alt="Fighter_8" />
-                        <p>ARMAN TSARUKYAN</p>
+                        <p>🇦🇲 ARMAN TSARUKYAN</p>
+                        <div className='record-right'>21-3-0</div>
                     </div>
                 </div>
                 {/* Fight 5 */}
@@ -103,12 +111,14 @@ export default function Event() {
                     <div className="fighter left-side">
                         <h6>MIDDLEWEIGHT BOUT</h6>
                         <img src={Fighter9Image} alt="Fighter_9" />
-                        <p>BO NICKAL</p>
+                        <p>🇺🇸 BO NICKAL</p>
+                        <div className='record-left'>5-0-0</div>
                     </div>
                     <div className="versus">vs</div>
                     <div className="fighter right-side">
                         <img src={Fighter10Image} alt="Fighter_10" />
-                        <p>CODY BRUNDAGE</p>
+                        <p>🇺🇸 CODY BRUNDAGE</p>
+                        <div className='record-right'>10-5-0</div>
                     </div>
                 </div>
                 <Comments event={event} />

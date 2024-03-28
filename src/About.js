@@ -18,7 +18,7 @@ function About() {
             </p>
             <p>
                 <h4>GitHub Code</h4>
-                Interested in looking at the code for this web-application? Check out Adam's GitHub repo, linked below (and pls hire him)!
+                Interested in looking at the code for this web-application? Check out the repository in our GitHub, linked below (and pls hire us!)
             </p>
             <div className='contact'>
                 <h4 className='developers'>Developed By:</h4>
@@ -32,14 +32,14 @@ function About() {
 
 
                         <strong>Nick Rayman</strong>
-                        Nlhrayman@gmail.com
+                        nlhrayman@gmail.com
                         <a href="https://github.com/nick-raym">https://github.com/nick-raym</a>
 
 
 
                         <strong>Adham Farghaly</strong>
-                        EMAIL HERE
-                        {/* <a href="https://github.com/adam-farghaly">https://github.com/adam-farghaly</a> */}
+                        afarghaly@gmail.com
+                        <a href="https://github.com/adam-farghaly">https://github.com/adam-farghaly</a>
                     </li>
                 </ul>
             </div>
