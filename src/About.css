@@ -1,17 +1,20 @@
 /* About.css */
 
 .container p {
-  color: rgba(255, 255, 255, 0.697);
-  background-color: rgba(186, 130, 0, 0.597); /* Grey background with 50% opacity */
+  color: rgb(209, 206, 206);
+  background-color: rgba(71, 71, 71, 0.597); /* Grey background with 50% opacity */
   padding: 10px; /* Adjust padding as needed */
   border-radius: 20px; /* Optional: Add rounded corners to the container */
+  border: 1px solid rgb(134, 134, 134);
   margin: 1.5%;
-  width: 60%;
+  width: 50%;
   position: relative;
-  left: 40vh;
+  left: 50vh;
   font-size: 23px;
   font-family: "Oswald";
   font-weight: normal;
+  text-align: center;
+  text-wrap:balance;
 }
 
 .container h4 {
@@ -28,14 +31,17 @@
 }
 
 .container ul{
-  background-color: rgba(255, 174, 0, 0.3);
-  color: rgb(0, 0, 0);
-  font-weight: normal;
-  width: 60vh;
-  height: auto;
-  margin-left: 9vh;
+  background-color: rgba(51, 51, 51, 0.5);
+  color: rgb(216, 214, 214);
+  font-weight: lighter;
+  width: 40vh;
+  position: relative;
+  top:-43vh;
+  left: 20vh;
+  height: 33vh;
+  padding-top: 13px;
   font-family: Oswald;
-  font-size: 25px;
+  font-size: 24px;
   border-radius: 5%;
 }
 
@@ -55,20 +61,46 @@
   font-family: Oswald;
   display: inline-block;
   flex-direction: row; /* Change flex-direction to row */
+  line-height: 1.45;
   width: 85vh;
-  height: 50vh;
-  margin-left: 58vh;
+  height: 60vh;
+  margin-left: 63vh;
   padding: 20px;
   border: 2.5px solid #ccc;
   border-radius: 15px;
-  background-color: rgba(197, 138, 0, 0.597)
+  background-color: rgba(143, 93, 0, 0.597)
+}
+
+
+.contact p {
+  font-family: Oswald;
+  text-align: left;
+  position: relative;
+  text-wrap:wrap;
+  width: 550px;
+  top: 34%;
+  left: -22%;
+  padding: 1.9vh;
+  margin: 150px 250px;
+  font-size: 10px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+}
+
+.disclaimer {
+  font-family: Oswald;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color:rgb(179, 178, 178);
+  text-align: center;
 }
 
 .contact-card {
   position: relative;
   left: -13vh;
   margin-right: 25vh;
-  color: rgb(255, 153, 0);
+  color: rgb(255, 0, 0);
   display: inline-block;
   font-family: Oswald;
   font-size: 3.5vh;
@@ -84,13 +116,6 @@
   text-align: center;
 }
 
-.contact p {
-  margin: -19vh; /* Remove default margin */
-  text-align: center;
-  margin-top: 0;
-  width:60vh;
-  padding-right: 25vh;
-}
 
 .contact li{
   list-style-type: none;

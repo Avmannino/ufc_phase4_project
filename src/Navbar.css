@@ -32,9 +32,9 @@ a {
   height: 9vh;
   width: calc(100% + 18px);
   /* Adjust width by 1px */
-  background: rgb(184, 124, 14);
+  background: rgb(197, 197, 197);
   position: relative;
-  border-bottom: 6px solid rgb(255, 10, 10);
+  border-bottom: 4px solid rgb(211, 0, 0);
   /* Simplify border shorthand */
   z-index: 1000;
 }
@@ -59,6 +59,10 @@ a {
   margin-top: -1px;
   position: relative;
   bottom: 1%;
+}
+
+.about-logo:hover {
+  background-color: #c90000;
 }
 
 .forum-logo {
@@ -96,7 +100,7 @@ a {
 }
 
 .lognav_link:hover {
-  background-color: #9c0000;
+  background-color: #c90000;
 }
 
 .logoutnav_link {
@@ -113,7 +117,7 @@ a {
 }
 
 .logoutnav_link:hover {
-  background-color: #9c0000;
+  background-color: #c90000;
 }
 
 
@@ -131,7 +135,7 @@ a {
 }
 
 .ftnav_link:hover {
-  background-color: #9c0000;
+  background-color: #c90000;
   position: relative;
 
 
@@ -139,6 +143,11 @@ a {
 
 .nav_left {
   margin-right: 26%;
+}
+
+.nav_logo {
+  margin-left: 12vh;
+  margin-top: 1.5vh;
 }
 
 
@@ -205,5 +214,5 @@ a {
 }
 
 .nav_link:hover {
-  background-color: #9c0000;
+  background-color: #c90000;
 }
