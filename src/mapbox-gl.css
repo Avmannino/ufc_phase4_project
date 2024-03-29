@@ -47,7 +47,7 @@ body {
 
 .mapboxgl-popup-content p {
     font-family: Oswald;
-    font-size: 15px;
+    font-size: 17px;
     margin-bottom: 10px;
     padding-bottom: -20px;
     padding-left: 1%;
@@ -61,7 +61,7 @@ body {
 .mapboxgl-popup-content img {
     display: block;
     /* Ensure the image is a block element */
-    margin: -255px 410px 10px;
+    margin: -255px 385px 10px;
     /* Center the image horizontally and adjust top margin */
     -webkit-box-shadow: -4px 6px 15px 12px #000000;
     box-shadow: -4px 6px 15px 12px #000000;
@@ -70,6 +70,8 @@ body {
 }
 
 .mapboxgl-popup-content p a {
+    font-family: Oswald;
+    font-weight: normal;
     color: rgb(4, 0, 255);
     /* Change the color of the link */
     text-decoration: underline;
@@ -89,7 +91,7 @@ body {
 .mapboxgl-popup-content p.label {
     font-weight: bold;
     font-size: 20px;
-    color: rgb(0, 0, 0);
+    color: rgb(179, 179, 179);
     padding-right: 7%;
 
 }
@@ -314,6 +316,8 @@ body {
 }
 
 .searchResultsContent {
+    font-family: Oswald;
+    font-size: 25px;
     position: relative;
     display: flexbox;
     background-color: #620000;
@@ -346,12 +350,11 @@ body {
     position: relative;
     margin-left: 97%;
     display: flex;
-    background-color: #ea9000;
-    color: #b60000;
+    background-color: #ea900000;
+    color: #ff9100;
     font-size: 20px;
     font-weight: bolder;
-    border-width: 2px;
-    border-color: #b60000;
+    border: 1px rgba(255, 0, 0, 0)
 }
 
 

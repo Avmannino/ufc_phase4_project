@@ -51,7 +51,7 @@ export default function FighterData({ fighter, handleBackButton, handleTopFighte
                                     ],
                                     align: "left",
                                     line: { color: "transparent", width: 0.2 },
-                                    font: { family: "Sternbach", size: 20, color: ["rgb(225,147,3)"] },
+                                    font: { family: "Oswald", size: 23, color: ["rgb(225,147,3)"] },
                                     height: 45, // Increase the height of the cells
                                     fill: { color: "rgba(0,0,0,0)" },
                                     paper_bgcolor: 'rgba(0,0,0,0)'
