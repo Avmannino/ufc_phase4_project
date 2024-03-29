@@ -7,26 +7,26 @@ import "./Data.css";
 export default function Data() {
     // list of fighter objects with name and image
     const topFighters = [
-        { name: "Conor McGregor"},
-        { name: "Khabib Nurmagomedov"},
-        { name: "Jon Jones"},
-        { name: "Jorge Masvidal"},
-        { name: "Israel Adesanya"},
-        { name: "Dustin Poirier"},
-        { name: "Nate Diaz"},
-        { name: "Stipe Miocic"},
-        { name: "Amanda Nunes"},
-        { name: "Francis Ngannou"},
-        { name: "Rose Namajunas"},
-        { name: "Max Holloway"},
-        { name: "Alexander Volkanovski"},
-        { name: "Valentina Shevchenko"},
-        { name: "Daniel Cormier"},
-        { name: "Tony Ferguson"},
-        { name: "Tyron Woodley"},
-        { name: "Justin Gaethje"},
-        { name: "Robert Whittaker"},
-        { name: "Cody Garbrandt"},
+        { nat: "🇮🇪", name: "Conor McGregor" },
+        { nat: "🇷🇺", name: "Khabib Nurmagomedov" },
+        { nat: "🇺🇸", name: "Jon Jones" },
+        { nat: "🇺🇸", name: "Jorge Masvidal" },
+        { nat: "🇳🇿", name: "Israel Adesanya" },
+        { nat: "🇺🇸", name: "Dustin Poirier" },
+        { nat: "🇺🇸", name: "Nate Diaz" },
+        { nat: "🇺🇸", name: "Stipe Miocic" },
+        { nat: "🇧🇷", name: "Amanda Nunes" },
+        { nat: "🇨🇲", name: "Francis Ngannou" },
+        { nat: "🇺🇸", name: "Rose Namajunas" },
+        { nat: "🇺🇸", name: "Max Holloway" },
+        { nat: "🇦🇺", name: "Alexander Volkanovski" },
+        { nat: "🇵🇪", name: "Valentina Shevchenko" },
+        { nat: "🇺🇸", name: "Daniel Cormier" },
+        { nat: "🇺🇸", name: "Tony Ferguson" },
+        { nat: "🇺🇸", name: "Tyron Woodley" },
+        { nat: "🇺🇸", name: "Justin Gaethje" },
+        { nat: "🇳🇿", name: "Robert Whittaker" },
+        { nat: "🇺🇸", name: "Cody Garbrandt" },
     ];
     const handleTopFighterSelect = (select_fighter) => {
         const selectedFighter = allFighters.find(fighter => fighter.name === select_fighter)
@@ -118,8 +118,9 @@ export default function Data() {
                 <FighterData fighter={selectedFighter} handleBackButton={handleBackButton} />
             ) : (
                 <div>
+
                     <div className="buttons-container">
-                        <button className='graphs_btn' onClick={handleShowAllClick}>Graph By:</button>
+                        <button className='graphs_btn' onClick={handleShowAllClick}>FILTER:</button>
                         <select className='dropdown_menu' value={sortBy} onChange={handleSortByChange}>
                             <option value="wins">Wins</option>
                             <option value="draws">Draws</option>
@@ -132,133 +133,214 @@ export default function Data() {
                         </select>
                     </div>
                     <div className="top-fighters-list">
-                        <h2>Popular Searches</h2>
+                        <h2>
+                            Popular Searches
+
+                        </h2>
                         <ul>
                             {topFighters.map((fighter, index) => (
-                                // Use the "image" property directly from your fighter objects
-                                <li key={index} onClick={() => handleTopFighterSelect(fighter.name)}> {fighter.name}
+
+                                <li key={index} onClick={() => handleTopFighterSelect(fighter.name)}> {fighter.nat} {fighter.name}
                                 </li>
                             ))}
                         </ul>
                     </div>
 
-                    <form style={{ position: "relative", display: "flex", marginTop: "-50px", marginLeft: "600px" }}>
-                        <input type="text" name="search" value={search} placeholder="Search by Name:" id="text-fighter" onChange={handleSearching} style={{ backgroundColor: "#b27503", borderRadius: "7px", borderWidth: "3px", borderColor: "red", height: "50px", width: "500px", marginLeft: "60px", marginTop: "-680px", color: "rgb(201, 0, 0)", textAlign: "center", fontFamily: "Sternbach", fontSize: "25px" }} />
-                        {search && (
-                            <div className="dropdown_search" style={{ position: "absolute", top: "60px", left: "0", zIndex: "1" }}>
-                                {filteredFighters.map((fighter, index) => (
-                                    <div key={index} onClick={() => handleDropdownSelect(fighter)}>{fighter.name}</div>
-                                ))}
-                            </div>
-                        )}
-                    </form>
                     <br></br>
                     <br></br>
                     {showAll && allFightersData && (
-                        <div className="scatter_graph">
-                            <h2>
-                                <Plot
-                                    data={[
-                                        {
-                                            x: allFightersData.map(fighter => fighter.name),
-                                            y: allFightersData.map(fighter => fighter[sortBy]),
-                                            type: 'scattergl',
-                                            mode: 'lines+markers',
-                                            marker: {
+                        <div className='scatter_box'>
+                            <div className="scatter_graph">
+                                <h2>
+                                    <Plot
+                                        data={[
+                                            {
+                                                x: allFightersData.map(fighter => fighter.name),
+                                                y: allFightersData.map(fighter => fighter[sortBy]),
+                                                type: 'scattergl',
+                                                mode: 'lines+markers',
+                                                marker: {
+                                                    color: '#ff9100',
+                                                    size: 9
+                                                },
+                                                line: {
+                                                    color: '#7d0000',
+                                                },
+                                                font: { family: 'nowayback', size: 20, color: ["rgb(255,255,255)"] },
+                                                name: `Top 50 Fighters - ${sortBy}`,
+                                                paper_bgcolor: "rgba(0,0,0,0)",
+                                                hoverinfo: 'text',
+                                                hovertext: allFightersData.map(fighter => {
+                                                    return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
+                                                })
+                                            }
+                                        ]}
+                                        layout={{
+                                            title: `Top 50 Fighters - ${sortBy}`,
+                                            underline: true,
+
+                                            bordercolor: "red",
+
+                                            titlefont: {
+                                                size: 40,
+                                                color: 'grey',
+                                                family: 'nowayback',
+
+
+                                            },
+                                            xaxis: {
+                                                title: '',
+                                                automargin: true,
+                                                showgrid: true,
+                                                gridcolor: 'rgba(102, 102, 102, 0.5)',
+                                                gridwidth: 16.4,
                                                 color: '#e19303',
-                                                size: 10
+                                                tickfont: {
+                                                    size: 11,
+                                                    color: "grey"
+                                                }
                                             },
-                                            line: {
-                                                color: 'red',
+                                            yaxis: {
+                                                title: sortBy, // Update y-axis title based on sortBy
+                                                automargin: true,
+                                                showgrid: false,
+                                                color: '#e19303',
+                                                tickfont: {
+                                                    size: 15,
+                                                    color: 'grey'
+                                                }
                                             },
-                                            font: { family: "Sternbach", size: 20, color: ["rgb(255,255,255)"] },
-                                            name: `Top 50 Fighters - ${sortBy}`,
-                                            paper_bgcolor: "rgba(0,0,0,0)",
-                                            hoverinfo: 'text',
-                                            hovertext: allFightersData.map(fighter => {
-                                                return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
-                                            })
-                                        }
-                                    ]}
-                                    layout={{
-                                        title: `Top 50 Fighters - ${sortBy}`,
-                                        titlefont: {
-                                            size: 35,
-                                            color: '#c90000', // Adjust title color if needed
-                                            family: "Sternbach"
-                                        },
-                                        xaxis: {
-                                            title: '',
-                                            automargin: true,
-                                            showgrid: false,
-                                            color: '#e19303',
-                                            tickfont: {
-                                                size: 8,
-                                                color: "#e19303"
-                                            }
-                                        },
-                                        yaxis: {
-                                            title: sortBy, // Update y-axis title based on sortBy
-                                            automargin: true,
-                                            showgrid: false,
-                                            color: '#e19303',
-                                            tickfont: {
-                                                size: 15,
-                                                color: '#e19303'
-                                            }
-                                        },
-                                        hoverlabel: {
-                                            bgcolor: '#e19303', // Change hover window background color
-                                            bordercolor: 'white', // Change hover window border color
-                                            font: {
-                                                family: 'Sternbach', // Change hover window text font family
-                                                size: 20, // Change hover window text font size
-                                                color: '#c90000' // Change hover window text font color
-                                            }
-                                        },
-                                        width: 1050,
-                                        height: 500,
-                                        plot_bgcolor: 'rgba(0, 0, 0, 0)',
-                                        paper_bgcolor: 'rgba(0, 0, 0, 0)'
-                                    }}
-                                />
-                            </h2>
+                                            hoverlabel: {
+                                                bgcolor: '#ffffff', // Change hover window background color
+                                                bordercolor: 'red', // Change hover window border color
+                                                font: {
+                                                    family: 'Oswald', // Change hover window text font family
+                                                    size: 20, // Change hover window text font size
+                                                    color: '#c90000' // Change hover window text font color
+                                                }
+                                            },
+                                            width: 1050,
+                                            height: 600,
+                                            zIndex: 1000,
+                                            right: 200,
+                                            plot_bgcolor: 'rgba(0, 0, 0, 0)',
+                                            paper_bgcolor: 'rgba(0, 0, 0, 0)'
+                                        }}
+                                    />
+                                </h2>
+                            </div>
                         </div>
                     )}
 
                     {showAll && allFightersData && (
-                        <div className="sunburst_graph">
-                            <h2>
-                                <Plot
-                                    data={[
-                                        {
-                                            labels: allFightersData.map(fighter => fighter.name),
-                                            parents: allFightersData.map(fighter => fighter.parent), // Assuming you have a parent property in your data to define the hierarchy
-                                            values: allFightersData.map(fighter => fighter[sortBy]),
-                                            type: 'sunburst',
-                                            hoverinfo: 'label+value',
-                                            hovertext: allFightersData.map(fighter => {
-                                                return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
-                                            })
-                                        }
-                                    ]}
-                                    layout={{
-                                        title: `Top 50 Fighters - ${sortBy}`,
-                                        titlefont: {
-                                            size: 35,
-                                            color: '#e19303',
-                                            family: "Sternbach"
-                                        },
-                                        sunburstcolorway: ['#c90000'], // Set the color for the Sunburst chart
-                                        margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
-                                        width: 1000,
-                                        height: 650,
-                                        plot_bgcolor: 'rgba(0, 0, 0, 0)',
-                                        paper_bgcolor: 'rgba(0, 0, 0, 0)'
-                                    }}
-                                    config={{ modeBarButtonsToAdd: ['zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d'] }} // Enable panning and zooming with click interactions
-                                />
-                            </h2>
+                        <div className='sunburst_box'>
+                            <div className="sunburst_graph">
+                                <h2>
+                                    <Plot
+                                        data={[
+                                            {
+                                                labels: allFightersData.map(fighter => fighter.name),
+                                                parents: allFightersData.map(fighter => fighter.parent), // Assuming you have a parent property in your data to define the hierarchy
+                                                values: allFightersData.map(fighter => fighter[sortBy]),
+                                                type: 'sunburst',
+                                                hoverinfo: 'label+value',
+                                                hovertext: allFightersData.map(fighter => {
+                                                    return `${fighter.name}<br>${sortBy}: ${fighter[sortBy]}`;
+                                                })
+                                            }
+                                        ]}
+                                        layout={{
+                                            title: `Top 50 Fighters - ${sortBy}`,
+                                            titlefont: {
+                                                size: 35,
+                                                color: 'grey',
+                                                family: "nowayback"
+                                            },
+                                            sunburstcolorway: ['#7a0000'], // Set the color for the Sunburst chart
+                                            margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
+                                            width: 1500,
+                                            height: 690,
+                                            family: "Oswald",
+                                            plot_bgcolor: 'rgba(0, 0, 0, 0)',
+                                            paper_bgcolor: 'rgba(0, 0, 0, 0)',
+                                            font: {
+                                                family: "nowayback", // Set your desired font family
+                                                size: 14,
+                                                color: 'red', // Set font color
+                                                weight: "lighter"
+                                            }
+                                        }}
+                                        config={{ modeBarButtonsToAdd: ['zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d'] }} // Enable panning and zooming with click interactions
+                                    />
+                                </h2>
+                            </div>
+                            <div className='search'>
+                                <form style={{
+                                    position: "absolute",
+                                    top: "calc(1vh - 100vh)", // Move down 50px from the navbar
+                                    left: "200%",
+                                    transform: "translateX(-50%)",
+                                    display: "flexbox",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    width: "70%",
+                                    maxWidth: "800px",
+                                    zIndex: "400",
+                                    boxSizing: "border-box",
+                                    paddingBottom: "0px", /* Added padding to accommodate dropdown */
+                                    zIndex: 9990
+
+                                }}>
+                                    <div style={{ display: "flex", alignItems: "center", width: "100%", zIndex: "9990" }}>
+                                        <button className='search-button' type="submit">Search</button>
+
+                                        <div className="search-container">
+                                            <input
+                                                type="text"
+                                                name="search"
+                                                value={search}
+                                                placeholder="Search by Name:"
+                                                id="text-fighter"
+                                                onChange={handleSearching}
+                                                className="search-input"
+                                                style={{
+
+                                                    borderRadius: "7px",
+                                                    borderWidth: "1px",
+                                                    borderColor: "#ff9100",
+                                                    paddingRight: "10px",
+                                                    width: "80%",
+                                                    height: "90%",
+                                                    marginBottom: "10px",
+                                                    marginRight: "250px",
+                                                    marginLeft: "25px"
+                                                }}
+                                            />
+                                        </div>
+
+                                    </div>
+                                    {search && (
+                                        <div className="dropdown_search">
+                                            {filteredFighters.map((fighter, index) => (
+                                                <div
+                                                    key={index}
+                                                    onClick={() => handleDropdownSelect(fighter)}
+                                                    style={{
+                                                        padding: "10px",
+                                                        borderBottom: "1px solid #ddd",
+                                                        cursor: "pointer",
+                                                        textAlign: "center",
+                                                        zIndex: "9999"
+
+                                                    }}
+                                                >
+                                                    {fighter.name}
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </form>
+                            </div>
                         </div>
                     )}
 

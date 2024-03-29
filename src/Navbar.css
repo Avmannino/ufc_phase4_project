@@ -1,218 +1,99 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 79.5%;
-}
-
-body {
-  font-size: 3rem;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: rgb(255, 0, 0);
-}
-
-/* Navbar.css */
-
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Use space-between to evenly distribute items */
-  height: 9vh;
-  width: calc(100% + 18px);
-  /* Adjust width by 1px */
+  height: 90px; /* Set a fixed height */
+  width: 100vw;
   background: rgb(197, 197, 197);
   position: relative;
-  border-bottom: 4px solid rgb(211, 0, 0);
-  /* Simplify border shorthand */
+  border-bottom: 5px solid rgb(211, 0, 0); /* Increase border thickness for better visibility */
   z-index: 1000;
 }
 
-/* Optional: Adjust padding or margin if necessary */
-.nav>* {
-  margin: 0 10px;
-  /* Add margin to distribute space between items */
-}
-
-
-.nav_brand {
-  background-image: url('./assets/UFC_Logo1.png');
-  text-transform: uppercase;
-  font-weight: bold;
-  z-index: 999;
-  position: absolute;
-  left: 20px;
-}
-
-.about-logo {
-  margin-top: -1px;
-  position: relative;
-  bottom: 1%;
-}
-
-.about-logo:hover {
-  background-color: #c90000;
-}
-
-.forum-logo {
-  margin-top: 0.6vh;
-  position: relative;
-  bottom: 0.5vh;
-}
-
-.nav_link {
-  font-size: 29px;
-  font-family: "Sternbach";
-  color: black;
-  padding-right: 4.5vh;
-  padding-top: 20%;
-  display: inline-flex;
-  margin-bottom: 1px;
-  margin-top: 30px;
-  position: relative;
-  bottom: 15%;
-
-}
-
-
-.lognav_link {
-  font-size: 29px;
-  font-family: "Sternbach";
-  color: black;
-  padding-right: 4.5vh;
-  padding-top: 10%;
-  display: inline-flex;
-  margin-bottom: 1px;
-  margin-top: 40px;
-  position: relative;
-  top: -2px;
-}
-
-.lognav_link:hover {
-  background-color: #c90000;
-}
-
-.logoutnav_link {
-  font-size: 29px;
-  font-family: "Sternbach";
-  color: black;
-  padding-right: 4.5vh;
-  padding-top: 10%;
-  display: inline-flex;
-  margin-bottom: 1px;
-  margin-top: 40px;
-  position: relative;
-  top: -2px;
-}
-
-.logoutnav_link:hover {
-  background-color: #c90000;
-}
-
-
-.ftnav_link {
-  font-size: 29px;
-  font-family: "Sternbach";
-  color: black;
-  padding-right: 2vh;
-  display: inline-flex;
-  margin-bottom: 1px;
-  margin-top: 45px;
-  position: relative;
-  bottom: 5%;
-
-}
-
-.ftnav_link:hover {
-  background-color: #c90000;
-  position: relative;
-
-
-}
-
-.nav_left {
-  margin-right: 26%;
+.nav_logo_link {
+  display: flex;
+  align-items: center;
 }
 
 .nav_logo {
-  margin-left: 12vh;
-  margin-top: 1.5vh;
+  margin-left: 110px; /* Adjust margin as needed */
 }
 
 
 
 .nav_menu {
   display: flex;
-  align-items: right;
-  justify-content: space-around;
-  gap: 1vh;
-  text-align: right;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Adjust the gap between links */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.nav_toggler div {
-  width: 6vh;
-  height: 0.5vh;
-  margin: 0.6vh;
-  background: rgb(210, 10, 10);
-  transition: 0.2s ease-in;
+.nav_link {
+  font-size: 1.9rem;
+  font-family: "Sternbach";
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  white-space: nowrap;
+}
+
+.nav_link:hover {
+  background-color: rgba(154, 0, 0, 0.594);
+  border-radius: 15px;
+}
+
+.nav_link_forum:hover {
+  background-color: rgba(154, 0, 0, 0.594);
+  border-radius: 15px;
+}
+
+.nav_linker:hover {
+  background-color: #c9000000;
 }
 
 .nav_toggler {
   cursor: pointer;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  left: 100vh;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001;
 }
 
-@media screen and (max-width: 1175px) {
+@media screen and (max-width: 1075px) {
   .nav_toggler {
-    display:block;
+    display: block;
   }
 
   .nav_menu {
+    display: none;
     position: fixed;
-    margin-top: 99.5vh;
-    margin-left: 147.8vh;
-    width: 18vh;
-    height: 90vh;
+    top: 70px; /* Set the top position based on the navbar height */
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 70px); /* Adjust height calculation */
     background-color: rgb(184, 124, 14);
-    border-left: solid rgb(255, 10, 10) 0.8vh;
-    ;
     flex-direction: column;
-    transform: translateX(100%);
-    transition: 0.2s ease-in;
+    justify-content: center;
+    align-items: center;
   }
-}
 
-.nav_active {
-  transform: translateX(0);
-}
+  .nav_menu a {
+    font-size: 2rem;
+    padding: 20px;
+  }
 
-/* Toggler Icon Animation */
+  .nav_menu a:hover {
+    background-color: #c90000;
+  }
 
-.toggle .line1 {
-  transform: rotate(-45deg) translate(-4px, 5px);
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotate(45deg) translate(-4px, -5px);
-}
-
-.nav_link:hover {
-  background-color: #c90000;
+  .nav_active .nav_menu {
+    display: flex;
+  }
 }

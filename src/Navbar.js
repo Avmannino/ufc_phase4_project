@@ -5,7 +5,7 @@ import nav_logo from './assets/nav_logo.png'
 import aboutLogo from './assets/a_bout.png';
 import forumLogo from './assets/ufc_300.png';
 
-function Navbar({user,logout}) {
+function Navbar({ user, logout }) {
     const location = useLocation();
     const [active, setActive] = useState("nav_menu");
     const [toggleIcon, setToggleIcon] = useState("nav_toggler");
@@ -30,20 +30,28 @@ function Navbar({user,logout}) {
                 </div>
             )}
             <ul className={active}>
-
+            <li className="nav_item">
+                    <Link to="/about" className="nav_link">ABOUT</Link>
+                </li>
                 <li className="nav_item">
-                    <Link to="/about" className="nav_link">
-                        <img src={aboutLogo} alt="About" className="about-logo" />
+                    <Link to="/map" className="nav_link">EVENT MAP</Link>
+                </li>
+                <li className="nav_item">
+                    <Link to="/data" className="nav_link">FIGHTERS</Link>
+                </li>
+                <li className="nav_item">
+                    <Link to="/event" className="nav_linker">
+                        <img src={forumLogo} alt="Forum" className="nav_link_forum" />
                     </Link>
                 </li>
-                <li className="nav_item"><Link to="/map" className="nav_link">EVENT MAP</Link></li>
-                <li className="nav_item"><Link to="/data" className="ftnav_link">FIGHTERS</Link></li>
-                <li className="nav_item">
-                    <Link to="/event" className="nav_link">
-                        <img src={forumLogo} alt="Forum" className="forum-logo" />
-                    </Link>
-                </li>
-                {user ?<li className="nav_item"><Link to="/" className="logoutnav_link" style={{fontSize:"30px"}} onClick={logout}>Log-Out</Link></li>   :     <li className="nav_item"><Link to="/login" className="lognav_link">LOG-IN</Link></li>}
+                {user ?
+                    <li className="nav_item">
+                        <Link to="/" className="nav_link" style={{ fontSize: "20px" }} onClick={logout}>Log-Out</Link>
+                    </li> :
+                    <li className="nav_item">
+                        <Link to="/login" className="nav_link">LOG-IN</Link>
+                    </li>
+                }
             </ul>
             <div onClick={navToggle} className={toggleIcon}>
                 <div className="line1"></div>

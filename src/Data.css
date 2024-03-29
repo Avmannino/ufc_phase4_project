@@ -1,5 +1,5 @@
 .cards :hover {
-    background-color: rgb(191, 144, 3);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -7,39 +7,108 @@
     font-size: 8px;
     padding-top: 4px;
     font-family: "Sternbach";
-    color: rgb(230, 1, 207);
+    color: #e601cf;
 }
 
 .fighter_data {
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 35px;
     padding-top: 3px;
-    font-family: "Sternbach";
+    font-family: "Oswald";
 }
 
 .scatter_graph {
     text-align: center;
     z-index: 1000;
-    margin-top: -650px;
+    margin-top: 2vh;
+    margin-left: 4vw;
+    /* border: 3px red;
+    border-style: solid; */
+    width: 1050px;
+    height: 650px;
+}
+
+.scatter_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 22vh;
+    left: 1.5vw;
+    padding: 12px;
+    height: 640px;
+    width: 1050px;
+    border: 4px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#000000, #000000) padding-box, linear-gradient(var(--angle),
+            #000000,
+            #ff9100) border-box;
+    animation: 6s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
 
 .sunburst_graph {
     text-align: center;
-    margin-top: 5%;
-    z-index: 1000;
+    margin-top: -8.3vh;
+    margin-left: 0vw;
+    font-family: Oswald;
+}
+
+.sunburst_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 102vh;
+    left: 8vw;
+    padding: 12px;
+    height: 635px;
+    width: 635px;
+    border: 8px solid #0000;
+    border-radius: 365px;
+    background: linear-gradient(#000000, #340000) padding-box, linear-gradient(var(--angle),
+            #000000,
+            #ffffff) border-box;
+    animation: 6s rotate linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
 
 /* styles.css */
 #text-fighter::placeholder {
-    color: #c90000;
-  }
-  
+    color: rgba(255, 255, 255, 0.429);
+    font-family: "nowayback";
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-align: center;
+}
 
 .graph_page {
     display: flex;
     justify-content: flex-start;
     background-image: url('./assets/data_bg.png');
-    background-size:auto;
+    background-size: auto;
     background-repeat: no-repeat;
     background-color: black;
     width: 100vw;
@@ -48,90 +117,191 @@
     /* Set height to 100% of the viewport height */
     overflow: hidden;
     /* Prevent scrolling if the content overflows */
+    z-index: 0;
 }
 
 .buttons-container {
-    display: flex;
-    align-items: center; /* Align items vertically */
-    width: 100px;
+    display: inline-block;
+    align-items: center;
+    /* Align items vertically */
+    width: 700px;
+    height: 100px;
 }
 
 .graphs_btn {
-    font-family: "Sternbach";
+    font-family: "nowayback";
     font-weight: 0;
-    font-size: 12px;
-    color: #db0000;
-    background-color: #b27503;
-    padding: 0 1.2vh;
-    border: solid #c90000 3px;
+    font-size: 0.7rem;
+    color: #ffffff;
+    background-color: #ffffff00;
+    padding: 0 1.1vh;
+    border: solid #ffffff 1.5px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
     border-radius: 10px;
-    transition: 238ms;
+    transition: 108ms;
     transform: translateY(0);
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 8vh;
-    margin-top: 20px;
+    margin-left: 6vh;
+    margin-top: 55px;
+    width: 70px;
+    height: 35px;
 }
 
+/* In your CSS file */
+.search-container {
+    position: fixed;
+    top: 95px;
+    /* Adjust as needed */
+    left: 70%;
+    /* Adjust as needed */
+    width: 95%;
+    /* Adjust as needed */
+    height: 50px;
+    /* Adjust as needed */
+}
+
+.search-input-container {
+    position: absolute;
+    top: -50; /* Adjust this value as needed */
+    left: 2vh;
+    width: 100%;
+}
+
+.search-input-container:hover {
+    border: 1px solid white; /* Change border color to white */
+    border-radius: 7px;
+    padding-right: 10px;
+    width: 80%;
+    height: 25%;
+}
+
+
+
+.search-input {
+    background-color: rgba(129, 129, 129, 0);
+    color: #c9c9c9;
+    border-radius: 7px;
+    border: 10px solid rgb(51, 0, 255);
+    padding: 15px;
+    font-family: "Oswald";
+    font-size: 1rem;
+}
+
+.search-input:hover {
+    border: 3px solid white;
+}
+
+
+.search-input::placeholder {
+    color: #ffffff;
+    /* Change the color of the placeholder text */
+    font-family: "nowayback";
+    /* Change the font family of the placeholder text */
+    font-style: bold;
+    /* Optionally, you can change the font style */
+    /* Adjust other styles as needed */
+}
+
+.search-button {
+    /* Add your button styles here */
+    font-family: "Oswald";
+    padding: 0.5vh 1.8vh;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: #6f6f6f00;
+    border: 1px solid #ff9100;
+    transition: 150ms;
+    transform: translateY(0);
+    cursor: pointer;
+    margin-left: 12vw;
+    /* Adjust the margin as needed */
+    margin-top: 5.3vw;
+    /* Adjust the margin as needed */
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    /* Adjust the positioning as needed */
+}
+
+.search-button:hover {
+    transition: 50ms;
+    padding: 0.51vh 1.81vh;
+    transform: translateY(-0px);
+    background-color: #8e8e8e00;
+    color: #ff9100;
+    border: solid 2px #ffffff;
+}
+
+
 .graphs_btn:hover {
-    transition: 238ms;
+    transition: 108ms;
     padding: 0 1.5vh;
     transform: translateY(-0px);
-    background-color: #c90000;
+    background-color: #c9000000;
     color: #b27503;
     border: solid 3px #b27503;
 }
 
 .dropdown_menu {
     position: relative;
-    display: inline-block;
-    padding: 8px 40px;
+    display: flexbox;
+    padding: 8px 30px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
     font-size: 2vh;
-    font-family: "Sternbach";
-    background-color: #b27503;
+    font-family: "nowayback";
+    ;
+    font-weight: normal;
+    background-color: #b2750300;
     transition: 138ms;
     transform: translateY(0);
     text-align: center;
-    color: rgb(201, 0, 0);
-    border-color:#c90000;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
     border-width: 3px;
     border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 1%;
-    
+    margin-top: -125px;
+    margin-left: 20px;
+
+
 }
 
 .dropdown_menu:hover {
     transition: 138ms;
-    padding: 15px 30px;
+    padding: 10px 35px;
     transform: translateY(-0px);
-    background-color: rgb(201, 0, 0);
+    background-color: rgba(135, 135, 135, 0);
     text-align: center;
-    color: #e19303;
-    border: solid 3px #e19303;
+    color: #de7e00;
+    border: 2px solid #de7e00;
 }
 
 .dropdown_search {
-    position: relative;
-    top: auto ;
-    left: 1vh;
     display: flexbox;
+    z-index: 9999;
+    /* Set a higher z-index */
     padding: 13px 40px;
-    box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    font-size: 27px;
-    font-family: "Sternbach";
-    background-color:#b27503;
+    box-shadow: rgba(130, 130, 130, 0.58) 5px 5px 25px 5px;
+    font-size: 1.1vw;
+    font-family: "Oswald";
+    background-color: #262626;
     transition: 238ms;
     transform: translateY(0);
     text-align: center;
-    color:#c90000;
+    color: #9b0000;
     border-width: 5px;
     border-color: #c90000;
     border-radius: 10px;
-    margin-left: 80px;
-    margin-top: -685px;
+    margin-left: 16vw;
+    margin-top: 2vh;
+    width: 18vw;
+    position: absolute;
+    /* Change position to absolute */
+    top: 25;
+    /* Adjust top position as needed */
+    left: 0;
+    /* Adjust left position as needed */
 }
 
 
@@ -140,50 +310,82 @@
 /* Style the options */
 .dropdown_menu option {
     /* Add your desired styles here */
-    font-size: 25px;
-    font-family: "Sternbach";
-    background-color: #c90000;
-    color: #e19303;
+    font-size: 1vw;
+    font-family: "nowayback";
+    background-color: rgba(66, 0, 0, 0.5);
+    color: #740000;
+    text-align: center;
+    padding: 0;
+    position: relative;
+    left: 1vw;
+    z-index: 9999;
 }
 
 /* Style the options on hover */
 .dropdown_menu option:hover {
-    background-color: #dddddd;
+    background-color: #000000;
     color: #333333;
+    z-index: 9999;
+}
+
+.top-fighters-list {
+    width: 40%;
+    z-index: 0;
 }
 
 .top-fighters-list h2 {
     display: flexbox;
-    font-size: 4vh;
+    font-size: 3.2vh;
     font-weight: bolder;
     text-decoration: underline;
     color: #e19303;
     text-align: center;
     position: relative;
-    bottom: 6vh;
-    left: 110vh;
+    bottom: 9vh;
+    margin-left: 77.5vh;
+    width: 1050px;
+    font-family: Oswald;
+    z-index: 1;
+
 }
 
 .top-fighters-list ul {
     display: flexbox;
-    font-size: 3vh;
-    color: rgb(214, 0, 0);
+    font-size: 1.4vw;
+    color: rgb(255, 255, 255);
     text-align: center;
     position: relative;
-    bottom: 5.5vh;
-    left: 110vh;
-    background-color: rgba(66, 0, 0, 0.5);
-    width: 1.5vh;
-    height: 620px;
-    margin-left: 500px;
+    bottom: 7vh;
+    left: 80.5vh;
+    /* This value seems too high, consider adjusting it */
+    padding-left: 1.5vw;
+    width: 13.5vw;
+    height: 690px;
+    margin-left: 19vw;
+    z-index: 1;
+    /* Set a lower z-index */
 }
 
 .top-fighters-list li {
-    color:#e19303;
-    margin-right: 3.5vh
+    font-size: 1vw;
+    color: #ffffff;
+    margin-right: 3.5vh;
+    font-family: Oswald;
+    z-index: 1;
 }
 
 .top-fighters-list li:hover {
     color: #757575;
     text-decoration: none;
+    z-index: 1;
+}
+
+@font-face {
+    font-family: Bebas;
+    src: url(./fonts/Bebas.ttf);
+}
+
+@font-face {
+    font-family: nowayback;
+    src: url(./fonts/nowayback.ttf);
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import Plot from "react-plotly.js";
-import Outline from './assets/fighter_outline.png';
 import './FighterData.css';
 
 export default function FighterData({ fighter, handleBackButton, handleTopFighterSelect }) {
