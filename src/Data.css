@@ -312,12 +312,12 @@
     /* Add your desired styles here */
     font-size: 1vw;
     font-family: "nowayback";
-    background-color: rgba(66, 0, 0, 0.5);
-    color: #740000;
-    text-align: center;
-    padding: 0;
+    background-color: rgb(111, 0, 0);
+    color: #fefefe;
+    text-align:inherit;
+    margin-left: 10vw;
     position: relative;
-    left: 1vw;
+    left: 9.5vw;
     z-index: 9999;
 }
 

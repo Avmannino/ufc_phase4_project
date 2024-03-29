@@ -1,60 +1,84 @@
 .form-div {
     text-align: center;
-    font-family: "Sternbach";
+    font-family: "Oswald";
     letter-spacing: 3px;
     font-weight: 0;
-    font-size: 25px;
-    color: #db0000;
-    background-color: #e19303;
+    font-size: 20px;
+    color: #bababa;
+    background-color: #2d0000b4;
     padding: 13px 8px;
-    border: solid #c90000 3px;
+    border: solid #ffffff 3px;
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
-    border-radius: 10px;
+    border-radius: 15px;
     transition: 238ms;
     transform: translateY(0);
     text-transform: uppercase;
-    margin-left: 2%;
+    width: 75%;
+    margin-left: 12%;
     margin-right:2%;
-    margin-top: 1.5%;
+    margin-top: 3.5%;
 }
 
 .login-input {
     margin-left: 10px;
+    font-family: "Oswald";
     height: 40px;
     width: 200px;
     text-align: center;
-    background-color: #664405;
-    border: solid #c90000 2px;
+    background-color: #aeaeae;
+    border: solid #906900 2.5px;
     margin-bottom: 30px;
 }
 
 .p-input {
     margin-left: 8px;
+    font-family: "Oswald";
     height: 40px;
     width: 200px;
     text-align: center;
-    background-color: #664405;
-    border: solid #c90000 2px;
+    background-color: #aeaeae;
+    border: solid #906900 2.5px;
     margin-bottom: 40px;
 }
 
 .login-btn {
+    font-family: "Oswald";
     margin-top: 10px;
     margin-bottom: 50px;
+    margin-left: 60px; /* Adjust margin-left to decrease space */
     height: 40px;
     width: 200px;
     font-size: 25px;
-    
-    
     text-align: center;
-    /* Use space-between to evenly distribute items */
-    /* Adjust width by 1px */
-    background: rgb(184, 124, 14);
-    
-    border-bottom: 6px solid rgb(255, 10, 10);
-    /* Simplify border shorthand */
+    background: rgb(148, 148, 148);
+    border-bottom: 2.5px solid rgb(255, 10, 10);
+    border-right: 2px solid rgb(0, 0, 0);
     z-index: 1000;
 }
+
+.login-btn:hover {
+    border:3px solid rgba(0, 0, 0, 0);
+}
+
+.sign-btn {
+    font-family: "Oswald";
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 0px; /* Adjust margin-left to decrease space */
+    height: 40px;
+    width: 200px;
+    font-size: 25px;
+    text-align: center;
+    background: rgb(148, 148, 148);
+    border-bottom: 2.5px solid rgb(255, 10, 10);
+    border-left: 2px solid rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+.sign-btn:hover {
+    border:3px solid rgba(0, 0, 0, 0);
+}
+
 
 .sign-text{
     font-size: 35px;

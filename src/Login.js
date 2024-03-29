@@ -64,7 +64,7 @@ export default function Login(){
                 >
                     Log In
                 </button>
-                <Link to="/signup"><button className="login-btn">Sign Up</button></Link>
+                <Link to="/signup"><button className="sign-btn">Sign Up</button></Link>
             </div>
         </form>
     </div>
