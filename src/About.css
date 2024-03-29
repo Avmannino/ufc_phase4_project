@@ -2,10 +2,10 @@
 
 .container p {
   color: rgb(209, 206, 206);
-  background-color: rgba(71, 71, 71, 0.597); /* Grey background with 50% opacity */
+  background-color: rgba(67, 0, 0, 0.71); /* Grey background with 50% opacity */
   padding: 10px; /* Adjust padding as needed */
   border-radius: 20px; /* Optional: Add rounded corners to the container */
-  border: 1px solid rgb(134, 134, 134);
+  border: 1px solid rgb(255, 255, 255);
   margin: 1.5%;
   width: 50%;
   position: relative;
@@ -19,19 +19,19 @@
 
 .container h4 {
   font-size: 50px;
-  color: rgb(0, 0, 0);
+  color: rgb(135, 135, 135);
   text-align: center;
   margin-bottom: 10px;
 }
 
 .container h3 {
   font-size: 50px;
-  color: rgb(0, 0, 0);
+  color: rgb(133, 133, 133);
   text-align: center;
 }
 
 .container ul{
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: rgba(51, 51, 51, 0);
   color: rgb(216, 214, 214);
   font-weight: lighter;
   width: 40vh;
@@ -43,7 +43,7 @@
   padding-top: 13px;
   font-family: Oswald;
   font-size: 1.5rem;
-  border-radius: 5%;
+  border-radius: 15%;
 }
 
 .textarea {
@@ -60,17 +60,18 @@
 
 .contact {
   font-family: Oswald;
+  font-size: 20px;
   display: inline-block;
   flex-direction: row; /* Change flex-direction to row */
   line-height: 1.45;
   text-align: left;
   width: 43vw;
-  height: 60vh;
-  margin-left: 31vw;
+  height: 68vh;
+  margin-left: 28vw;
   padding: 20px;
   border: 2.5px solid #ccc;
   border-radius: 15px;
-  background-color: rgba(143, 93, 0, 0.597)
+  background-color: rgba(67, 0, 0, 0.71);
 }
 
 
@@ -80,8 +81,8 @@
   position: relative;
   text-wrap:wrap;
   width: 550px;
-  top: 28%;
-  left: -34%;
+  top: 35%;
+  left: -14%;
   padding: 1.9vh;
   margin: 150px 250px;
   font-size: 10px;
@@ -103,11 +104,11 @@
   position: relative;
   left: -13vw;
   margin-right: 25vh;
-  color: rgb(255, 0, 0);
+  color: rgb(114, 0, 0);
   display: inline-block;
   font-family: Oswald;
   font-size: 3.5vh;
-  margin-left: 12vh;
+  margin-left: 15vh;
 }
 
 .contact h4 {
@@ -119,13 +120,17 @@
   text-align: center;
 }
 
-
+/*names and emails*/
 .contact li{
   list-style-type: none;
-  margin-bottom: 15vh;
+  margin-bottom: 2vh;
+  margin-top: 8vh;
+  font-size: 24px;
+  margin-left: 1vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(207, 0, 0, 0);
 }
 
 
@@ -137,8 +142,9 @@
 
 .contact a {
   color: black;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: normal;
   margin-left: 10px; /* Add spacing between name and info */
-  color: rgba(0, 4, 255, 0.7)
+ 
+  color: rgba(0, 4, 255, 0.769)
 }

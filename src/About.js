@@ -10,7 +10,7 @@ function About() {
             </p>
             <p>
                 <h4>About The Data Source</h4>
-                Certain data was web-scraped via a third-party API and manually entered into a master JSON file. The library for our Event Map did not allow for the utilization of data via a backend database or API. We plan to implement this data into our backend database in the near future. We did however manage to obtain additional datasets for the more granular fight and fighter values.
+                These datasets were obtained via 3rd-party web-scrapers and fed into a backend database via Flask. The database is routed and parsed in Python and is linked to our React frontend. The graphs are provided via PlotlyJS and the event map utilizes a frontend API through a library called Mapbox.  
             </p>
             <p>
                 <h4>Motivation</h4>
@@ -18,7 +18,7 @@ function About() {
             </p>
             <p>
                 <h4>GitHub Code</h4>
-                Interested in looking at the code for this web-application? Check out the repository in our GitHub, linked below (and pls hire us!)
+                Interested in looking at the code for this web-application? Check out the repository in our GitHub, linked below.
             </p>
             <div className='contact'>
                 <h4 className='developers'>Developed By:</h4>
