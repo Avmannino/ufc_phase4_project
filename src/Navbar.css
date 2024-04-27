@@ -2,11 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px; /* Set a fixed height */
+  height: 90px; 
   width: 100vw;
   background: rgb(197, 197, 197);
   position: relative;
-  border-bottom: 5px solid rgb(211, 0, 0); /* Increase border thickness for better visibility */
+  border-bottom: 5px solid rgb(211, 0, 0); 
   z-index: 1000;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .nav_logo {
-  margin-left: 110px; /* Adjust margin as needed */
+  margin-left: 110px; 
 }
 
 
@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* Adjust the gap between links */
+  gap: 20px; 
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -74,10 +74,10 @@
   .nav_menu {
     display: none;
     position: fixed;
-    top: 70px; /* Set the top position based on the navbar height */
+    top: 70px; 
     left: 0;
     width: 100vw;
-    height: calc(100vh - 70px); /* Adjust height calculation */
+    height: calc(100vh - 70px); 
     background-color: rgb(184, 124, 14);
     flex-direction: column;
     justify-content: center;

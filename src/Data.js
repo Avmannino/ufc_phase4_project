@@ -5,7 +5,6 @@ import "./Data.css";
 
 
 export default function Data() {
-    // list of fighter objects with name and image
     const topFighters = [
         { nat: "🇮🇪", name: "Conor McGregor" },
         { nat: "🇷🇺", name: "Khabib Nurmagomedov" },
@@ -68,10 +67,9 @@ export default function Data() {
     }, []);
 
     const handleShowAllClick = () => {
-        fetch("http://127.0.0.1:5555/fighters") // Fetch all fighters
+        fetch("http://127.0.0.1:5555/fighters")
             .then((response) => response.json())
             .then((allFightersData) => {
-                // Sort the fighters based on the selected criterion
                 const sortedFightersData = allFightersData
                     .filter(fighter => fighter.wins !== 0 && typeof fighter.wins !== 'undefined') // Filter out fighters with 0 or undefined wins
                     .sort((a, b) => {
@@ -82,18 +80,18 @@ export default function Data() {
                         } else if (sortBy === 'losses') {
                             return b.losses - a.losses; // Sort by losses (ascending)
                         } else if (sortBy === 'height_cm') {
-                            return b.height_cm - a.height_cm; // Sort by height (descending)
+                            return b.height_cm - a.height_cm; // ''
                         } else if (sortBy === 'weight_in_kg') {
-                            return b.weight_in_kg - a.weight_in_kg; // Sort by weight (descending)
+                            return b.weight_in_kg - a.weight_in_kg; // ''
                         } else if (sortBy === 'reach_in_cm') {
-                            return b.reach_in_cm - a.reach_in_cm; // Sort by reach (descending)
+                            return b.reach_in_cm - a.reach_in_cm; // ''
                         } else if (sortBy === 'significant_strikes_landed_per_minute') {
-                            return b.significant_strikes_landed_per_minute - a.significant_strikes_landed_per_minute; // Sort by strikes landed (descending)
+                            return b.significant_strikes_landed_per_minute - a.significant_strikes_landed_per_minute; // ''
                         } else if (sortBy === 'average_submissions_attempted_per_15_minutes') {
-                            return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes; // Sort by takedown accuracy (descending)
+                            return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes; // ''
                         }
                     })
-                    .slice(0, 50); // Select top 100 fighters after sorting
+                    .slice(0, 50);
                 setAllFightersData(sortedFightersData);
                 setShowAll(true);
             })
@@ -109,7 +107,7 @@ export default function Data() {
 
     const handleDropdownSelect = (fighter) => {
         setSelectedFighter(fighter);
-        setSearch(fighter.name); // Set search input value to the selected fighter's name
+        setSearch(fighter.name);
     };
 
     return (
@@ -158,7 +156,7 @@ export default function Data() {
                                                 x: allFightersData.map(fighter => fighter.name),
                                                 y: allFightersData.map(fighter => fighter[sortBy]),
                                                 type: 'scattergl',
-                                                mode: 'lines+markers',
+                                                mode: 'markers',
                                                 marker: {
                                                     color: '#ff9100',
                                                     size: 9
@@ -201,7 +199,7 @@ export default function Data() {
                                                 }
                                             },
                                             yaxis: {
-                                                title: sortBy, // Update y-axis title based on sortBy
+                                                title: sortBy,
                                                 automargin: true,
                                                 showgrid: false,
                                                 color: '#e19303',
@@ -211,12 +209,12 @@ export default function Data() {
                                                 }
                                             },
                                             hoverlabel: {
-                                                bgcolor: '#ffffff', // Change hover window background color
-                                                bordercolor: 'red', // Change hover window border color
+                                                bgcolor: '#ffffff',
+                                                bordercolor: 'red',
                                                 font: {
-                                                    family: 'Oswald', // Change hover window text font family
-                                                    size: 20, // Change hover window text font size
-                                                    color: '#c90000' // Change hover window text font color
+                                                    family: 'Oswald',
+                                                    size: 20,
+                                                    color: '#c90000'
                                                 }
                                             },
                                             width: 1050,
@@ -240,7 +238,7 @@ export default function Data() {
                                         data={[
                                             {
                                                 labels: allFightersData.map(fighter => fighter.name),
-                                                parents: allFightersData.map(fighter => fighter.parent), // Assuming you have a parent property in your data to define the hierarchy
+                                                parents: allFightersData.map(fighter => fighter.parent),
                                                 values: allFightersData.map(fighter => fighter[sortBy]),
                                                 type: 'sunburst',
                                                 hoverinfo: 'label+value',
@@ -256,28 +254,28 @@ export default function Data() {
                                                 color: 'grey',
                                                 family: "nowayback"
                                             },
-                                            sunburstcolorway: ['#7a0000'], // Set the color for the Sunburst chart
-                                            margin: { l: 0, r: 0, b: 0, t: 80 }, // Adjust the top margin
+                                            sunburstcolorway: ['#7a0000'],
+                                            margin: { l: 0, r: 0, b: 0, t: 80 },
                                             width: 1500,
                                             height: 690,
                                             family: "Oswald",
                                             plot_bgcolor: 'rgba(0, 0, 0, 0)',
                                             paper_bgcolor: 'rgba(0, 0, 0, 0)',
                                             font: {
-                                                family: "nowayback", // Set your desired font family
+                                                family: "nowayback",
                                                 size: 14,
-                                                color: 'red', // Set font color
+                                                color: 'red',
                                                 weight: "lighter"
                                             }
                                         }}
-                                        config={{ modeBarButtonsToAdd: ['zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d'] }} // Enable panning and zooming with click interactions
+                                        config={{ modeBarButtonsToAdd: ['zoom2d', 'pan2d', 'zoomIn2d', 'zoomOut2d'] }}
                                     />
                                 </h2>
                             </div>
                             <div className='search'>
                                 <form style={{
                                     position: "absolute",
-                                    top: "calc(1vh - 100vh)", // Move down 50px from the navbar
+                                    top: "calc(1vh - 100vh)",
                                     left: "200%",
                                     transform: "translateX(-50%)",
                                     display: "flexbox",
@@ -287,7 +285,7 @@ export default function Data() {
                                     maxWidth: "800px",
                                     zIndex: "400",
                                     boxSizing: "border-box",
-                                    paddingBottom: "0px", /* Added padding to accommodate dropdown */
+                                    paddingBottom: "0px",
                                     zIndex: 9990
 
                                 }}>
@@ -331,7 +329,6 @@ export default function Data() {
                                                         cursor: "pointer",
                                                         textAlign: "center",
                                                         zIndex: "9999"
-
                                                     }}
                                                 >
                                                     {fighter.name}
@@ -343,8 +340,6 @@ export default function Data() {
                             </div>
                         </div>
                     )}
-
-
                 </div>
             )}
         </div>

@@ -3,7 +3,6 @@ body {
     padding: 0;
 }
 
-/* Adjust width of popup content wrapper */
 .mapboxgl-popup.mapboxgl-popup-anchor-bottom .mapboxgl-popup-content-wrapper {
     max-width: 90vw !important;
     background-color: #007bff;
@@ -13,13 +12,12 @@ body {
 
 /* Popup content styling */
 
-
 .mapboxgl-popup-content {
     display: flex;
     width: 90vw !important;
-    /* Adjust the percentage as needed */
+
     max-width: 640px;
-    /* Adjust the maximum width if necessary */
+
     height: 310px;
     background-color: #7c0000;
     border: 10px groove #d79300;
@@ -37,7 +35,6 @@ body {
     font-family: Oswald;
     font-size: 25px;
     font-weight: bold;
-    /* text-decoration: underline; */
     margin-bottom: 30px;
     padding-top: 0.5%;
     padding-left: 1%;
@@ -60,9 +57,7 @@ body {
 /* Style the event poster image */
 .mapboxgl-popup-content img {
     display: block;
-    /* Ensure the image is a block element */
     margin: -255px 385px 10px;
-    /* Center the image horizontally and adjust top margin */
     -webkit-box-shadow: -4px 6px 15px 12px #000000;
     box-shadow: -4px 6px 15px 12px #000000;
     max-width: 100%;
@@ -73,16 +68,13 @@ body {
     font-family: Oswald;
     font-weight: normal;
     color: rgb(4, 0, 255);
-    /* Change the color of the link */
     text-decoration: underline;
-    /* Remove underline */
     padding-left: 0%;
 
 }
 
 .mapboxgl-popup-content p a:hover {
     text-decoration: underline;
-    /* Add underline on hover */
     color: #640000;
     background-color: #f09000;
 }
@@ -146,9 +138,7 @@ body {
     height: 30px;
     position: absolute;
     top: -17.5px;
-    /* Adjust based on marker size */
     left: -17.5px;
-    /* Adjust based on marker size */
     background-image: url('assets/marker_icon.png');
     background-size: cover;
     border-radius: 50%;
@@ -195,17 +185,12 @@ body {
 .searchBox {
     position: absolute;
     top: 13%;
-    /* Adjust top position */
     left: 16%;
-    /* Center horizontally */
     transform: translateX(-50%);
     background: rgb(154, 0, 0);
     height: 6vh;
-    /* Use viewport height units */
     border-radius: 0%;
-    /* Adjust border radius if needed */
     border-width: 0.6vh;
-    /* Use viewport height units */
     border-color: #bd9b00;
     font-family: Oswald;
     z-index: 1000;
@@ -213,16 +198,13 @@ body {
 
 .searchBox:hover>.searchInput {
     width: 25vw;
-    /* Use viewport width units */
     padding-top: 0%;
     color: #ea9000;
     font-family: Oswald;
     border-width: 0.6vh;
-    /* Use viewport height units */
     border-color: #007bff;
     text-align: center;
     font-size: 3vh;
-    /* Use viewport height units */
 }
 
 .searchBox:hover>.searchButton {
@@ -238,7 +220,6 @@ body {
     float: left;
     border-radius: 5%;
     border-width: 0.6vh;
-    /* Use viewport height units */
     border-color: rgb(163, 163, 163);
     background: #d00101;
     display: flex;
@@ -247,12 +228,10 @@ body {
     transition: 0.6s;
     font-family: Oswald;
     font-size: 2vh;
-    /* Use viewport height units */
     font-weight: lighter;
     padding-right: 3vw;
     padding-left: 3vw;
     margin-top: -0.60vh;
-    /* Use viewport height units */
     margin-right: 0vh;
     margin-left: -0.5vh;
 }
@@ -262,34 +241,27 @@ body {
     background: none;
     border-color: rgb(255, 0, 0);
     border-width: 1vh;
-    /* Use viewport height units */
     float: right;
     padding: 0;
     color: rgb(200, 127, 0);
     font-size: 2.5vh;
-    /* Use viewport height units */
     transition: 0.5s;
     line-height: 6vh;
-    /* Use viewport height units */
     width: 0.1vh;
 }
 
 @media screen and (max-width: 320px) {
     .searchBox:hover>.searchInput {
         width: 0.1vw;
-        /* Use viewport width units */
         padding: 10vw;
-        /* Use viewport width units */
         border-width: 5px;
         border-color: #d79300;
     }
 
     .searchButton {
         width: 1.5vw;
-        /* Use viewport width units */
         height: 54h;
-        /* Use viewport height units */
-        /* Use viewport width units */
+
     }
 }
 
@@ -328,11 +300,8 @@ body {
     padding: 40px;
     max-width: 80%;
     margin-top: 5%;
-    /* Adjust as needed */
     max-height: 80%;
-    /* Adjust as needed */
     overflow-y: auto;
-    /* Enable vertical scrollbar */
 }
 
 .searchResultsContent ul {

@@ -19,12 +19,9 @@
     background-repeat: no-repeat;
     color: #fff;
     padding-top: 150px;
-    /* Adjust the top padding */
     padding-bottom: 150px;
-    /* Adjust the bottom padding */
     text-align: center;
     position: relative;
-    /* Set position to relative to allow absolute positioning of the button */
 }
 
 .forum-header h3 {
@@ -37,7 +34,6 @@
     font-family: Oswald;
     font-size: 6.5vh;
     margin: 15px 0;
-    /* Adjust the vertical margin as needed */
     padding: 0.5vh;
 }
 
@@ -45,31 +41,23 @@
     font-family: Oswald;
     font-size: 2.5vh;
     margin-bottom: -5px;
-    /* Increase the margin to move h4 lower */
 }
 
 .forum-header p {
     font-family: Oswald;
     font-size: 1.7vh;
     margin-top: 40px;
-    /* Increase the margin-top value to move the content lower */
     margin-bottom: -40px;
-    /* Adjust the margin-bottom to keep the content closer together */
 }
-
 
 
 .login-button {
     position: absolute;
-    /* Set position to absolute to position the button relative to the header */
     font-family: Oswald;
     font-weight: bold;
     bottom: -40px;
-    /* Adjust the bottom value to move the button up */
     left: 50%;
-    /* Center the button horizontally */
     transform: translateX(-50%);
-    /* Center the button horizontally */
     background-color: white;
     color: black;
     border: solid 1.5px;
@@ -98,8 +86,6 @@
     background-color: white;
 }
 
-
-
 .forum-main {
     flex: 1;
     padding: 20px;
@@ -127,7 +113,6 @@
     font-size: 21px;
     position: absolute;
     left: 19%;
-    /* Adjust right offset as needed */
     top: 10.5%;
     transform: translateY(-50%);
     width: 20.5vh;
@@ -139,7 +124,6 @@
     font-size: 21px;
     position: absolute;
     left: 75%;
-    /* Adjust right offset as needed */
     top: 10.5%;
     transform: translateY(-50%);
     width: 20.5vh;
@@ -174,13 +158,9 @@
     font-weight: bold;
     font-size: 15px;
     position: absolute;
-    /* Set position to absolute */
     top: 2%;
-    /* Position at vertical center */
     left: 50%;
-    /* Position at horizontal center */
     transform: translate(-50%, -50%);
-    /* Center the element */
 }
 
 .watch-espn {
@@ -190,7 +170,6 @@
     color: #333;
     text-align: center;
     margin-bottom: 5px;
-    /* Adjust margin bottom to reduce space */
 }
 
 .centered-img {
@@ -199,7 +178,6 @@
     margin-right: auto;
     margin-bottom: 0px;
 }
-
 
 
 .fight-card p {
@@ -220,7 +198,6 @@
 .fighter img {
     height:auto;
     width: 146px;
-    /* Adjust image width as needed */
 }
 
 

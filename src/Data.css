@@ -22,8 +22,6 @@
     z-index: 1000;
     margin-top: 2vh;
     margin-left: 4vw;
-    /* border: 3px red;
-    border-style: solid; */
     width: 1050px;
     height: 650px;
 }
@@ -34,7 +32,7 @@
     align-items: center;
     position: absolute;
     top: 22vh;
-    left: 1.5vw;
+    left: 7.5vw;
     padding: 12px;
     height: 640px;
     width: 1050px;
@@ -60,7 +58,7 @@
 
 .sunburst_graph {
     text-align: center;
-    margin-top: -8.3vh;
+    margin-top: -7vh;
     margin-left: 0vw;
     font-family: Oswald;
 }
@@ -71,7 +69,7 @@
     align-items: center;
     position: absolute;
     top: 102vh;
-    left: 8vw;
+    left: 12vw;
     padding: 12px;
     height: 635px;
     width: 635px;
@@ -95,7 +93,7 @@
     inherits: false;
 }
 
-/* styles.css */
+
 #text-fighter::placeholder {
     color: rgba(255, 255, 255, 0.429);
     font-family: "nowayback";
@@ -112,18 +110,14 @@
     background-repeat: no-repeat;
     background-color: black;
     width: 100vw;
-    /* Set width to 100% of the viewport width */
     height: 180vh;
-    /* Set height to 100% of the viewport height */
     overflow: hidden;
-    /* Prevent scrolling if the content overflows */
     z-index: 0;
 }
 
 .buttons-container {
     display: inline-block;
     align-items: center;
-    /* Align items vertically */
     width: 700px;
     height: 100px;
 }
@@ -142,34 +136,30 @@
     transform: translateY(0);
     cursor: pointer;
     text-transform: uppercase;
-    margin-left: 6vh;
+    margin-left: 16vh;
     margin-top: 55px;
     width: 70px;
     height: 35px;
 }
 
-/* In your CSS file */
+
 .search-container {
     position: fixed;
     top: 95px;
-    /* Adjust as needed */
-    left: 70%;
-    /* Adjust as needed */
+    left: -17vw;
     width: 95%;
-    /* Adjust as needed */
-    height: 50px;
-    /* Adjust as needed */
+    height: 55px;
 }
 
 .search-input-container {
     position: absolute;
-    top: -50; /* Adjust this value as needed */
-    left: 2vh;
+    top: -50; 
+    left: -0vh;
     width: 100%;
 }
 
 .search-input-container:hover {
-    border: 1px solid white; /* Change border color to white */
+    border: 1px solid white; 
     border-radius: 7px;
     padding-right: 10px;
     width: 80%;
@@ -195,34 +185,28 @@
 
 .search-input::placeholder {
     color: #ffffff;
-    /* Change the color of the placeholder text */
     font-family: "nowayback";
-    /* Change the font family of the placeholder text */
     font-style: bold;
-    /* Optionally, you can change the font style */
-    /* Adjust other styles as needed */
+
 }
 
 .search-button {
-    /* Add your button styles here */
     font-family: "Oswald";
     padding: 0.5vh 1.8vh;
     font-size: 0.8rem;
     border-radius: 5px;
     color: rgb(255, 255, 255);
     background-color: #6f6f6f00;
-    border: 1px solid #ff9100;
+    border: 1px solid #ffffff;
     transition: 150ms;
     transform: translateY(0);
     cursor: pointer;
-    margin-left: 12vw;
-    /* Adjust the margin as needed */
-    margin-top: 5.3vw;
-    /* Adjust the margin as needed */
+    margin-left: -20vw;
+    margin-top: 4vw;
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
     position: relative;
 
-    /* Adjust the positioning as needed */
+
 }
 
 .search-button:hover {
@@ -251,7 +235,6 @@
     box-shadow: rgb(87, 87, 87) 5px 5px 25px 5px;
     font-size: 2vh;
     font-family: "nowayback";
-    ;
     font-weight: normal;
     background-color: #b2750300;
     transition: 138ms;
@@ -263,6 +246,7 @@
     border-radius: 10px;
     margin-top: -125px;
     margin-left: 20px;
+    max-height: 1000px;
 
 
 }
@@ -280,36 +264,28 @@
 .dropdown_search {
     display: flexbox;
     z-index: 9999;
-    /* Set a higher z-index */
     padding: 13px 40px;
     box-shadow: rgba(130, 130, 130, 0.58) 5px 5px 25px 5px;
     font-size: 1.1vw;
     font-family: "Oswald";
-    background-color: #262626;
+    background-color: #8d5c00e3;
     transition: 238ms;
     transform: translateY(0);
     text-align: center;
-    color: #9b0000;
+    color: #ffffff;
     border-width: 5px;
     border-color: #c90000;
     border-radius: 10px;
-    margin-left: 16vw;
+    margin-left: -20vw;
     margin-top: 2vh;
     width: 18vw;
     position: absolute;
-    /* Change position to absolute */
-    top: 25;
-    /* Adjust top position as needed */
-    left: 0;
-    /* Adjust left position as needed */
+    top: 12vh;
+    left: 1vw;
 }
 
 
-
-
-/* Style the options */
 .dropdown_menu option {
-    /* Add your desired styles here */
     font-size: 1vw;
     font-family: "nowayback";
     background-color: rgb(111, 0, 0);
@@ -319,9 +295,10 @@
     position: relative;
     left: 9.5vw;
     z-index: 9999;
+    max-height: 1000px;
 }
 
-/* Style the options on hover */
+
 .dropdown_menu option:hover {
     background-color: #000000;
     color: #333333;
@@ -338,11 +315,11 @@
     font-size: 3.2vh;
     font-weight: bolder;
     text-decoration: underline;
-    color: #e19303;
+    color: #ffffff;
     text-align: center;
     position: relative;
-    bottom: 9vh;
-    margin-left: 77.5vh;
+    bottom: 21vh;
+    margin-left: 90.5vh;
     width: 1050px;
     font-family: Oswald;
     z-index: 1;
@@ -352,23 +329,21 @@
 .top-fighters-list ul {
     display: flexbox;
     font-size: 1.4vw;
-    color: rgb(255, 255, 255);
+    color: rgb(146, 119, 0);
     text-align: center;
     position: relative;
-    bottom: 7vh;
+    bottom: 20vh;
     left: 80.5vh;
-    /* This value seems too high, consider adjusting it */
     padding-left: 1.5vw;
     width: 13.5vw;
     height: 690px;
     margin-left: 19vw;
     z-index: 1;
-    /* Set a lower z-index */
 }
 
 .top-fighters-list li {
     font-size: 1vw;
-    color: #ffffff;
+    color: #ff9900;
     margin-right: 3.5vh;
     font-family: Oswald;
     z-index: 1;

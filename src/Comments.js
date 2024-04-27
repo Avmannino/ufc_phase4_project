@@ -27,13 +27,11 @@ export default function Comments({ event }) {
         else {
             attemptComment({ review: comment, user_id: user.id, event_id: event.id })
                 .then((newComment) => {
-                    // Update comments state with the new comment using spread operator
                     setAllComments(prevComments => [newComment, ...prevComments]);
-                    setComment(""); // Clear the comment input after posting
+                    setComment("");
                 })
                 .catch(error => {
                     console.error('Error posting comment:', error);
-                    // Handle error if posting comment fails
                 });
         }
     }
@@ -48,7 +46,7 @@ export default function Comments({ event }) {
                 <><Link to="/login" className='log-link'>LOG IN</Link>
                     <h3 className='text-log-comment'>Please Log-in to comment</h3></>
             }
-            <h4>UFC {event.event_num} Thread</h4>
+            <h4 style={{border: "1px solid red"}}>UFC {event.event_num} Discussion Thread</h4>
             <div className='all-comments'>
                 {comments ? comments.map((comm) => (
                     <p key={comm.id} className='single-comment'>
