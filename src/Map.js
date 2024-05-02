@@ -11,7 +11,7 @@ function Map() {
 
   useEffect(() => {
     // Set the Mapbox access token from the environment variable
-    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+    mapboxgl.accessToken = "pk.eyJ1IjoiYW1hbm5pbm85MiIsImEiOiJjbHZnYWpwNDkwbjlnMmpuNTR3dnQ5NmFpIn0.NZJARseRRQSwILTc36j9HQ";
 
     const newMap = new mapboxgl.Map({
       container: 'map', // container ID
