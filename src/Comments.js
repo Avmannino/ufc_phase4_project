@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Comments.css';
-import { Link, useOutlet, useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 
 
 export default function Comments({ event }) {

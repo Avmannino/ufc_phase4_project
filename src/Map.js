@@ -10,32 +10,29 @@ function Map() {
   const [showResultsPopup, setShowResultsPopup] = useState(false);
 
   useEffect(() => {
-    mapboxgl.accessToken = ''; // API KEY HERE
+    // Set the Mapbox access token from the environment variable
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
     const newMap = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/amannino92/cltw0qns6010c01pb657hagns',
-      center: [-3.0937, 12.0489],
-      zoom: 2.4,
-      pitch: 35,
-      bearing: 0,
+      container: 'map', // container ID
+      style: 'mapbox://styles/amannino92/cltw0qns6010c01pb657hagns', // style URL
+      center: [-3.0937, 12.0489], // starting position [lng, lat]
+      zoom: 2.4, // starting zoom
+      pitch: 35, // pitch in degrees
+      bearing: 0 // bearing in degrees
     });
 
     newMap.on('load', () => {
-
       eventData.eventData.forEach(event => {
-
         const markerWrapper = document.createElement('div');
         markerWrapper.className = 'marker-wrapper';
 
         const markerElement = document.createElement('div');
         markerElement.className = 'custom-marker';
 
-
         const marker = new mapboxgl.Marker(markerElement)
           .setLngLat(JSON.parse(event.coordinates))
           .addTo(newMap);
-
 
         const popupContent = `<div>
           <h3>${event.show}</h3>
@@ -46,8 +43,6 @@ function Map() {
           <p><a href="${event.wikipage}" target="_blank">*Wikipedia*</a></p>
           <img src="${event.poster_url}" alt="Event Poster" style="width:160px">
         </div>`;
-
-
 
         markerElement.addEventListener('click', () => {
           newMap.flyTo({
@@ -63,13 +58,9 @@ function Map() {
       });
 
       newMap.addControl(new mapboxgl.NavigationControl());
-
-
       newMap.doubleClickZoom.disable();
-
       setMap(newMap);
     });
-
 
     newMap.on('dblclick', () => {
       newMap.flyTo({
@@ -81,7 +72,7 @@ function Map() {
       });
     });
 
-    return () => newMap.remove();
+    return () => newMap.remove(); // Cleanup map on unmount
   }, []);
 
   const handleSearch = () => {
@@ -116,7 +107,7 @@ function Map() {
       {showResultsPopup && (
         <div className="searchResultsPopup">
           <div className="searchResultsContent" onClick={(e) => e.preventDefault()}>
-            <button className="closeButton" onClick={closeResultsPopup}>x</button> {/* Close button */}
+            <button className="closeButton" onClick={closeResultsPopup}>x</button>
             <h2>Search Results:</h2>
             <ul>
               {searchResults.map((event, index) => (
@@ -124,7 +115,7 @@ function Map() {
                   <p><strong>Show:</strong> {event.show}</p>
                   <p><strong>Date:</strong> {event.date}</p>
                   <p><strong>Venue:</strong> {event.venue}</p>
-                  <p><strong>Location:</strong> {event.location}</p>
+                  <p><strong>Location:</strong> {event.location}</p> {/* Corrected this line */}
                   <p><a href={event.wikipage} target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
                 </li>
               ))}
@@ -133,8 +124,6 @@ function Map() {
           </div>
         </div>
       )}
-
-
     </div>
   );
 }

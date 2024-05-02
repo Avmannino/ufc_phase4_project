@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import FighterData from './FighterData';
 import Plot from "react-plotly.js";
 import "./Data.css";
@@ -29,7 +29,6 @@ export default function Data() {
     ];
     const handleTopFighterSelect = (select_fighter) => {
         const selectedFighter = allFighters.find(fighter => fighter.name === select_fighter)
-        // const selectedFighterData = allFightersData.find((f) => f.name === fighter);
         setSelectedFighter(selectedFighter);
     };
 
@@ -39,12 +38,60 @@ export default function Data() {
     const [showAll, setShowAll] = useState(false);
     const [allFightersData, setAllFightersData] = useState(null);
     const [sortBy, setSortBy] = useState('wins');
-    useEffect(() => {
-        handleShowAllClick()
-    }, [])
+    
+    const handleShowAllClick = useCallback(() => {
+        fetch("http://127.0.0.1:5555/fighters")
+            .then((response) => response.json())
+            .then((allFightersData) => {
+                const sortedFightersData = allFightersData
+                    .filter(fighter => fighter.wins !== 0 && typeof fighter.wins !== 'undefined') 
+                    .sort((a, b) => {
+                        if (sortBy === 'wins') {
+                            return b.wins - a.wins;
+                        } else if (sortBy === 'draws') {
+                            return b.draws - a.draws;
+                        } else if (sortBy === 'losses') {
+                            return b.losses - a.losses;
+                        } else if (sortBy === 'height_cm') {
+                            return b.height_cm - a.height_cm;
+                        } else if (sortBy === 'weight_in_kg') {
+                            return b.weight_in_kg - a.weight_in_kg;
+                        } else if (sortBy === 'reach_in_cm') {
+                            return b.reach_in_cm - a.reach_in_cm;
+                        } else if (sortBy === 'significant_strikes_landed_per_minute') {
+                            return b.significant_strikes_landed_per_minute - a.significant_strikes_landed_per_minute;
+                        } else if (sortBy === 'average_submissions_attempted_per_15_minutes') {
+                            return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes;
+                        }
+                    })
+                    .slice(0, 50);
+                setAllFightersData(sortedFightersData);
+                setShowAll(true);
+            })
+            .catch((error) => {
+                console.error("Error fetching all fighters data:", error);
+            });
+    }, [sortBy]);
 
-    const handleFighterClick = (fighter) => {
+    useEffect(() => {
+        handleShowAllClick();
+    }, [handleShowAllClick]);
+
+    useEffect(() => {
+        fetch("http://127.0.0.1:5555/fighters")
+            .then((response) => response.json())
+            .then((fighters) => {
+                setAllFighters(fighters);
+            });
+    }, []);
+
+    const handleSortByChange = (event) => {
+        setSortBy(event.target.value);
+    };
+
+    const handleDropdownSelect = (fighter) => {
         setSelectedFighter(fighter);
+        setSearch(fighter.name);
     };
 
     const handleBackButton = (event) => {
@@ -57,58 +104,6 @@ export default function Data() {
         setSearch(event.target.value);
     }
     filteredFighters = allFighters.filter((f) => search ? f.name.toLowerCase().includes((search).toLowerCase()) : true);
-
-    useEffect(() => {
-        fetch("http://127.0.0.1:5555/fighters")
-            .then((response) => response.json())
-            .then((fighters) => {
-                setAllFighters(fighters);
-            });
-    }, []);
-
-    const handleShowAllClick = () => {
-        fetch("http://127.0.0.1:5555/fighters")
-            .then((response) => response.json())
-            .then((allFightersData) => {
-                const sortedFightersData = allFightersData
-                    .filter(fighter => fighter.wins !== 0 && typeof fighter.wins !== 'undefined') // Filter out fighters with 0 or undefined wins
-                    .sort((a, b) => {
-                        if (sortBy === 'wins') {
-                            return b.wins - a.wins; // Sort by wins (descending)
-                        } else if (sortBy === 'draws') {
-                            return b.draws - a.draws; // Sort by draws (descending)
-                        } else if (sortBy === 'losses') {
-                            return b.losses - a.losses; // Sort by losses (ascending)
-                        } else if (sortBy === 'height_cm') {
-                            return b.height_cm - a.height_cm; // ''
-                        } else if (sortBy === 'weight_in_kg') {
-                            return b.weight_in_kg - a.weight_in_kg; // ''
-                        } else if (sortBy === 'reach_in_cm') {
-                            return b.reach_in_cm - a.reach_in_cm; // ''
-                        } else if (sortBy === 'significant_strikes_landed_per_minute') {
-                            return b.significant_strikes_landed_per_minute - a.significant_strikes_landed_per_minute; // ''
-                        } else if (sortBy === 'average_submissions_attempted_per_15_minutes') {
-                            return b.average_submissions_attempted_per_15_minutes - a.average_submissions_attempted_per_15_minutes; // ''
-                        }
-                    })
-                    .slice(0, 50);
-                setAllFightersData(sortedFightersData);
-                setShowAll(true);
-            })
-            .catch((error) => {
-                console.error("Error fetching all fighters data:", error);
-            });
-    };
-
-    const handleSortByChange = (event) => {
-        setSortBy(event.target.value);
-
-    };
-
-    const handleDropdownSelect = (fighter) => {
-        setSelectedFighter(fighter);
-        setSearch(fighter.name);
-    };
 
     return (
         <div className='graph_page'>
